@@ -1,1 +1,5 @@
-<h1>monsters work</h1>
+<div id="monsters">
+  <div ng-repeat="monster in monsters | orderBy: 'name'">
+    {{monster.name}}
+  </div>
+</div>

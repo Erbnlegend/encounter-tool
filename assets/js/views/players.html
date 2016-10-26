@@ -1,0 +1,29 @@
+<div id="players">
+  <h2>Player Stats</h2>
+  <div id="playerField">
+    <p>Name: </p>
+    <p>Armor Class: </p>
+    <p>Initiative: </p>
+  </div>
+  <form ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 3000, 'blur': 0 } }">
+
+    <div ng-repeat="player in players | orderBy: '-initiative'">
+        <input ng-model="player.name"
+        type="text"
+        ng-value="{{player.name}}"
+        />
+        <input ng-model="player.ac"
+        type="number"
+        ng-value="{{player.ac}}"
+        />
+        <input ng-model="player.initiative"
+        type="number"
+        ng-value="{{player.initiative}}"
+         />
+  </div>
+  <input type="submit" value="+ Add"/>
+  </form>
+</div>
+<div id="monsters">
+  <monsters></monsters>
+</div>

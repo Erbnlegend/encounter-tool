@@ -1,4 +1,4 @@
-var app = angular.module('encounterTool', []);
+var app = angular.module('encounterTool', ['ngRoute']);
 
 app.controller('PlayerController', ['$scope', '$http', function($scope, $http){
 
@@ -10,5 +10,18 @@ app.controller('PlayerController', ['$scope', '$http', function($scope, $http){
       .error(function(data,status,error,config){
           $scope.players = [{heading:"Error",description:"Could not load json data"}];
       });
-      
-});
+
+}]);
+
+app.controller('MonsterController', ['$scope', '$http', function($scope, $http){
+
+  $scope.monsters = null;
+  $http.get('assets/js/data/monsters.json')
+      .success(function(data) {
+          $scope.monsters = data;
+      })
+      .error(function(data,status,error,config){
+          $scope.monsters = [{heading:"Error",description:"Could not load json data"}];
+      });
+
+}]);

@@ -47,3 +47,47 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  margin: 1em 0;
+}
+
+#players {
+  width: 30%;
+  min-width: 400px;
+  border: 1px solid black;
+  padding: 1em;
+  margin: 1em;
+}
+#players #playerField {
+  width: 100%;
+}
+#players #playerField p {
+  text-align: center;
+  display: inline-block;
+  width: 32.66667%;
+  margin-bottom: 1em;
+  text-decoration: underline;
+}
+#players h2 {
+  margin: 0 auto 1em;
+  text-align: center;
+  font-size: 1.5em;
+}
+#players input {
+  width: 32.66667%;
+  margin: 0 auto;
+  border: none;
+  text-align: center;
+  padding: 10px 0;
+}
+#players input[type=submit] {
+  margin-top: 1em;
+  width: 100%;
+  cursor: pointer;
+}
+#players input[type=submit]:hover {
+  background: rgba(0, 0, 0, 0.6);
+}

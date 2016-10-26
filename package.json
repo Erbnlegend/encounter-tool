@@ -1,0 +1,24 @@
+{
+  "name": "encounter-tool",
+  "version": "1.0.0",
+  "description": "Table Top Quick Encounter Tool",
+  "main": "angularApp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Erbnlegend/encounter-tool.git"
+  },
+  "author": "Aaron Erb",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-mocks": "1.5.x",
+    "angular-route": "1.5.x"
+  },
+  "bugs": {
+    "url": "https://github.com/Erbnlegend/encounter-tool/issues"
+  },
+  "homepage": "https://github.com/Erbnlegend/encounter-tool#readme"
+}

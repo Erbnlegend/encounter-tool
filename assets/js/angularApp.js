@@ -15,9 +15,9 @@ app.controller('PlayerController', ['$scope', '$http', function($scope, $http){
 
     $scope.players.push(
       {
-      	name: playerName,
-      	ac: playerArmorClass,
-      	initiative: playerInitiative
+      	"name": playerName,
+      	"ac": playerArmorClass,
+      	"initiative": playerInitiative
       }
     )
     //clear out fields

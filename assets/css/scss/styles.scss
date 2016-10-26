@@ -2,12 +2,17 @@
 @import 'variables';
 @import 'mixins';
 
-
 h1 {
   text-align: center;
   font-size: 2em;
-  margin: 1em 0;
+  padding: 1em 0;
 }
+h3 {
+  text-align: center;
+  font-size: 1.5em;
+  padding: .5em 0;
+}
+
 
 
 #players {
@@ -45,5 +50,29 @@ h1 {
         background: darken(rgba(0,0,0, .6), 20);
       }
     }
+  }
+}
+.overlayForm {
+  background: rgba(0,0,0,.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+form.newPlayer_form{
+  background: rgba(255,87,34,.8);
+  padding: 1em;
+  display: block;
+  width: 45%;
+  margin: 20% auto;
+  input {
+    text-align: center;
+    width: (96.4%/3);
+    padding: 10px 0;
+    margin-top: 1em;
+  }
+  input[type=submit] {
+    width: 100%;
   }
 }

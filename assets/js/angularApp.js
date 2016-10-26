@@ -11,6 +11,22 @@ app.controller('PlayerController', ['$scope', '$http', function($scope, $http){
           $scope.players = [{heading:"Error",description:"Could not load json data"}];
       });
 
+  $scope.addNewPlayer = function(playerName, playerArmorClass, playerInitiative) {
+
+    $scope.players.push(
+      {
+      	name: playerName,
+      	ac: playerArmorClass,
+      	initiative: playerInitiative
+      }
+    )
+    //clear out fields
+    $scope.playerName = '';
+    $scope.playerArmorClass = '';
+    $scope.playerInitiative = '';
+
+  };
+
 }]);
 
 app.controller('MonsterController', ['$scope', '$http', function($scope, $http){

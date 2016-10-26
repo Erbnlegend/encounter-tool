@@ -1,0 +1,17 @@
+[{
+	"name": "Aaron",
+	"ac": 17,
+	"initiative": 15
+}, {
+	"name": "Lucy",
+	"ac": 14,
+	"initiative": 17
+}, {
+	"name": "Jared",
+	"ac": 18,
+	"initiative": 12
+}, {
+	"name": "Dylan",
+	"ac": 2,
+	"initiative": 19
+}]

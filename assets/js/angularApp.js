@@ -28,9 +28,9 @@ app.controller('PlayerController', ['$scope', '$http', '$localStorage', function
 
     $localStorage.players.push(
       {
-      	name: playerName,
-      	ac: playerArmorClass,
-      	initiative: playerInitiative
+      	"name": playerName,
+      	"ac": playerArmorClass,
+      	"initiative": playerInitiative
       }
     );
 

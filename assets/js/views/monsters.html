@@ -163,8 +163,8 @@
       <div class="overlayForm" ng-init="showMonsterForm = false" ng-show="showMonsterForm">
         <form class="newPlayer_form" ng-submit="addPlayerMonster(monster.name, monster.armor_class, initiativeRoll, monster.dexterity)">
           <h3>Enter Initiative Roll</h3>
-          <input ng-show="false" type="text" placeholder="Name" ng-value="monster.name"/>
-          <input ng-show="false" type="number" placeholder="Armor class"  ng-value="monster.armor_class"/>
+          <input type="text" placeholder="Name" ng-value="monster.name"/>
+          <input type="number" placeholder="Armor class"  ng-value="monster.armor_class"/>
           <input type="number" placeholder="Initiative" min="0" max="20" ng-model="initiativeRoll"/>
           <input ng-click="showMonsterForm = false" type="submit" value="+ Add"/>
         </form>

@@ -1,32 +1,27 @@
-<div class="page_wrap">
-  <div class="flex_center">
-    <div id="encounter_box">
-      <h2>Encounter Order</h2>
-      <div id="playerField">
-        <p>Name: </p>
-        <p>Armor Class: </p>
-        <p>Initiative: </p>
-      </div>
-      <div ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 3000, 'blur': 0 } }">
-        <div class="players_list" ng-repeat="player in players | orderBy: '-initiative'">
-            <input ng-model="player.name"
-            type="text"
-            ng-value="{{player.name}}"
-            />
-            <input ng-model="player.ac"
-            type="number"
-            ng-value="{{player.ac}}"
-            />
-            <input ng-model="player.initiative"
-            type="number"
-            ng-value="{{player.initiative}}"
-             />
-        </div>
-        <button class="green_btn" type="submit" ng-click="showPlayerForm = true">+ Add</button>
-      </div>
-    </div>
+<div id="encounter_box">
+  <h2>Encounter Order</h2>
+  <div id="playerField">
+    <p>Name: </p>
+    <p>Armor Class: </p>
+    <p>Initiative: </p>
   </div>
-
+  <div ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 3000, 'blur': 0 } }">
+    <div class="players_list" ng-repeat="player in players | orderBy: '-initiative'">
+        <input ng-model="player.name"
+        type="text"
+        ng-value="player.name"
+        />
+        <input ng-model="player.ac"
+        type="number"
+        ng-value="player.ac"
+        />
+        <input ng-model="player.initiative"
+        type="number"
+        ng-value="player.initiative"
+         />
+    </div>
+    <button class="green_btn" type="submit" ng-click="showPlayerForm = true">+ Add</button>
+  </div>
 </div>
 
 <div class="overlayForm" ng-init="showPlayerForm = false" ng-show="showPlayerForm">

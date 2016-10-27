@@ -4,15 +4,20 @@
 @import 'controls';
 
 .page_wrap {
-	width: 90%;
+	width: 95%;
 	margin: 0 auto;
-	max-width: 800px;
+	max-width: 1600px;
+	display: flex;
+  justify-content: flex-start;
 }
 
 h1 {
   text-align: center;
   font-size: 2em;
   padding: 1em 0;
+	/*prevents the header from moving
+	when a scroll bar is added*/
+	width: 100vw;
 }
 h3 {
   text-align: center;
@@ -22,9 +27,11 @@ h3 {
 
 #encounter_box {
   width: 30%;
-  min-width: 380px;
+  min-width: 400px;
   border: 1px solid rgb(0,0,0);
   padding: 1em;
+	margin: 2em;
+	align-self: baseline;
   #playerField {
     width: 100%;
     display: flex;
@@ -73,6 +80,10 @@ h3 {
   justify-content: center;
   flex-wrap: wrap;
 }
+.flex_center_nowrap {
+	display: flex;
+  justify-content: center;
+}
 
 
 //add players form
@@ -102,12 +113,17 @@ form.newPlayer_form{
   }
 }
 
+.add_monster_btn_wrap button {
+	margin-top: 0;
+}
+monsters {
+	margin: 2em 0 2em 2em;
+}
 .monsterCage {
   width: 60%;
   padding: 1em;
   margin: 1em 1em 0;
-  border: 1px solid rgb(0,0,0);
-  float: left;
+  border: 1px solid $dark_gray;
   position: relative;
   .section {
     margin-top: .7em;
@@ -126,16 +142,6 @@ form.newPlayer_form{
     padding: .3em;
   }
   .attributes {
-  }
-}
-
-#addMonster {
-  width: 60%;
-  padding: 1em;
-  float: left;
-  button {
-    width: 100%;
-    padding: 10px 0;
   }
 }
 

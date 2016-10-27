@@ -21,10 +21,10 @@
         ng-value="{{player.initiative}}"
          />
     </div>
-    <input type="submit" ng-click="showForm = true" value="+ Add"/>
+    <input type="submit" ng-click="showPlayerForm = true" value="+ Add"/>
   </div>
 </div>
-<div class="overlayForm" ng-init="showForm = false" ng-show="showForm">
+<div class="overlayForm" ng-init="showPlayerForm = false" ng-show="showPlayerForm">
   <form class="newPlayer_form"  ng-submit="addNewPlayer(playerName, playerArmorClass, playerInitiative)">
     <h3>Add New Player</h3>
     <input type="text" placeholder="Name" ng-model="playerName"/>

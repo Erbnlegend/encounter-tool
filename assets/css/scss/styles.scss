@@ -17,6 +17,7 @@ h3 {
 
 #players {
   width: 30%;
+  float: left;
   min-width: 400px;
   border: 1px solid rgb(0,0,0);
   padding: 1em;
@@ -75,4 +76,30 @@ form.newPlayer_form{
   input[type=submit] {
     width: 100%;
   }
+}
+
+.monsterCage {
+  width: 60%;
+  padding: 1em;
+  margin: 1em 1em 0;
+  border: 1px solid rgb(0,0,0);
+  float: left;
+}
+
+#addMonster {
+  width: 60%;
+  padding: 1em;
+  float: left;
+  button {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+#monstersForm {
+  width: 60%;
+  float: left;
+  border: 1px solid rgb(0,0,0);
+  padding: 1em;
+  margin: 1em;
 }

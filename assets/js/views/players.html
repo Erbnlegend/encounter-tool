@@ -5,7 +5,7 @@
     <p>Armor Class: </p>
     <p>Initiative: </p>
   </div>
-  <form ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 3000, 'blur': 0 } }">
+  <div ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 3000, 'blur': 0 } }">
 
     <div ng-repeat="player in players | orderBy: '-initiative'">
         <input ng-model="player.name"
@@ -20,8 +20,18 @@
         type="number"
         ng-value="{{player.initiative}}"
          />
+    </div>
+    <input type="submit" ng-click="showPlayerForm = true" value="+ Add"/>
   </div>
-  <input type="submit" value="+ Add"/>
+</div>
+
+<div class="overlayForm" ng-init="showPlayerForm = false" ng-show="showPlayerForm">
+  <form class="newPlayer_form"  ng-submit="addNewPlayer(playerName, playerArmorClass, playerInitiative)">
+    <h3>Add New Player</h3>
+    <input type="text" placeholder="Name" ng-model="playerName"/>
+    <input type="number" placeholder="Armor class" ng-model="playerArmorClass"/>
+    <input type="number" placeholder="Initiative" ng-model="playerInitiative"/>
+    <input ng-click="showPlayerForm = false" type="submit" value="+ Add"/>
   </form>
 </div>
-  <monsters></monsters>
+<monsters></monsters>

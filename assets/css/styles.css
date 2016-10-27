@@ -1,3 +1,7 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -51,11 +55,18 @@ table {
 h1 {
   text-align: center;
   font-size: 2em;
-  margin: 1em 0;
+  padding: 1em 0;
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.5em;
+  padding: .5em 0;
 }
 
 #players {
   width: 30%;
+  float: left;
   min-width: 400px;
   border: 1px solid black;
   padding: 1em;
@@ -90,4 +101,56 @@ h1 {
 }
 #players input[type=submit]:hover {
   background: rgba(0, 0, 0, 0.6);
+}
+
+.overlayForm {
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+form.newPlayer_form {
+  background: rgba(255, 87, 34, 0.8);
+  padding: 1em;
+  display: block;
+  width: 45%;
+  margin: 20% auto;
+}
+form.newPlayer_form input {
+  text-align: center;
+  width: 32.13333%;
+  padding: 10px 0;
+  margin-top: 1em;
+}
+form.newPlayer_form input[type=submit] {
+  width: 100%;
+}
+
+.monsterCage {
+  width: 60%;
+  padding: 1em;
+  margin: 1em 1em 0;
+  border: 1px solid black;
+  float: left;
+}
+
+#addMonster {
+  width: 60%;
+  padding: 1em;
+  float: left;
+}
+#addMonster button {
+  width: 100%;
+  padding: 10px 0;
+}
+
+#monstersForm {
+  width: 60%;
+  float: left;
+  border: 1px solid black;
+  padding: 1em;
+  margin: 1em;
 }

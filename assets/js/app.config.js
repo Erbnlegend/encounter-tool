@@ -1,7 +1,8 @@
 angular.module('encounterTool').
-  config(['$locationProvider', '$routeProvider',
-    function config($locationProvider, $routeProvider) {
+  config(['$locationProvider', '$routeProvider', '$localStorageProvider',
+    function config($locationProvider, $routeProvider, $localStorageProvider) {
       $locationProvider.hashPrefix('!');
+      $localStorageProvider.setKeyPrefix('');
 
       $routeProvider.
         when('/', {

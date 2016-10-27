@@ -57,10 +57,18 @@ app.controller('MonsterController', ['$scope', '$http', function($scope, $http){
       $scope.addMonster = function(selectedMonster) {
         //Add Monster to user Array
         $scope.user.push(selectedMonster);
-        //Trigger addPlayer
-        console.log($scope.user.name, $scope.user.armor_class, $scope.user.dexterity);
-        //$scope.addNewPlayer($scope.user.name, $scope.user.armor_class, $scope.user.dexterity);
-      }
+      };
+
+      $scope.addPlayerMonster = function(name, ac, initRoll, dex) {
+        var roundDex = Math.floor((dex -10)/2);
+        if(roundDex < 0) {
+          roundDex = 0;
+        }
+        var addRoll = roundDex + initRoll;
+
+        $scope.addNewPlayer(name, ac, addRoll);
+
+      };
 
 
 }]);

@@ -1,6 +1,13 @@
 @import 'reset';
 @import 'variables';
 @import 'mixins';
+@import 'controls';
+
+.page_wrap {
+	width: 90%;
+	margin: 0 auto;
+	max-width: 800px;
+}
 
 h1 {
   text-align: center;
@@ -13,15 +20,14 @@ h3 {
   padding: .5em 0;
 }
 
-#players {
+#encounter_box {
   width: 30%;
-  float: left;
-  min-width: 400px;
+  min-width: 380px;
   border: 1px solid rgb(0,0,0);
   padding: 1em;
-  margin: 1em;
   #playerField {
     width: 100%;
+    display: flex;
     p {
       text-align: center;
       display: inline-block;
@@ -30,27 +36,46 @@ h3 {
       text-decoration: underline;
     }
   }
+  .players_list {
+    display: flex;
+    margin-bottom: 1em;
+    input {
+      width: (98% / 3);
+      margin: 0 auto;
+      border: 1px solid transparent;
+      text-align: center;
+      padding: 0.5em 0;
+      transition: all 0.2s;
+      font-size: 1.1em;
+      &:hover {
+        border: 1px solid $gray;
+      }
+      &[type=submit] {
+        margin-top: 1em;
+        width: 100%;
+        cursor: pointer;
+        &:hover {
+          background: darken(rgba(0,0,0, .6), 20);
+        }
+      }
+    }
+  }
   h2 {
     margin: 0 auto 1em;
     text-align: center;
     font-size: 1.5em;
   }
-  input {
-    width: (98% / 3);
-    margin: 0 auto;
-    border: none;
-    text-align: center;
-    padding: 10px 0;
-    &[type=submit] {
-      margin-top: 1em;
-      width: 100%;
-      cursor: pointer;
-      &:hover {
-        background: darken(rgba(0,0,0, .6), 20);
-      }
-    }
-  }
 }
+
+//flex containers
+.flex_center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+//add players form
 .overlayForm {
   background: rgba(0,0,0,.9);
   position: fixed;
@@ -60,11 +85,12 @@ h3 {
   height: 100%;
 }
 form.newPlayer_form{
-  background: rgba(255,87,34,.8);
+  background: $blue;
   padding: 1em;
   display: block;
   width: 45%;
   margin: 20% auto;
+  position: relative;
   input {
     text-align: center;
     width: (96.4%/3);

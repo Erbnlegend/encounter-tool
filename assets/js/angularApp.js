@@ -16,9 +16,6 @@ app.controller('PlayerController', ['$scope', '$http', '$localStorage', function
 
   updatePlayers();
 
-  console.log('testing: '+$localStorage.platestyers);
-  console.log('testing: '+$localStorage.players);
-
 
   $scope.addNewPlayer = function(playerName, playerArmorClass, playerInitiative) {
     $scope.players.push(

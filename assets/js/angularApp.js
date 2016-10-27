@@ -1,32 +1,47 @@
-var app = angular.module('encounterTool', ['ngRoute', 'checklist-model']);
+var app = angular.module('encounterTool', ['ngRoute','checklist-model','ngStorage']);
 
-app.controller('PlayerController', ['$scope', '$http', function($scope, $http){
+app.controller('PlayerController', ['$scope', '$http', '$localStorage', function($scope, $http, $localStorage){
 
-  $scope.players = null;
-  $http.get('assets/js/data/players.json')
-      .success(function(data) {
-          $scope.players = data;
-      })
-      .error(function(data,status,error,config){
-          $scope.players = [{heading:"Error",description:"Could not load json data"}];
-      });
+  $scope.players = [];
+
+  var updatePlayers = function() {
+    if ($localStorage.players == undefined) {
+      $localStorage.players = [];
+    } else {
+      for (i = 0; i < $localStorage.players.length; i++) {
+        $scope.players.push($localStorage.players[i])
+      }
+    }
+  };
+
+  updatePlayers();
+
+  console.log('testing: '+$localStorage.platestyers);
+  console.log('testing: '+$localStorage.players);
+
 
   $scope.addNewPlayer = function(playerName, playerArmorClass, playerInitiative) {
-console.log($scope.players);
     $scope.players.push(
       {
       	"name": playerName,
       	"ac": playerArmorClass,
       	"initiative": playerInitiative
       }
-    )
+    );
+
+    $localStorage.players.push(
+      {
+      	name: playerName,
+      	ac: playerArmorClass,
+      	initiative: playerInitiative
+      }
+    );
+
     //clear out fields
     $scope.playerName = '';
     $scope.playerArmorClass = '';
     $scope.playerInitiative = '';
-
   };
-
 }]);
 
 app.controller('MonsterController', ['$scope', '$http', function($scope, $http){

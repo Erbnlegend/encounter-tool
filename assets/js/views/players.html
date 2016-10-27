@@ -24,14 +24,14 @@
     <input type="submit" ng-click="showPlayerForm = true" value="+ Add"/>
   </div>
 </div>
+
 <div class="overlayForm" ng-init="showPlayerForm = false" ng-show="showPlayerForm">
   <form class="newPlayer_form"  ng-submit="addNewPlayer(playerName, playerArmorClass, playerInitiative)">
     <h3>Add New Player</h3>
     <input type="text" placeholder="Name" ng-model="playerName"/>
     <input type="number" placeholder="Armor class" ng-model="playerArmorClass"/>
     <input type="number" placeholder="Initiative" ng-model="playerInitiative"/>
-    <input ng-click="showForm = false" type="submit" value="+ Add"/>
+    <input ng-click="showPlayerForm = false" type="submit" value="+ Add"/>
   </form>
 </div>
-
-  <monsters></monsters>
+<monsters></monsters>

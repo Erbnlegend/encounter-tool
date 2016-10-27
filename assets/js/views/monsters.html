@@ -2,20 +2,20 @@
   <button ng-click="showMonsterForm = true">Add Your Monsters</button>
 </div>
 
-<div ng-repeat="selectedMonster in user.monsters">
+<div ng-repeat="userMonsters in user track by $index">
   <div class="monsterCage">
 
     <div class="section">
       <h4>
-        {{selectedMonster.name}}
+        {{userMonsters.name}}
       </h4>
       <p>
         <span>
           <sup>
-            {{selectedMonster.size}}
-            {{selectedMonster.type}} {{selectedMonster.subtype}},
-            {{selectedMonster.alignment}}
-            (Challenge: {{selectedMonster.challenge_rating}})
+            {{userMonsters.size}}
+            {{userMonsters.type}} {{userMonsters.subtype}},
+            {{userMonsters.alignment}}
+            (Challenge: {{userMonsters.challenge_rating}})
       </sup>
       </span>
       </p>
@@ -25,125 +25,125 @@
       <label>
         <strong>HP:</strong>
         <input type="number"
-         ng-model="selectedMonster.hit_points"
+         ng-model="userMonsters.hit_points"
          ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 3000, 'blur': 0 }}"
          ng-value="hit_points" />
-         <sup>({{selectedMonster.hit_dice}})</sup>
+         <sup>({{userMonsters.hit_dice}})</sup>
       </label>
       <p>
         Speed:<br />
-        {{selectedMonster.speed}}
+        {{userMonsters.speed}}
       </p>
     </div>
 
     <div class="section">
       <p>
         <strong>Attributes: <br /></strong>
-        Str: {{selectedMonster.strength}}
-        Dex: {{selectedMonster.dexterity}}
-        Con: {{selectedMonster.constitution}}
-        Int: {{selectedMonster.intelligence}}
-        Wis: {{selectedMonster.wisdom}}
-        Cha: {{selectedMonster.charisma}}
+        Str: {{userMonsters.strength}}
+        Dex: {{userMonsters.dexterity}}
+        Con: {{userMonsters.constitution}}
+        Int: {{userMonsters.intelligence}}
+        Wis: {{userMonsters.wisdom}}
+        Cha: {{userMonsters.charisma}}
       </p>
     </div>
 
     <div class="section">
       <p>
         <strong>Saving Throws:<br /></strong>
-        <span ng-if="selectedMonster.strength_save">
-          Str +{{selectedMonster.strength_save}},
+        <span ng-if="userMonsters.strength_save">
+          Str +{{userMonsters.strength_save}},
         </span>
-        <span ng-if="selectedMonster.dexterity_save ">
-          Dex +{{selectedMonster.dexterity_save}},
+        <span ng-if="userMonsters.dexterity_save ">
+          Dex +{{userMonsters.dexterity_save}},
         </span>
-        <span ng-if="selectedMonster.constitution_save">
-          Con +{{selectedMonster.constitution_save}},
+        <span ng-if="userMonsters.constitution_save">
+          Con +{{userMonsters.constitution_save}},
         </span>
-        <span ng-if="selectedMonster.intelligence_save">
-          Int +{{selectedMonster.intelligence_save}},
+        <span ng-if="userMonsters.intelligence_save">
+          Int +{{userMonsters.intelligence_save}},
         </span>
-        <span ng-if="selectedMonster.wisdom_save">
-          Wis +{{selectedMonster.wisdom_save}}
+        <span ng-if="userMonsters.wisdom_save">
+          Wis +{{userMonsters.wisdom_save}}
           ,</span>
-        <span ng-if="selectedMonster.charisma_save">
-          Cha +{{selectedMonster.charisma_save}}
+        <span ng-if="userMonsters.charisma_save">
+          Cha +{{userMonsters.charisma_save}}
         </span>
       </p>
 
       <p>
         <strong>Skills: <br /></strong>
-        <span ng-if="selectedMonster.acrobatics">
-          +{{selectedMonster.acrobatics}} Acrobatics (Dex),
+        <span ng-if="userMonsters.acrobatics">
+          +{{userMonsters.acrobatics}} Acrobatics (Dex),
         </span>
-        <span ng-if="selectedMonster.arcana">
-          +{{selectedMonster.arcana}} Arcana (Int),
+        <span ng-if="userMonsters.arcana">
+          +{{userMonsters.arcana}} Arcana (Int),
         </span>
-        <span ng-if="selectedMonster.athletics">
-          +{{selectedMonster.athletics}} Athletics (Str),
+        <span ng-if="userMonsters.athletics">
+          +{{userMonsters.athletics}} Athletics (Str),
         </span>
-        <span ng-if="selectedMonster.deception">
-          +{{selectedMonster.deception}} Deception (Cha),
+        <span ng-if="userMonsters.deception">
+          +{{userMonsters.deception}} Deception (Cha),
         </span>
-        <span ng-if="selectedMonster.history">
-          +{{selectedMonster.history}} History (Int),
+        <span ng-if="userMonsters.history">
+          +{{userMonsters.history}} History (Int),
         </span>
-        <span ng-if="selectedMonster.insight">
-          +{{selectedMonster.insight}} Insight (Wis),
+        <span ng-if="userMonsters.insight">
+          +{{userMonsters.insight}} Insight (Wis),
         </span>
-        <span ng-if="selectedMonster.intimidation">
-          +{{selectedMonster.intimidation}} Intimidation (Cha),
+        <span ng-if="userMonsters.intimidation">
+          +{{userMonsters.intimidation}} Intimidation (Cha),
         </span>
-        <span ng-if="selectedMonster.investigation">
-          +{{selectedMonster.investigation}}Investigation (Int),
+        <span ng-if="userMonsters.investigation">
+          +{{userMonsters.investigation}}Investigation (Int),
         </span>
-        <span ng-if="selectedMonster.medicine">
-          +{{selectedMonster.medicine}} Medicine (Wis),
+        <span ng-if="userMonsters.medicine">
+          +{{userMonsters.medicine}} Medicine (Wis),
         </span>
-        <span ng-if="selectedMonster.nature">
-          +{{selectedMonster.nature}} Nature (Int),
+        <span ng-if="userMonsters.nature">
+          +{{userMonsters.nature}} Nature (Int),
         </span>
-        <span ng-if="selectedMonster.perception">
-          +{{selectedMonster.perception}} Perception (Wis),
+        <span ng-if="userMonsters.perception">
+          +{{userMonsters.perception}} Perception (Wis),
         </span>
-        <span ng-if="selectedMonster.performance">
-          +{{selectedMonster.performance}}Performance (Cha),
+        <span ng-if="userMonsters.performance">
+          +{{userMonsters.performance}}Performance (Cha),
         </span>
-        <span ng-if="selectedMonster.persuasion">
-          +{{selectedMonster.persuasion}} Persuasion (Cha),
+        <span ng-if="userMonsters.persuasion">
+          +{{userMonsters.persuasion}} Persuasion (Cha),
         </span>
-        <span ng-if="selectedMonster.religion">
-          +{{selectedMonster.religion}} Religion (Int),
+        <span ng-if="userMonsters.religion">
+          +{{userMonsters.religion}} Religion (Int),
         </span>
-        <span ng-if="selectedMonster.stealth">
-          +{{selectedMonster.stealth}} Stealth (Dex),
+        <span ng-if="userMonsters.stealth">
+          +{{userMonsters.stealth}} Stealth (Dex),
         </span>
-        <span ng-if="selectedMonster.survival">
-          +{{selectedMonster.survival}} Survival (Wis),
+        <span ng-if="userMonsters.survival">
+          +{{userMonsters.survival}} Survival (Wis),
         </span>
       </p>
 
       <p>
         <strong>Damage Resistance/Immunities/Vulnerabilites: <br /></strong>
-        <span ng-if="selectedMonster.damage_resistances">
-          Resistant to {{selectedMonster.damage_resistances}}
+        <span ng-if="userMonsters.damage_resistances">
+          Resistant to {{userMonsters.damage_resistances}}
         </span>
-        <span ng-if="selectedMonster.damage_immunities">
-          Immune to {{selectedMonster.damage_immunities}}
+        <span ng-if="userMonsters.damage_immunities">
+          Immune to {{userMonsters.damage_immunities}}
         </span>
-        <span ng-if="selectedMonster.damage_vulnerabilities">
-          Vulnerable to {{selectedMonster.damage_vulnerabilities}}
+        <span ng-if="userMonsters.damage_vulnerabilities">
+          Vulnerable to {{userMonsters.damage_vulnerabilities}}
         </span>
       </p>
 
       <p>
         <strong>Senses: <br /></strong>
-        {{selectedMonster.senses}}
+        {{userMonsters.senses}}
       </p>
 
       <p>
         <strong>Languages: <br /></strong>
-        {{selectedMonster.languages}}
+        {{userMonsters.languages}}
       </p>
     </div>
 
@@ -155,7 +155,8 @@
 </div>
 
 <div id="monstersForm" ng-init="showMonsterForm = false" ng-show="showMonsterForm">
-  <label ng-repeat="monster in monsters">
-    <input type="checkbox" checklist-model="user.monsters" checklist-value="monster"> {{monster.name}} ({{monster.type}})<br />
-  </label>
+  <div ng-repeat="monster in monsters">
+    <button ng-model="user.monsters" ng-value="monster" ng-click="addMonster(this.monster)">+ Add</button>
+      {{monster.name}} ({{monster.type}})<br />
+  </div>
 </div>

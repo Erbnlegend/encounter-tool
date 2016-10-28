@@ -96,6 +96,8 @@ app.controller('MonsterController', ['$scope', '$http', '$localStorage', functio
 
   };
 
+  $scope.numLimit = 30;
+
   $scope.showMonsterList = false;
   //toggle btn for monsters list
   $scope.toggleMonsterList = function() {

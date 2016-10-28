@@ -16,9 +16,6 @@ h1 {
   font-size: 3em;
   padding: 1em 0 0.5em 0;
 	font-family: 'Marck Script', 'Kaushan Script', sans-serif;
-	/*prevents the header from moving
-	when a scroll bar is added*/
-	width: 100vw;
 }
 h3 {
   text-align: center;
@@ -160,6 +157,8 @@ monsters {
 }
 
 #monstersForm {
+	min-width: 450px;
+	max-width: 600px;
   width: 60%;
   float: left;
   border: 1px solid rgb(0,0,0);
@@ -168,16 +167,37 @@ monsters {
 }
 
 #monstersList {
+	min-width: 450px;
+	max-width: 600px;
 	padding: 0.5em;
 	margin-top: 1em;
 	border: 1px solid $dark_gray;
 	background: $yellow;
+}
+.monsters_search {
+	input {
+		margin: .5em 0;
+	}
+	input[type=text] {
+		width: 49%;
+		text-align: center;
+	}
+	input[type=checkbox] {
+		line-height: 1.5em;
+	}
+	a {
+		display: block;
+		margin: .5em 0;
+	}
 }
 .monster_inlist {
 	padding: 0.5em;
 	margin: 0.5em 0;
 	button {
 		margin: 0 0.5em 0 0;
+	}
+	p {
+		display: inline;
 	}
 }
 

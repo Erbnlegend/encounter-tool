@@ -149,14 +149,16 @@
 </div>
 
 <div id="monstersList" ng-show="showMonsterList">
-  <div class="monsters_search">
-    <input type="text" ng-model="nameSearch" placeholder="Quick Search" />
-  </div>
-  <div class="monster_inlist" ng-repeat="monster in monsters | filter: nameSearch">
+
+<monsters-search></monsters-search>
+
+  <div class="monster_inlist" ng-repeat="monster in monsters | filter: globalSearch:strict | limitTo: numLimit">
     <button class="green_btn" ng-model="user.monsters" ng-value="monster" ng-click="addMonster(this.monster);showMonsterForm = true">
       + Add
     </button>
-      {{monster.name}} ({{monster.type}})
+        <p>
+          {{monster.name}} ({{monster.type}})
+        </p>
 
       <!--Monster Add Player Form-->
       <div class="overlayForm" ng-init="showMonsterForm = false" ng-show="showMonsterForm">

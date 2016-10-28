@@ -5,3 +5,11 @@ app.directive('monsters', function() {
       controller: 'MonsterController'
   };
 });
+
+app.directive('monstersSearch', function() {
+  return {
+      restrict: 'E',
+      templateUrl: './assets/js/views/monstersSearch.html',
+      controller: 'MonsterController'
+  };
+});

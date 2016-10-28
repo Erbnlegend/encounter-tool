@@ -51,15 +51,9 @@ app.controller('PlayerController', ['$scope', '$http', '$localStorage', function
     }
   }
 
-  $scope.rotatingBKGD = function() {
-    var newImage = '';
-    for (i = 0; i < $scope.BKGDimages.length; i++) {
-      var newImage = '';
-      newImage = $scope.BKGDimages[i];
-      console.log('did this work?');
-    }
-    return newImage
-  };
+}]);
+
+app.controller('bodyCtrl', ['$scope', '$http', '$localStorage', function($scope, $http, $localStorage){
 
   $scope.BKGDimages = [
     'assets/img/evil_monastery_by_klauspillon-d83rh7b.jpg',
@@ -70,7 +64,17 @@ app.controller('PlayerController', ['$scope', '$http', '$localStorage', function
     'assets/img/dragon_s_castle_by_klauspillon-d8fmohg.jpg'
   ];
 
+  $scope.rotatingBKGD = function() {
+    var randomIndex = Math.floor((Math.random() * $scope.BKGDimages.length) + 1);
+    return randomIndex
+  };
+
+  console.log('randome number: '+$scope.BKGDimages[$scope.rotatingBKGD()])
+
+  $scope.rotatingBKGD = $scope.BKGDimages[$scope.rotatingBKGD()];
+
 }]);
+
 
 app.controller('MonsterController', ['$scope', '$http', '$localStorage', function($scope, $http, $localStorage){
 

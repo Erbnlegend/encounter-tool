@@ -1,42 +1,37 @@
-<div class="add_monster_btn_wrap">
+<div id="monster">
+  <div class="add_monster_btn_wrap">
   <button class="red_btn" ng-click="toggleMonsterList()">Monsters List</button>
 </div>
 
 <div ng-repeat="userMonsters in user track by $index">
   <div class="monsterCage">
 
-    <div class="section">
+    <div class="sectionTitle">
       <h4>
-        {{userMonsters.name}}
+        <strong>{{userMonsters.name}}</strong>
       </h4>
       <p>
         <span>
-          <sup>
             {{userMonsters.size}}
             {{userMonsters.type}} {{userMonsters.subtype}},
             {{userMonsters.alignment}}
             (Challenge: {{userMonsters.challenge_rating}})
-      </sup>
       </span>
       </p>
     </div>
 
     <div class="section">
-      <label>
-        <strong>HP:</strong>
-        <input type="number"
-         ng-value="{{userMonsters.hit_points}}" />
-         <sup>({{userMonsters.hit_dice}})</sup>
-      </label>
+      <p><strong>Speed:</strong></p>
       <p>
-        Speed:<br />
         {{userMonsters.speed}}
       </p>
+      <strong>HP:</strong>
+       <p>Max: {{userMonsters.hit_points}} <sup>({{userMonsters.hit_dice}})</sup></p>
     </div>
 
     <div class="section">
+      <p><strong>Attributes: </strong></p>
       <p>
-        <strong>Attributes: <br /></strong>
         Str: {{userMonsters.strength}}
         Dex: {{userMonsters.dexterity}}
         Con: {{userMonsters.constitution}}
@@ -47,8 +42,8 @@
     </div>
 
     <div class="section">
+      <p><strong>Saving Throws:</strong></p>
       <p>
-        <strong>Saving Throws:<br /></strong>
         <span ng-if="userMonsters.strength_save">
           Str +{{userMonsters.strength_save}},
         </span>
@@ -69,8 +64,8 @@
         </span>
       </p>
 
+      <p><strong>Skills: </strong></p>
       <p>
-        <strong>Skills: <br /></strong>
         <span ng-if="userMonsters.acrobatics">
           +{{userMonsters.acrobatics}} Acrobatics (Dex),
         </span>
@@ -117,30 +112,30 @@
           +{{userMonsters.stealth}} Stealth (Dex),
         </span>
         <span ng-if="userMonsters.survival">
-          +{{userMonsters.survival}} Survival (Wis),
+          +{{userMonsters.survival}} Survival (Wis)
         </span>
       </p>
 
+      <p><strong>Damage Resistance/Immunities/Vulnerabilites: </strong></p>
       <p>
-        <strong>Damage Resistance/Immunities/Vulnerabilites: <br /></strong>
         <span ng-if="userMonsters.damage_resistances">
-          Resistant to {{userMonsters.damage_resistances}}
+          Resistant to {{userMonsters.damage_resistances}},
         </span>
         <span ng-if="userMonsters.damage_immunities">
-          Immune to {{userMonsters.damage_immunities}}
+          Immune to {{userMonsters.damage_immunities}},
         </span>
         <span ng-if="userMonsters.damage_vulnerabilities">
           Vulnerable to {{userMonsters.damage_vulnerabilities}}
         </span>
       </p>
 
+      <p><strong>Senses: </strong></p>
       <p>
-        <strong>Senses: <br /></strong>
         {{userMonsters.senses}}
       </p>
 
+      <p><strong>Languages: </strong></p>
       <p>
-        <strong>Languages: <br /></strong>
         {{userMonsters.languages}}
       </p>
     </div>
@@ -151,21 +146,33 @@
 
   </div>
 </div>
+</div>
 
-<div id="monstersList" ng-init="showMonsterList = false" ng-show="showMonsterList">
-  <div ng-repeat="monster in monsters">
-    <button ng-model="user.monsters" ng-value="monster" ng-click="addMonster(this.monster);showMonsterForm = true">
+<div id="monstersList" ng-show="showMonsterList">
+
+<!--Monster Search-->
+<monsters-search></monsters-search>
+
+  <div class="monster_inlist" ng-repeat="monster in monsters | filter: globalSearch:strict | limitTo: numLimit">
+    <button class="green_btn" ng-model="user.monsters" ng-value="monster" ng-click="addMonster(this.monster);showMonsterForm = true">
       + Add
     </button>
-      {{monster.name}} ({{monster.type}})<br />
+        <p>
+          {{monster.name}} ({{monster.type}})
+        </p>
 
       <!--Monster Add Player Form-->
       <div class="overlayForm" ng-init="showMonsterForm = false" ng-show="showMonsterForm">
-        <form class="newPlayer_form" ng-submit="addPlayerMonster(monster.name, monster.armor_class, initiativeRoll, monster.dexterity)">
+        <form class="newPlayer_form" ng-submit="addPlayerMonster(monster.name, monster.armor_class, initiativeRoll, monster.hit_points, monster.dexterity)">
+          <div class="close_btn" ng-click="showMonsterForm = false">
+            <div></div>
+            <div></div>
+          </div>
           <h3>Enter Initiative Roll</h3>
-          <input type="text" placeholder="Name" ng-value="monster.name"/>
-          <input type="number" placeholder="Armor class"  ng-value="monster.armor_class"/>
-          <input type="number" placeholder="Initiative" min="0" max="20" ng-model="initiativeRoll"/>
+          <input type="text" placeholder="Name" ng-value="monster.name" required/>
+          <input type="number" placeholder="Armor Class"  ng-value="monster.armor_class" required/>
+          <input type="number" placeholder="Hit Points"  ng-value="monster.hit_points" required/>
+          <input type="number" placeholder="Initiative" min="0" max="20" minlength="1"maxlength="2" ng-model="initiativeRoll" required/>
           <input ng-click="showMonsterForm = false" type="submit" value="+ Add"/>
         </form>
       </div>

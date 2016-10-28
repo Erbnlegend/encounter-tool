@@ -1,0 +1,14 @@
+<div class="monsters_search">
+  <input type="text" ng-model="globalSearch.$" placeholder="Global Search" />
+  <div ng-show="advancedSearch" ng-init="advancedSearch = false">
+    <input type="text" ng-model="globalSearch.type" placeholder="Type Search ex: Undead" />
+    <input type="text" ng-model="globalSearch.challenge_rating" placeholder="Challenge Rating Search" />
+    <input type="text" ng-model="globalSearch.damage_vulnerabilities" placeholder="Damage Vulnerability Search" />
+    <input type="text" ng-model="globalSearch.damage_resistances" placeholder="Damage Resistances Search" />
+    <input type="text" ng-model="globalSearch.damage_immunities" placeholder="Damage Immunities Search" />
+    <input type="text" ng-model="globalSearch.condition_immunities" placeholder="Condition Immunities Search" />
+    <label><input type="checkbox" ng-model="strict" />Turn on Strict Values<sup>(case and spelling)</sup></label>
+    <a href="javascript:void(0)" ng-show="advancedSearch" ng-click="advancedSearch = false">Close Advanced Search</a>
+  </div>
+  <a href="javascript:void(0)" ng-show="!advancedSearch" ng-click="advancedSearch = true">Advanced Search</a>
+</div>

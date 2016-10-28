@@ -2,6 +2,18 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+@import url("https://fonts.googleapis.com/css?family=Marck+Script");
+@import url("https://fonts.googleapis.com/css?family=Cedarville+Cursive");
+@import url("https://fonts.googleapis.com/css?family=Cabin+Sketch");
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+@import url("https://fonts.googleapis.com/css?family=Marck+Script");
+@import url("https://fonts.googleapis.com/css?family=Cedarville+Cursive");
+@import url("https://fonts.googleapis.com/css?family=Cabin+Sketch");
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+@import url("https://fonts.googleapis.com/css?family=Marck+Script");
+@import url("https://fonts.googleapis.com/css?family=Cedarville+Cursive");
+@import url("https://fonts.googleapis.com/css?family=Cabin+Sketch");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -63,6 +75,7 @@ table {
   background: #c8c8c8;
   border-radius: 2px;
   border: none;
+  outline: none;
   display: inline-block;
   margin: 1em 0;
   font-family: sans-serif;
@@ -74,6 +87,9 @@ table {
 }
 .btn:hover, .red_btn:hover, .blue_btn:hover, .green_btn:hover, .gray_btn:hover, .orange_btn:hover {
   box-shadow: 8px 8px 10px -3px rgba(41, 41, 41, 0.5);
+}
+.btn:select, .red_btn:select, .blue_btn:select, .green_btn:select, .gray_btn:select, .orange_btn:select {
+  outline: none;
 }
 
 .red_btn {
@@ -125,8 +141,23 @@ table {
   transform: rotate(-45deg);
 }
 
+.monsters_search {
+  margin-top: 0.3em;
+}
+.monsters_search input {
+  padding: 0.5em;
+}
+
+body {
+  background-image: url("../img/acaratus___city_of_veturoth___by_klauspillon-d8hkywg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 .page_wrap {
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
   max-width: 1600px;
   display: flex;
@@ -135,11 +166,11 @@ table {
 
 h1 {
   text-align: center;
-  font-size: 2em;
-  padding: 1em 0;
-  /*prevents the header from moving
-  when a scroll bar is added*/
-  width: 100vw;
+  text-shadow: 3px 3px 2px rgba(41, 41, 41, 0.8), -3px 3px 2px rgba(41, 41, 41, 0.8), -3px -3px 2px rgba(41, 41, 41, 0.8), 3px -3px 2px rgba(41, 41, 41, 0.8);
+  font-size: 4em;
+  padding: 1em 0 0.5em 0;
+  font-family: 'Cabin Sketch', 'Cedarville Cursive', 'Marck Script', 'Kaushan Script', sans-serif;
+  color: #fff;
 }
 
 h3 {
@@ -149,12 +180,19 @@ h3 {
 }
 
 #encounter_box {
-  width: 30%;
+  width: 35%;
   min-width: 400px;
-  border: 1px solid black;
   padding: 1em;
   margin: 2em;
   align-self: baseline;
+  background: #EDD094;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/Qdu8ZOl-wallpaper-old-paper.jpg");
+}
+#encounter_box button {
+  width: 100%;
 }
 #encounter_box #playerField {
   width: 100%;
@@ -172,29 +210,27 @@ h3 {
   margin-bottom: 1em;
 }
 #encounter_box .players_list input {
-  width: 32.66667%;
-  margin: 0 auto;
+  width: 24.5%;
   border: 1px solid transparent;
   text-align: center;
-  padding: 0.5em 0;
+  padding: 0.3em;
+  background: transparent;
   transition: all 0.2s;
   font-size: 1.1em;
 }
 #encounter_box .players_list input:hover {
   border: 1px solid #bdc3c7;
-}
-#encounter_box .players_list input[type=submit] {
-  margin-top: 1em;
-  width: 100%;
-  cursor: pointer;
-}
-#encounter_box .players_list input[type=submit]:hover {
-  background: rgba(0, 0, 0, 0.6);
+  background: #f4e3c0;
 }
 #encounter_box h2 {
   margin: 0 auto 1em;
   text-align: center;
   font-size: 1.5em;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .flex_center {
@@ -227,7 +263,7 @@ form.newPlayer_form {
 }
 form.newPlayer_form input {
   text-align: center;
-  width: 32.13333%;
+  width: 24.325%;
   padding: 10px 0;
   margin-top: 1em;
 }
@@ -236,41 +272,106 @@ form.newPlayer_form input[type=submit] {
 }
 
 .add_monster_btn_wrap button {
-  margin-top: 0;
+  width: 100%;
+  display: block;
+  margin: 0 auto 1em;
 }
 
 monsters {
+  width: 55%;
   margin: 2em 0 2em 2em;
 }
 
-.monsterCage {
-  width: 60%;
+#monster {
+  width: 100%;
+  min-width: 600px;
   padding: 1em;
-  margin: 1em 1em 0;
-  border: 1px solid #414141;
+  background: #EDD094;
+  background-image: url("../img/Qdu8ZOl-wallpaper-old-paper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#monster .monsterCage {
+  width: 100%;
+  padding: .1em 1em;
+  border-bottom: 1px solid #414141;
   position: relative;
 }
-.monsterCage .section {
+#monster .monsterCage .sectionTitle, #monster .monsterCage .section {
   margin-top: .7em;
 }
-.monsterCage h4 {
-  font-size: 1.7em;
-}
-.monsterCage p {
+#monster .monsterCage h4 {
+  display: inline;
   font-size: 1.3em;
 }
-.monsterCage sup {
+#monster .monsterCage strong {
+  font-size: 1.1em;
+}
+#monster .monsterCage p {
+  line-height: 1.5em;
+  font-size: .9em;
+}
+#monster .monsterCage label {
   font-size: .6em;
 }
-.monsterCage input {
-  width: 60px;
-  padding: .3em;
+#monster .monsterCage input {
+  font-size: .9em;
+  width: 35px;
 }
 
 #monstersForm {
+  min-width: 450px;
+  max-width: 600px;
   width: 60%;
   float: left;
   border: 1px solid black;
   padding: 1em;
   margin: 1em;
+}
+
+#monstersList {
+  min-width: 450px;
+  max-width: 600px;
+  padding: 0.5em;
+  margin-top: 1em;
+  background: #EDD094;
+  background-image: url("../img/Qdu8ZOl-wallpaper-old-paper.jpg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-attachment: fixed;
+}
+
+.monsters_search input {
+  margin: .5em 0;
+}
+.monsters_search input[type=text] {
+  width: 49%;
+  text-align: center;
+}
+.monsters_search input[type=checkbox] {
+  line-height: 1.5em;
+}
+.monsters_search a {
+  display: block;
+  margin: .5em 0;
+}
+
+.monster_inlist {
+  padding: 0.5em;
+  margin: 0.5em 0;
+}
+.monster_inlist button {
+  margin: 0 0.5em 0 0;
+}
+.monster_inlist p {
+  display: inline;
+}
+
+.empty_players_box {
+  background: #e67e22;
+  color: #fff;
+  text-align: center;
+  padding: 1.5em;
+  font-size: 0.8em;
 }

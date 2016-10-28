@@ -1,36 +1,41 @@
-<div class="page_wrap">
   <div class="flex_center">
     <div id="encounter_box">
       <h2>Encounter Order</h2>
       <div id="playerField">
         <p>Name: </p>
-        <p>Armor Class: </p>
+        <p>Armor: </p>
+        <p>Health: </p>
         <p>Initiative: </p>
       </div>
       <div ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 3000, 'blur': 0 } }">
+        <div class="empty_players_box" ng-show="emptyPlayersCheck()">
+          No players yet, click the fancy button below to get going
+        </div>
         <div class="players_list" ng-repeat="player in players | orderBy: '-initiative'">
             <input ng-model="player.name"
             type="text"
             ng-value="player.name"
-            />
+            required/>
             <input ng-model="player.ac"
             type="number"
             ng-value="player.ac"
-            />
+            required/>
+            <input ng-model="player.health"
+            type="number"
+            ng-value="player.health"/>
             <input ng-model="player.initiative"
             type="number"
             ng-value="player.initiative"
-             />
+            required/>
         </div>
         <button class="green_btn" type="submit" ng-click="showPlayerForm = true">+ Add</button>
       </div>
     </div>
-    <button class="green_btn" type="submit" ng-click="showPlayerForm = true">+ Add</button>
+    <monsters></monsters>
   </div>
-</div>
 
 <div class="overlayForm" ng-init="showPlayerForm = false" ng-show="showPlayerForm">
-  <form class="newPlayer_form"  ng-submit="addNewPlayer(playerName, playerArmorClass, playerInitiative)">
+  <form class="newPlayer_form"  ng-submit="addNewPlayer(playerName, playerArmorClass, playerHealth, playerInitiative)">
     <div class="close_btn" ng-click="showPlayerForm = false">
       <div></div>
       <div></div>
@@ -38,8 +43,8 @@
     <h3>Add New Player</h3>
     <input type="text" placeholder="Name" ng-model="playerName"/>
     <input type="number" placeholder="Armor class" ng-model="playerArmorClass"/>
+    <input type="number" placeholder="Hit Points" ng-model="playerHealth"/>
     <input type="number" placeholder="Initiative" ng-model="playerInitiative"/>
     <input ng-click="showPlayerForm = false" type="submit" value="+ Add"/>
   </form>
 </div>
-<monsters></monsters>

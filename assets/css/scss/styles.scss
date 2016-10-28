@@ -3,8 +3,15 @@
 @import 'mixins';
 @import 'controls';
 
+// list of images http://abduzeedo.com/badass-fantasy-illustrations-klaus-pillon
+body {
+	background-image: url('../img/acaratus___city_of_veturoth___by_klauspillon-d8hkywg.jpg');
+	@include backGrd;
+	background-attachment: fixed;
+}
+
 .page_wrap {
-	width: 95%;
+	width: 100%;
 	margin: 0 auto;
 	max-width: 1600px;
 	display: flex;
@@ -13,11 +20,14 @@
 
 h1 {
   text-align: center;
-  font-size: 2em;
-  padding: 1em 0;
-	/*prevents the header from moving
-	when a scroll bar is added*/
-	width: 100vw;
+	text-shadow: 3px 3px 2px rgba(41,41,41,0.8),
+	-3px 3px 2px rgba(41,41,41,0.8),
+	-3px -3px 2px rgba(41,41,41,0.8),
+	3px -3px 2px rgba(41,41,41,0.8);
+  font-size: 4em;
+  padding: 1em 0 0.5em 0;
+	font-family: 'Cabin Sketch', 'Cedarville Cursive', 'Marck Script', 'Kaushan Script', sans-serif;
+	color: #fff;
 }
 h3 {
   text-align: center;
@@ -26,12 +36,17 @@ h3 {
 }
 
 #encounter_box {
-  width: 30%;
+  width: 35%;
   min-width: 400px;
-  border: 1px solid rgb(0,0,0);
   padding: 1em;
 	margin: 2em;
 	align-self: baseline;
+	background: $yellow;
+	@include backGrd;
+	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
+	button {
+		width: 100%;
+	}
   #playerField {
     width: 100%;
     display: flex;
@@ -47,23 +62,16 @@ h3 {
     display: flex;
     margin-bottom: 1em;
     input {
-      width: (98% / 3);
-      margin: 0 auto;
+      width: (98% / 4);
       border: 1px solid transparent;
       text-align: center;
-      padding: 0.5em 0;
+      padding: 0.3em;
+			background: transparent;
       transition: all 0.2s;
       font-size: 1.1em;
       &:hover {
         border: 1px solid $gray;
-      }
-      &[type=submit] {
-        margin-top: 1em;
-        width: 100%;
-        cursor: pointer;
-        &:hover {
-          background: darken(rgba(0,0,0, .6), 20);
-        }
+				background: lighten($yellow, 10%);
       }
     }
   }
@@ -75,6 +83,10 @@ h3 {
 }
 
 //flex containers
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+}
 .flex_center {
   display: flex;
   justify-content: center;
@@ -104,7 +116,7 @@ form.newPlayer_form{
   position: relative;
   input {
     text-align: center;
-    width: (96.4%/3);
+    width: (97.3%/4);
     padding: 10px 0;
     margin-top: 1em;
   }
@@ -114,41 +126,102 @@ form.newPlayer_form{
 }
 
 .add_monster_btn_wrap button {
-	margin-top: 0;
+	width: 100%;
+	display: block;
+	margin: 0 auto 1em;
 }
 monsters {
+	width: 55%;
 	margin: 2em 0 2em 2em;
 }
-.monsterCage {
-  width: 60%;
-  padding: 1em;
-  margin: 1em 1em 0;
-  border: 1px solid $dark_gray;
-  position: relative;
-  .section {
-    margin-top: .7em;
-  }
-  h4 {
-    font-size: 1.7em;
-  }
-  p {
-    font-size: 1.3em;
-  }
-  sup {
-    font-size: .6em;
-  }
-  input {
-    width: 60px;
-    padding: .3em;
-  }
-  .attributes {
-  }
+#monster {
+	width: 100%;
+	min-width: 600px;
+	padding: 1em;
+	background: $yellow;
+	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
+	@include backGrd;
+	.monsterCage {
+	  width: 100%;
+	  padding: .1em 1em;
+		border-bottom: 1px solid $dark_gray;
+	  position: relative;
+	  .sectionTitle, .section {
+	    margin-top: .7em;
+	  }
+	  h4 {
+			display: inline;
+			font-size: 1.3em;
+		}
+		strong {
+			font-size: 1.1em;
+		}
+		p {
+			line-height: 1.5em;
+			font-size: .9em;
+		}
+		label {
+			font-size: .6em;
+		}
+		input {
+			font-size: .9em;
+			width: 35px;
+		}
+	}
 }
 
 #monstersForm {
+	min-width: 450px;
+	max-width: 600px;
   width: 60%;
   float: left;
   border: 1px solid rgb(0,0,0);
   padding: 1em;
   margin: 1em;
+}
+
+#monstersList {
+	min-width: 450px;
+	max-width: 600px;
+	padding: 0.5em;
+	margin-top: 1em;
+	background: $yellow;
+	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-attachment: fixed;
+}
+.monsters_search {
+	input {
+		margin: .5em 0;
+	}
+	input[type=text] {
+		width: 49%;
+		text-align: center;
+	}
+	input[type=checkbox] {
+		line-height: 1.5em;
+	}
+	a {
+		display: block;
+		margin: .5em 0;
+	}
+}
+.monster_inlist {
+	padding: 0.5em;
+	margin: 0.5em 0;
+	button {
+		margin: 0 0.5em 0 0;
+	}
+	p {
+		display: inline;
+	}
+}
+
+.empty_players_box {
+	background: $orange;
+	color: #fff;
+	text-align: center;
+	padding: 1.5em;
+	font-size: 0.8em;
 }

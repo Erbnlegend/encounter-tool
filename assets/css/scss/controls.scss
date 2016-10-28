@@ -30,6 +30,8 @@
 	@extend .btn;
 }
 .green_btn {
+	width: 100%;
+	margin: 0;
 	background: $green;
 	color: #fff;
 	@extend .btn;

@@ -17,7 +17,6 @@ h1 {
   padding: 1em 0;
 	/*prevents the header from moving
 	when a scroll bar is added*/
-	width: 100vw;
 }
 h3 {
   text-align: center;
@@ -47,11 +46,10 @@ h3 {
     display: flex;
     margin-bottom: 1em;
     input {
-      width: (98% / 3);
-      margin: 0 auto;
+      width: (98% / 4);
       border: 1px solid transparent;
       text-align: center;
-      padding: 0.5em 0;
+      padding: 0.3em 0;
       transition: all 0.2s;
       font-size: 1.1em;
       &:hover {
@@ -75,6 +73,10 @@ h3 {
 }
 
 //flex containers
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+}
 .flex_center {
   display: flex;
   justify-content: center;
@@ -104,7 +106,7 @@ form.newPlayer_form{
   position: relative;
   input {
     text-align: center;
-    width: (96.4%/3);
+    width: (97.3%/4);
     padding: 10px 0;
     margin-top: 1em;
   }
@@ -114,35 +116,46 @@ form.newPlayer_form{
 }
 
 .add_monster_btn_wrap button {
-	margin-top: 0;
+	width: 100%;
+	display: block;
+	margin: 0 auto 1em;
 }
 monsters {
 	margin: 2em 0 2em 2em;
 }
-.monsterCage {
-  width: 60%;
-  padding: 1em;
-  margin: 1em 1em 0;
-  border: 1px solid $dark_gray;
-  position: relative;
-  .section {
-    margin-top: .7em;
-  }
-  h4 {
-    font-size: 1.7em;
-  }
-  p {
-    font-size: 1.3em;
-  }
-  sup {
-    font-size: .6em;
-  }
-  input {
-    width: 60px;
-    padding: .3em;
-  }
-  .attributes {
-  }
+#monster {
+	width: 100%;
+	border: 1px solid $dark_gray;
+	min-width: 450px;
+	max-width: 600px;
+	padding: 1em;
+	.monsterCage {
+	  width: 100%;
+	  padding: .1em 1em;
+		border-bottom: 1px solid $dark_gray;
+	  position: relative;
+	  .sectionTitle, .section {
+	    margin-top: .7em;
+	  }
+	  h4 {
+			display: inline;
+			font-size: 1.3em;
+		}
+		strong {
+			font-size: 1.1em;
+		}
+		p {
+			line-height: 1.5em;
+			font-size: .9em;
+		}
+		label {
+			font-size: .6em;
+		}
+		input {
+			font-size: .9em;
+			width: 35px;
+		}
+	}
 }
 
 #monstersForm {

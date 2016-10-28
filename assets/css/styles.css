@@ -64,12 +64,12 @@ table {
   border-radius: 2px;
   border: none;
   display: inline-block;
-  margin: 1em;
+  margin: 1em 0;
   font-family: sans-serif;
   font-weight: bold;
   cursor: pointer;
   text-transform: capitalize;
-  transition: all 0.2s;
+  transition: all 0.3s;
   box-shadow: 5px 5px 10px -3px rgba(41, 41, 41, 0.5);
 }
 .btn:hover, .red_btn:hover, .blue_btn:hover, .green_btn:hover, .gray_btn:hover, .orange_btn:hover {
@@ -126,15 +126,20 @@ table {
 }
 
 .page_wrap {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 1600px;
+  display: flex;
+  justify-content: flex-start;
 }
 
 h1 {
   text-align: center;
   font-size: 2em;
   padding: 1em 0;
+  /*prevents the header from moving
+  when a scroll bar is added*/
+  width: 100vw;
 }
 
 h3 {
@@ -145,9 +150,11 @@ h3 {
 
 #encounter_box {
   width: 30%;
-  min-width: 380px;
+  min-width: 400px;
   border: 1px solid black;
   padding: 1em;
+  margin: 2em;
+  align-self: baseline;
 }
 #encounter_box #playerField {
   width: 100%;
@@ -196,6 +203,11 @@ h3 {
   flex-wrap: wrap;
 }
 
+.flex_center_nowrap {
+  display: flex;
+  justify-content: center;
+}
+
 .overlayForm {
   background: rgba(0, 0, 0, 0.9);
   position: fixed;
@@ -223,12 +235,19 @@ form.newPlayer_form input[type=submit] {
   width: 100%;
 }
 
+.add_monster_btn_wrap button {
+  margin-top: 0;
+}
+
+monsters {
+  margin: 2em 0 2em 2em;
+}
+
 .monsterCage {
   width: 60%;
   padding: 1em;
   margin: 1em 1em 0;
-  border: 1px solid black;
-  float: left;
+  border: 1px solid #414141;
   position: relative;
 }
 .monsterCage .section {
@@ -246,16 +265,6 @@ form.newPlayer_form input[type=submit] {
 .monsterCage input {
   width: 60px;
   padding: .3em;
-}
-
-#addMonster {
-  width: 60%;
-  padding: 1em;
-  float: left;
-}
-#addMonster button {
-  width: 100%;
-  padding: 10px 0;
 }
 
 #monstersForm {

@@ -54,21 +54,31 @@ app.controller('MonsterController', ['$scope', '$http', function($scope, $http){
           $scope.monsters = [{heading:"Error",description:"Could not load json data"}];
       });
 
-      $scope.addMonster = function(selectedMonster) {
-        //Add Monster to user Array
-        $scope.user.push(selectedMonster);
-      };
+  $scope.addMonster = function(selectedMonster) {
+    //Add Monster to user Array
+    $scope.user.push(selectedMonster);
+  };
 
-      $scope.addPlayerMonster = function(name, ac, initRoll, dex) {
-        var roundDex = Math.floor((dex -10)/2);
-        if(roundDex < 0) {
-          roundDex = 0;
-        }
-        var addRoll = roundDex + initRoll;
+  $scope.addPlayerMonster = function(name, ac, initRoll, dex) {
+    var roundDex = Math.floor((dex -10)/2);
+    if(roundDex < 0) {
+      roundDex = 0;
+    }
+    var addRoll = roundDex + initRoll;
 
-        $scope.addNewPlayer(name, ac, addRoll);
+    $scope.addNewPlayer(name, ac, addRoll);
 
-      };
+  };
+
+  $scope.showMonsterList = false;
+  //toggle btn for monsters list
+  $scope.toggleMonsterList = function() {
+    if($scope.showMonsterList == false) {
+      $scope.showMonsterList = true
+    }else {
+      $scope.showMonsterList = false
+    }
+  };
 
 
 }]);

@@ -8,12 +8,12 @@
 	border-radius: 2px;
   border: none;
 	display: inline-block;
-	margin: 1em;
+	margin: 1em 0;
 	font-family: sans-serif;
 	font-weight: bold;
 	cursor: pointer;
 	text-transform: capitalize;
-  transition: all 0.2s;
+  transition: all 0.3s;
   box-shadow: 5px 5px 10px -3px rgba(41,41,41,0.5);
   &:hover {
     box-shadow: 8px 8px 10px -3px rgba(41,41,41,0.5);

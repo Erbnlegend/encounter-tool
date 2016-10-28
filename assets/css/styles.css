@@ -4,10 +4,16 @@
 */
 @import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
 @import url("https://fonts.googleapis.com/css?family=Marck+Script");
+@import url("https://fonts.googleapis.com/css?family=Cedarville+Cursive");
+@import url("https://fonts.googleapis.com/css?family=Cabin+Sketch");
 @import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
 @import url("https://fonts.googleapis.com/css?family=Marck+Script");
+@import url("https://fonts.googleapis.com/css?family=Cedarville+Cursive");
+@import url("https://fonts.googleapis.com/css?family=Cabin+Sketch");
 @import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
 @import url("https://fonts.googleapis.com/css?family=Marck+Script");
+@import url("https://fonts.googleapis.com/css?family=Cedarville+Cursive");
+@import url("https://fonts.googleapis.com/css?family=Cabin+Sketch");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -39,11 +45,6 @@ body {
   line-height: 1;
   font-family: sans-serif;
   color: #414141;
-  background-image: url("../img/Qdu8ZOl-wallpaper-old-paper.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
 }
 
 ol, ul {
@@ -147,6 +148,31 @@ table {
   padding: 0.5em;
 }
 
+body {
+  background-image: url("../img/acaratus___city_of_veturoth___by_klauspillon-d8hkywg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  animation-name: backGrd;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-duration: 300s;
+}
+
+/*
+@keyframes backGrd {
+	0% {background-image: url('../img/acaratus___city_of_veturoth___by_klauspillon-d8hkywg.jpg');}
+	20% {background-image: url('../img/rise_of_the_kage___city_of_ryu___by_klauspillon-d83mi6s.jpg');}
+
+	40% {background-image: url('../img/ur_ghom__city_of_caves_by_klauspillon-d83rgvo.jpg');}
+
+	60% {background-image: url('../img/55-410176.jpg');}
+
+	80% {background-image: url('../img/dragon_s_castle_by_klauspillon-d8fmohg.jpg');}
+
+	100% {background-image: url('../img/evil_monastery_by_klauspillon-d83rh7b.jpg');}
+}*/
 .page_wrap {
   width: 100%;
   margin: 0 auto;
@@ -157,9 +183,10 @@ table {
 
 h1 {
   text-align: center;
-  font-size: 3em;
+  font-size: 4em;
   padding: 1em 0 0.5em 0;
-  font-family: 'Marck Script', 'Kaushan Script', sans-serif;
+  font-family: 'Cabin Sketch', 'Cedarville Cursive', 'Marck Script', 'Kaushan Script', sans-serif;
+  color: #fff;
 }
 
 h3 {
@@ -171,11 +198,14 @@ h3 {
 #encounter_box {
   width: 30%;
   min-width: 400px;
-  border: 1px solid black;
   padding: 1em;
   margin: 2em;
   align-self: baseline;
   background: #EDD094;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/Qdu8ZOl-wallpaper-old-paper.jpg");
 }
 #encounter_box button {
   width: 100%;
@@ -269,11 +299,14 @@ monsters {
 
 #monster {
   width: 100%;
-  border: 1px solid #414141;
   min-width: 450px;
   max-width: 600px;
   padding: 1em;
   background: #EDD094;
+  background-image: url("../img/Qdu8ZOl-wallpaper-old-paper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 #monster .monsterCage {
   width: 100%;
@@ -318,8 +351,11 @@ monsters {
   max-width: 600px;
   padding: 0.5em;
   margin-top: 1em;
-  border: 1px solid #414141;
   background: #EDD094;
+  background-image: url("../img/Qdu8ZOl-wallpaper-old-paper.jpg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-attachment: fixed;
 }
 
 .monsters_search input {

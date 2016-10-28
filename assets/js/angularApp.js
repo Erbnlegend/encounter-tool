@@ -51,6 +51,25 @@ app.controller('PlayerController', ['$scope', '$http', '$localStorage', function
     }
   }
 
+  $scope.rotatingBKGD = function() {
+    var newImage = '';
+    for (i = 0; i < $scope.BKGDimages.length; i++) {
+      var newImage = '';
+      newImage = $scope.BKGDimages[i];
+      console.log('did this work?');
+    }
+    return newImage
+  };
+
+  $scope.BKGDimages = [
+    'assets/img/evil_monastery_by_klauspillon-d83rh7b.jpg',
+    'assets/img/acaratus___city_of_veturoth___by_klauspillon-d8hkywg.jpg',
+    'assets/img/rise_of_the_kage___city_of_ryu___by_klauspillon-d83mi6s.jpg',
+    'assets/img/ur_ghom__city_of_caves_by_klauspillon-d83rgvo.jpg',
+    'assets/img/55-410176.jpg',
+    'assets/img/dragon_s_castle_by_klauspillon-d8fmohg.jpg'
+  ];
+
 }]);
 
 app.controller('MonsterController', ['$scope', '$http', '$localStorage', function($scope, $http, $localStorage){

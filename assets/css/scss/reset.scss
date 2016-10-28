@@ -3,6 +3,7 @@
    License: none (public domain)
 */
 @import 'variables';
+@import 'mixins';
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -33,11 +34,6 @@ body {
 	line-height: 1;
 	font-family: sans-serif;
 	color: $dark_gray;
-	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-attachment: fixed;
 }
 ol, ul {
 	list-style: none;

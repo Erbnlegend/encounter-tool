@@ -150,6 +150,7 @@
 
 <div id="monstersList" ng-show="showMonsterList">
 
+<!--Monster Search-->
 <monsters-search></monsters-search>
 
   <div class="monster_inlist" ng-repeat="monster in monsters | filter: globalSearch:strict | limitTo: numLimit">

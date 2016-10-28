@@ -154,7 +154,7 @@ h3 {
   padding: .5em 0; }
 
 #encounter_box {
-  width: 30%;
+  width: 35%;
   min-width: 400px;
   padding: 1em;
   margin: 2em;
@@ -236,12 +236,11 @@ form.newPlayer_form {
   margin: 0 auto 1em; }
 
 monsters {
-  margin: 2em 0 2em 2em; }
+  margin: 2em; }
 
 #monster {
   width: 100%;
-  min-width: 450px;
-  max-width: 600px;
+  min-width: 600px;
   padding: 1em;
   background: #EDD094;
   background-image: url("../img/Qdu8ZOl-wallpaper-old-paper.jpg");

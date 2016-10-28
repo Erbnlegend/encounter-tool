@@ -3,6 +3,31 @@
 @import 'mixins';
 @import 'controls';
 
+// list of images http://abduzeedo.com/badass-fantasy-illustrations-klaus-pillon
+body {
+	background-image: url('../img/acaratus___city_of_veturoth___by_klauspillon-d8hkywg.jpg');
+	@include backGrd;
+	background-attachment: fixed;
+	animation-name: backGrd;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+	animation-duration: 300s;
+}
+
+/*
+@keyframes backGrd {
+	0% {background-image: url('../img/acaratus___city_of_veturoth___by_klauspillon-d8hkywg.jpg');}
+	20% {background-image: url('../img/rise_of_the_kage___city_of_ryu___by_klauspillon-d83mi6s.jpg');}
+
+	40% {background-image: url('../img/ur_ghom__city_of_caves_by_klauspillon-d83rgvo.jpg');}
+
+	60% {background-image: url('../img/55-410176.jpg');}
+
+	80% {background-image: url('../img/dragon_s_castle_by_klauspillon-d8fmohg.jpg');}
+
+	100% {background-image: url('../img/evil_monastery_by_klauspillon-d83rh7b.jpg');}
+}*/
+
 .page_wrap {
 	width: 100%;
 	margin: 0 auto;
@@ -13,12 +38,10 @@
 
 h1 {
   text-align: center;
-  font-size: 3em;
+  font-size: 4em;
   padding: 1em 0 0.5em 0;
-	font-family: 'Marck Script', 'Kaushan Script', sans-serif;
-	/*prevents the header from moving
-	when a scroll bar is added*/
-	width: 100vw;
+	font-family: 'Cabin Sketch', 'Cedarville Cursive', 'Marck Script', 'Kaushan Script', sans-serif;
+	color: #fff;
 }
 h3 {
   text-align: center;
@@ -29,11 +52,12 @@ h3 {
 #encounter_box {
   width: 30%;
   min-width: 400px;
-  border: 1px solid rgb(0,0,0);
   padding: 1em;
 	margin: 2em;
 	align-self: baseline;
 	background: $yellow;
+	@include backGrd;
+	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
 	button {
 		width: 100%;
 	}
@@ -125,11 +149,12 @@ monsters {
 }
 #monster {
 	width: 100%;
-	border: 1px solid $dark_gray;
 	min-width: 450px;
 	max-width: 600px;
 	padding: 1em;
 	background: $yellow;
+	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
+	@include backGrd;
 	.monsterCage {
 	  width: 100%;
 	  padding: .1em 1em;
@@ -170,8 +195,11 @@ monsters {
 #monstersList {
 	padding: 0.5em;
 	margin-top: 1em;
-	border: 1px solid $dark_gray;
 	background: $yellow;
+	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-attachment: fixed;
 }
 .monster_inlist {
 	padding: 0.5em;

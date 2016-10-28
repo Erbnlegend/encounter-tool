@@ -1,0 +1,70 @@
+@import 'variables';
+
+
+// buttons
+.btn {
+	padding: 0.5em 2em;
+	background: rgb(200,200,200);
+	border-radius: 2px;
+  border: none;
+	display: inline-block;
+	margin: 1em 0;
+	font-family: sans-serif;
+	font-weight: bold;
+	cursor: pointer;
+	text-transform: capitalize;
+  transition: all 0.3s;
+  box-shadow: 5px 5px 10px -3px rgba(41,41,41,0.5);
+  &:hover {
+    box-shadow: 8px 8px 10px -3px rgba(41,41,41,0.5);
+  }
+}
+.red_btn {
+	background: $red;
+	color: #fff;
+	@extend .btn;
+}
+.blue_btn {
+	background: $blue;
+	color: #fff;
+	@extend .btn;
+}
+.green_btn {
+	background: $green;
+	color: #fff;
+	@extend .btn;
+}
+.gray_btn {
+	background: $gray;
+	color: #fff;
+	@extend .btn;
+}
+.orange_btn {
+	background: $orange;
+	color: #fff;
+	@extend .btn;
+}
+
+.close_btn {
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  position: absolute;
+  top: -10%;
+  left: 100%;
+  cursor: pointer;
+  div {
+    position: absolute;
+    background: #fff;
+    border: 3px solid #fff;
+    border-radius: 3px;
+    height: 0.1px;
+    width: 100%;
+  }
+  div:first-child {
+    transform: rotate(45deg);
+  }
+  div:last-child {
+    transform: rotate(-45deg);
+  }
+}

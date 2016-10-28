@@ -1,32 +1,40 @@
-<div id="players">
-  <h2>Encounter Order</h2>
-  <div id="playerField">
-    <p>Name: </p>
-    <p>Armor Class: </p>
-    <p>Initiative: </p>
-  </div>
-  <div ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 3000, 'blur': 0 } }">
-
-    <div ng-repeat="player in players | orderBy: '-initiative'">
-        <input ng-model="player.name"
-        type="text"
-        ng-value="{{player.name}}"
-        />
-        <input ng-model="player.ac"
-        type="number"
-        ng-value="{{player.ac}}"
-        />
-        <input ng-model="player.initiative"
-        type="number"
-        ng-value="{{player.initiative}}"
-         />
+<div class="page_wrap">
+  <div class="flex_center">
+    <div id="encounter_box">
+      <h2>Encounter Order</h2>
+      <div id="playerField">
+        <p>Name: </p>
+        <p>Armor Class: </p>
+        <p>Initiative: </p>
+      </div>
+      <div ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 3000, 'blur': 0 } }">
+        <div class="players_list" ng-repeat="player in players | orderBy: '-initiative'">
+            <input ng-model="player.name"
+            type="text"
+            ng-value="player.name"
+            />
+            <input ng-model="player.ac"
+            type="number"
+            ng-value="player.ac"
+            />
+            <input ng-model="player.initiative"
+            type="number"
+            ng-value="player.initiative"
+             />
+        </div>
+        <button class="green_btn" type="submit" ng-click="showPlayerForm = true">+ Add</button>
+      </div>
     </div>
-    <input type="submit" ng-click="showPlayerForm = true" value="+ Add"/>
+    <button class="green_btn" type="submit" ng-click="showPlayerForm = true">+ Add</button>
   </div>
 </div>
 
 <div class="overlayForm" ng-init="showPlayerForm = false" ng-show="showPlayerForm">
   <form class="newPlayer_form"  ng-submit="addNewPlayer(playerName, playerArmorClass, playerInitiative)">
+    <div class="close_btn" ng-click="showPlayerForm = false">
+      <div></div>
+      <div></div>
+    </div>
     <h3>Add New Player</h3>
     <input type="text" placeholder="Name" ng-model="playerName"/>
     <input type="number" placeholder="Armor class" ng-model="playerArmorClass"/>

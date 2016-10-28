@@ -1,4 +1,4 @@
-var app = angular.module('encounterTool', ['ngRoute','checklist-model','ngStorage']);
+var app = angular.module('encounterTool', ['ngRoute','ngStorage']);
 
 app.controller('PlayerController', ['$scope', '$http', '$localStorage', function($scope, $http, $localStorage){
 
@@ -28,9 +28,9 @@ app.controller('PlayerController', ['$scope', '$http', '$localStorage', function
 
     $localStorage.players.push(
       {
-      	name: playerName,
-      	ac: playerArmorClass,
-      	initiative: playerInitiative
+      	"name": playerName,
+      	"ac": playerArmorClass,
+      	"initiative": playerInitiative
       }
     );
 
@@ -44,6 +44,8 @@ app.controller('PlayerController', ['$scope', '$http', '$localStorage', function
 app.controller('MonsterController', ['$scope', '$http', function($scope, $http){
 
   $scope.monsters = null;
+  $scope.user = [];
+
   $http.get('assets/js/data/monsters.json')
       .success(function(data) {
           $scope.monsters = data;
@@ -52,21 +54,31 @@ app.controller('MonsterController', ['$scope', '$http', function($scope, $http){
           $scope.monsters = [{heading:"Error",description:"Could not load json data"}];
       });
 
-      $scope.user = {
-          roles: [$scope.monsters]
-        };
-        $scope.checkAll = function() {
-          $scope.user.monsters = angular.copy($scope.monsters);
-        };
-        $scope.uncheckAll = function() {
-          $scope.user.monsters = [];
-        };
-        $scope.checkFirst = function() {
-          $scope.user.monsters = [];
-          $scope.user.monsters.push($scope.monsters[0]);
-        };
-        $scope.setToNull = function() {
-          $scope.user.monsters = null;
-        };
+  $scope.addMonster = function(selectedMonster) {
+    //Add Monster to user Array
+    $scope.user.push(selectedMonster);
+  };
+
+  $scope.addPlayerMonster = function(name, ac, initRoll, dex) {
+    var roundDex = Math.floor((dex -10)/2);
+    if(roundDex < 0) {
+      roundDex = 0;
+    }
+    var addRoll = roundDex + initRoll;
+
+    $scope.addNewPlayer(name, ac, addRoll);
+
+  };
+
+  $scope.showMonsterList = false;
+  //toggle btn for monsters list
+  $scope.toggleMonsterList = function() {
+    if($scope.showMonsterList == false) {
+      $scope.showMonsterList = true
+    }else {
+      $scope.showMonsterList = false
+    }
+  };
+
 
 }]);

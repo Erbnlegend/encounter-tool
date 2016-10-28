@@ -1,11 +1,23 @@
 @import 'reset';
 @import 'variables';
 @import 'mixins';
+@import 'controls';
+
+.page_wrap {
+	width: 95%;
+	margin: 0 auto;
+	max-width: 1600px;
+	display: flex;
+  justify-content: flex-start;
+}
 
 h1 {
   text-align: center;
   font-size: 2em;
   padding: 1em 0;
+	/*prevents the header from moving
+	when a scroll bar is added*/
+	width: 100vw;
 }
 h3 {
   text-align: center;
@@ -13,15 +25,16 @@ h3 {
   padding: .5em 0;
 }
 
-#players {
+#encounter_box {
   width: 30%;
-  float: left;
   min-width: 400px;
   border: 1px solid rgb(0,0,0);
   padding: 1em;
-  margin: 1em;
+	margin: 2em;
+	align-self: baseline;
   #playerField {
     width: 100%;
+    display: flex;
     p {
       text-align: center;
       display: inline-block;
@@ -30,27 +43,50 @@ h3 {
       text-decoration: underline;
     }
   }
+  .players_list {
+    display: flex;
+    margin-bottom: 1em;
+    input {
+      width: (98% / 3);
+      margin: 0 auto;
+      border: 1px solid transparent;
+      text-align: center;
+      padding: 0.5em 0;
+      transition: all 0.2s;
+      font-size: 1.1em;
+      &:hover {
+        border: 1px solid $gray;
+      }
+      &[type=submit] {
+        margin-top: 1em;
+        width: 100%;
+        cursor: pointer;
+        &:hover {
+          background: darken(rgba(0,0,0, .6), 20);
+        }
+      }
+    }
+  }
   h2 {
     margin: 0 auto 1em;
     text-align: center;
     font-size: 1.5em;
   }
-  input {
-    width: (98% / 3);
-    margin: 0 auto;
-    border: none;
-    text-align: center;
-    padding: 10px 0;
-    &[type=submit] {
-      margin-top: 1em;
-      width: 100%;
-      cursor: pointer;
-      &:hover {
-        background: darken(rgba(0,0,0, .6), 20);
-      }
-    }
-  }
 }
+
+//flex containers
+.flex_center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.flex_center_nowrap {
+	display: flex;
+  justify-content: center;
+}
+
+
+//add players form
 .overlayForm {
   background: rgba(0,0,0,.9);
   position: fixed;
@@ -60,11 +96,12 @@ h3 {
   height: 100%;
 }
 form.newPlayer_form{
-  background: rgba(255,87,34,.8);
+  background: $blue;
   padding: 1em;
   display: block;
   width: 45%;
   margin: 15% auto;
+  position: relative;
   input {
     text-align: center;
     width: (96.4%/3);
@@ -76,12 +113,17 @@ form.newPlayer_form{
   }
 }
 
+.add_monster_btn_wrap button {
+	margin-top: 0;
+}
+monsters {
+	margin: 2em 0 2em 2em;
+}
 .monsterCage {
   width: 60%;
   padding: 1em;
   margin: 1em 1em 0;
-  border: 1px solid rgb(0,0,0);
-  float: left;
+  border: 1px solid $dark_gray;
   position: relative;
   .section {
     margin-top: .7em;
@@ -96,20 +138,10 @@ form.newPlayer_form{
     font-size: .6em;
   }
   input {
-    width: 40px;
+    width: 60px;
     padding: .3em;
   }
   .attributes {
-  }
-}
-
-#addMonster {
-  width: 60%;
-  padding: 1em;
-  float: left;
-  button {
-    width: 100%;
-    padding: 10px 0;
   }
 }
 

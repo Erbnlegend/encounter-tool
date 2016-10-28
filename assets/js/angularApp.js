@@ -42,6 +42,15 @@ app.controller('PlayerController', ['$scope', '$http', '$localStorage', function
     $scope.playerHealth = '';
     $scope.playerInitiative = '';
   };
+
+  $scope.emptyPlayersCheck = function() {
+    if($scope.players.length == 0) {
+      return true
+    }else {
+      return false
+    }
+  }
+
 }]);
 
 app.controller('MonsterController', ['$scope', '$http', '$localStorage', function($scope, $http, $localStorage){

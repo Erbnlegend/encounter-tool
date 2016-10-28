@@ -4,7 +4,7 @@
 @import 'controls';
 
 .page_wrap {
-	width: 95%;
+	width: 100%;
 	margin: 0 auto;
 	max-width: 1600px;
 	display: flex;
@@ -13,10 +13,12 @@
 
 h1 {
   text-align: center;
-  font-size: 2em;
-  padding: 1em 0;
+  font-size: 3em;
+  padding: 1em 0 0.5em 0;
+	font-family: 'Marck Script', 'Kaushan Script', sans-serif;
 	/*prevents the header from moving
 	when a scroll bar is added*/
+	width: 100vw;
 }
 h3 {
   text-align: center;
@@ -31,6 +33,10 @@ h3 {
   padding: 1em;
 	margin: 2em;
 	align-self: baseline;
+	background: $yellow;
+	button {
+		width: 100%;
+	}
   #playerField {
     width: 100%;
     display: flex;
@@ -49,19 +55,13 @@ h3 {
       width: (98% / 4);
       border: 1px solid transparent;
       text-align: center;
-      padding: 0.3em 0;
+      padding: 0.3em;
+			background: transparent;
       transition: all 0.2s;
       font-size: 1.1em;
       &:hover {
         border: 1px solid $gray;
-      }
-      &[type=submit] {
-        margin-top: 1em;
-        width: 100%;
-        cursor: pointer;
-        &:hover {
-          background: darken(rgba(0,0,0, .6), 20);
-        }
+				background: lighten($yellow, 10%);
       }
     }
   }
@@ -129,6 +129,7 @@ monsters {
 	min-width: 450px;
 	max-width: 600px;
 	padding: 1em;
+	background: $yellow;
 	.monsterCage {
 	  width: 100%;
 	  padding: .1em 1em;
@@ -164,4 +165,26 @@ monsters {
   border: 1px solid rgb(0,0,0);
   padding: 1em;
   margin: 1em;
+}
+
+#monstersList {
+	padding: 0.5em;
+	margin-top: 1em;
+	border: 1px solid $dark_gray;
+	background: $yellow;
+}
+.monster_inlist {
+	padding: 0.5em;
+	margin: 0.5em 0;
+	button {
+		margin: 0 0.5em 0 0;
+	}
+}
+
+.empty_players_box {
+	background: $orange;
+	color: #fff;
+	text-align: center;
+	padding: 1.5em;
+	font-size: 0.8em;
 }

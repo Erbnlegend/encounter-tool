@@ -79,6 +79,9 @@ h3 {
 }
 
 #footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
 	width: 100%;
 	background: rgba(0,0,0, .5);
 	color: $gray;

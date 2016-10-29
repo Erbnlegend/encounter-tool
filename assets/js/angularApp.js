@@ -43,12 +43,40 @@ app.controller('PlayerController', ['$scope', '$http', '$localStorage', function
     $scope.playerInitiative = '';
   };
 
+// Update the input values on change
+// Needed so that changes are kept on change of initial player creation
+// Fixes issue with updating local storage right after player is created
+  $scope.changeName = function(player) {
+    var index = $scope.players.indexOf(player);
+    console.log(index);
+    $localStorage.players[index].name = player.name;
+  };
+  $scope.changeAc = function(player) {
+    var index = $scope.players.indexOf(player);
+    console.log(index);
+    $localStorage.players[index].ac = player.ac;
+  };
+  $scope.changeHealth = function(player) {
+    var index = $scope.players.indexOf(player);
+    console.log(index);
+    $localStorage.players[index].health = player.health;
+  };
+  $scope.changeInitiative = function(player) {
+    var index = $scope.players.indexOf(player);
+    console.log(index);
+    $localStorage.players[index].initiative = player.initiative;
+  };
+
   $scope.emptyPlayersCheck = function() {
     if($scope.players.length == 0) {
       return true
     }else {
       return false
     }
+  };
+
+  $scope.dupePlayer = function(name, armor, health, initiative) {
+    $scope.addNewPlayer(name, armor, health, initiative);
   };
 
   $scope.removePlayer = function(item) {

@@ -1,0 +1,104 @@
+// Static Styles
+#encounter_box {
+  padding: 1em;
+	margin: 2em;
+	align-self: baseline;
+	background: $yellow;
+	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
+  @include backGrd;
+  @include mediaQ_small(860px) {
+    padding: 1em;
+    margin: 2em 0;
+    width: 100%;
+  }
+  @include mediaQ_large(901px) {
+    width: 35%;
+  }
+	button.green_btn {
+		width: 100%;
+	}
+  #playerField {
+    width: 100%;
+    display: flex;
+    p {
+      text-align: center;
+      display: inline-block;
+      width: (98%/5.5);
+      margin-bottom: 1em;
+      text-decoration: underline;
+    }
+  }
+  .players_list {
+    display: flex;
+    margin-bottom: 1.5em;
+		position: relative;
+    input {
+      width: (98% / 5.5);
+      border: 1px solid transparent;
+      text-align: center;
+      padding: 0.3em;
+			background: transparent;
+      transition: all 0.2s;
+      font-size: .8em;
+      &:hover {
+        border: 1px solid $gray;
+				background: lighten($yellow, 10%);
+      }
+    }
+		button.gray_btn {
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin: 0;
+      font-size: .6em
+		}
+    button.blue_btn {
+      position: absolute;
+      top: 0;
+      right: 10%;
+      margin: 0;
+      font-size: .6em
+    }
+  }
+  h2 {
+    margin: 0 auto 1em;
+    text-align: center;
+    font-size: 1.5em;
+  }
+}
+
+// Add players form
+.overlayForm {
+  background: rgba(0,0,0,.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+	z-index: 10;
+}
+form.newPlayer_form{
+  background: $blue;
+  padding: 1em;
+  display: block;
+  width: 45%;
+  margin: 15% auto;
+  position: relative;
+  @include mediaQ_small(860px) {
+    width: 100%;
+  }
+  input {
+    display: inline;
+    text-align: center;
+    width: (95%/4);
+    padding: 10px 0;
+    margin-top: 1em;
+    @include mediaQ_small(860px) {
+      padding: 5px 0;
+      font-size: .6em;
+    }
+  }
+  input[type=submit] {
+    width: 100%;
+  }
+}

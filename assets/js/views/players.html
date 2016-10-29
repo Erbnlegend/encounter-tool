@@ -1,4 +1,4 @@
-  <div class="flex_center">
+  <div class="flex">
     <div id="encounter_box">
       <h2>Encounter Order</h2>
       <div id="playerField">
@@ -15,19 +15,27 @@
             <input ng-model="player.name"
             type="text"
             ng-value="player.name"
-            required/>
+            ng-change="changeName(player)"
+            />
             <input ng-model="player.ac"
             type="number"
             ng-value="player.ac"
-            required/>
+            ng-change="changeAc(player)"
+            />
             <input ng-model="player.health"
             type="number"
-            ng-value="player.health"/>
+            ng-value="player.health"
+            ng-change="changeHealth(player)"
+            />
             <input ng-model="player.initiative"
             type="number"
             ng-value="player.initiative"
-            required/>
+            ng-change="changeInitiative(player)"
+            />
+            <!--Clone and Delete-->
+            <button class="blue_btn" ng-click="dupePlayer(player.name,player.ac,player.health,player.initiative)">Clone</button>
             <button class="gray_btn" ng-click="removePlayer(player)">X</button>
+
         </div>
         <button class="green_btn" type="submit" ng-click="showPlayerForm = true">+ Add</button>
       </div>

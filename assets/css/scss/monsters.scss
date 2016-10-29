@@ -1,0 +1,141 @@
+// Monster Styles
+
+.add_monster_btn_wrap button {
+	width: 100%;
+	display: block;
+	margin: 0 auto 1em;
+}
+
+// Space out the monsters directive
+
+monsters {
+	margin: 2em;
+	@include mediaQ_small(860px) {
+		width: 100%;
+		margin: 0;
+	}
+	@include mediaQ_medium(861px, 900px) {
+		width: 100%;
+		margin: 2em;
+	}
+	@include mediaQ_large(901px) {
+		width: 45%;
+	}
+}
+
+// Main Container
+
+#monster {
+	width: 100%;
+	padding: 1em;
+	background: $yellow;
+	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
+	position: relative;
+	button.red_btn.main {
+		width: 100%;
+	}
+	@include backGrd;
+
+  // Selected Monsters
+	.monsterCage {
+	  width: 100%;
+	  padding: .1em 1em;
+		border-bottom: 1px solid $dark_gray;
+	  position: relative;
+	  .sectionTitle, .section {
+	    margin-top: .7em;
+	  }
+	  h4 {
+			display: inline;
+			font-size: 1.3em;
+		}
+		strong {
+			font-size: 1.1em;
+		}
+		p {
+			line-height: 1.5em;
+			font-size: .9em;
+		}
+		label {
+			font-size: .6em;
+		}
+		input {
+			font-size: .9em;
+			width: 35px;
+		}
+		button {
+			position: absolute;
+			top: 5px;
+			right: 70px;
+			@include mediaQ_small(860px) {
+				right: 50px;
+			}
+		}
+		button.gray_btn {
+			position: absolute;
+			top: 5px;
+			right: 0;
+		}
+	}
+}
+
+// Add Player Monster Form
+#monstersForm {
+  width: 60%;
+  float: left;
+  border: 1px solid rgb(0,0,0);
+  padding: 1em;
+  margin: 1em;
+	@include mediaQ_small(860px) {
+		width: 100%;
+		margin: 0;
+	}
+}
+
+
+// Monster Selection List
+#monstersList {
+	width: 50%;
+	padding: 0.5em;
+	margin-top: 1em;
+	background: $yellow;
+	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-attachment: fixed;
+	@include mediaQ_small(860px) {
+		width: 100%;
+	}
+}
+// Search Monster Styles
+.monsters_search {
+	position: relative;
+	input {
+		margin: .5em 0;
+	}
+	input[type=text] {
+		width: 49%;
+		text-align: center;
+	}
+	input[type=checkbox] {
+		line-height: 1.5em;
+	}
+	a {
+		text-decoration: none;
+		text-align: center;
+		display: block;
+		width: 40%;
+		min-width: 250px;
+		margin: .5em 0;
+	}
+}
+.monster_inlist {
+	padding: 0.5em;
+	margin: 0.5em 0;
+	button {
+		margin: 0 0.5em 0 0;
+	}
+	p {
+		display: inline;
+	}
+}

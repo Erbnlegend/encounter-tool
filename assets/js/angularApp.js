@@ -48,22 +48,18 @@ app.controller('PlayerController', ['$scope', '$http', '$localStorage', function
 // Fixes issue with updating local storage right after player is created
   $scope.changeName = function(player) {
     var index = $scope.players.indexOf(player);
-    console.log(index);
     $localStorage.players[index].name = player.name;
   };
   $scope.changeAc = function(player) {
     var index = $scope.players.indexOf(player);
-    console.log(index);
     $localStorage.players[index].ac = player.ac;
   };
   $scope.changeHealth = function(player) {
     var index = $scope.players.indexOf(player);
-    console.log(index);
     $localStorage.players[index].health = player.health;
   };
   $scope.changeInitiative = function(player) {
     var index = $scope.players.indexOf(player);
-    console.log(index);
     $localStorage.players[index].initiative = player.initiative;
   };
 

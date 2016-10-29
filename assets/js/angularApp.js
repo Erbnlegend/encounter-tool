@@ -61,7 +61,10 @@ app.controller('bodyCtrl', ['$scope', '$http', '$localStorage', function($scope,
     'assets/img/rise_of_the_kage___city_of_ryu___by_klauspillon-d83mi6s.jpg',
     'assets/img/ur_ghom__city_of_caves_by_klauspillon-d83rgvo.jpg',
     'assets/img/55-410176.jpg',
-    'assets/img/dragon_s_castle_by_klauspillon-d8fmohg.jpg'
+    'assets/img/dragon_s_castle_by_klauspillon-d8fmohg.jpg',
+    'assets/img/dragon_s_nest_by_klauspillon-d85hcvq.jpg',
+    'assets/img/they_found_it__by_klauspillon-d760i25.jpg',
+    'assets/img/acaratus_concept_art___prison___by_klauspillon-d7ap9hx.jpg'
   ];
 
   $scope.rotatingBKGD = function() {
@@ -69,7 +72,7 @@ app.controller('bodyCtrl', ['$scope', '$http', '$localStorage', function($scope,
     return randomIndex;
   };
 
-  console.log('randome number: '+$scope.BKGDimages[$scope.rotatingBKGD()])
+  console.log($scope.BKGDimages.length);
 
   $scope.rotatingBKGD = $scope.BKGDimages[$scope.rotatingBKGD()];
 

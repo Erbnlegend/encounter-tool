@@ -483,3 +483,30 @@ h3 {
   padding: 1.5em;
   font-size: 0.8em;
 }
+
+#footer {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #bdc3c7;
+  text-align: center;
+  padding: 1em;
+  line-height: 1.2em;
+}
+#footer a {
+  color: #bdc3c7;
+}
+
+#license {
+  background: rgba(0, 0, 0, 0.6);
+}
+#license h1 {
+  font-size: 2em;
+}
+#license h2, #license h3 {
+  text-align: center;
+  color: #bdc3c7;
+  font-size: 1.3em;
+}
+#license p {
+  color: #bdc3c7;
+}

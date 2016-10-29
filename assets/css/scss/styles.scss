@@ -77,3 +77,29 @@ h3 {
 	padding: 1.5em;
 	font-size: 0.8em;
 }
+
+#footer {
+	width: 100%;
+	background: rgba(0,0,0, .5);
+	color: $gray;
+	text-align: center;
+	padding: 1em;
+	line-height: 1.2em;
+	a {
+		color: $gray;
+	}
+}
+#license {
+	background: rgba(0,0,0,.6);
+	h1 {
+		font-size: 2em;
+	}
+	h2,h3 {
+		text-align: center;
+		color: $gray;
+		font-size: 1.3em;
+	}
+	p {
+		color: $gray;
+	}
+}

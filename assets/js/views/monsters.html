@@ -1,12 +1,11 @@
 <div id="monster">
   <div class="add_monster_btn_wrap">
-  <button class="red_btn" ng-click="toggleMonsterList()">Monsters List</button>
+  <button class="red_btn" ng-click="toggleMonsterList()">+ Add Monster</button>
 </div>
 
 <monster-cage></monster-cage>
 
 </div>
-
 <div id="monstersList" ng-show="showMonsterList">
 
 <!--Monster Search-->
@@ -23,10 +22,6 @@
       <!--Monster Add Player Form-->
       <div class="overlayForm" ng-init="showMonsterForm = false" ng-show="showMonsterForm">
         <form class="newPlayer_form" ng-submit="addPlayerMonster(monster.name, monster.armor_class, initiativeRoll, monster.hit_points, monster.dexterity)">
-          <div class="close_btn" ng-click="showMonsterForm = false">
-            <div></div>
-            <div></div>
-          </div>
           <h3>Enter Initiative Roll</h3>
           <input type="text" placeholder="Name" ng-value="monster.name" required/>
           <input type="number" placeholder="Armor Class"  ng-value="monster.armor_class" required/>

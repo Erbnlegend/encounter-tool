@@ -1,14 +1,14 @@
 <div class="monsters_search">
   <input type="text" ng-model="globalSearch.$" placeholder="Global Search" />
   <div ng-show="advancedSearch" ng-init="advancedSearch = false">
-    <input type="text" ng-model="globalSearch.type" placeholder="Type Search ex: Undead" />
-    <input type="text" ng-model="globalSearch.challenge_rating" placeholder="Challenge Rating Search" />
-    <input type="text" ng-model="globalSearch.damage_vulnerabilities" placeholder="Damage Vulnerability Search" />
-    <input type="text" ng-model="globalSearch.damage_resistances" placeholder="Damage Resistances Search" />
-    <input type="text" ng-model="globalSearch.damage_immunities" placeholder="Damage Immunities Search" />
-    <input type="text" ng-model="globalSearch.condition_immunities" placeholder="Condition Immunities Search" />
+    <input type="text" ng-model="globalSearch.type" placeholder="Type Search ex: undead" />
+    <input type="text" ng-model="globalSearch.challenge_rating" placeholder="Challenge Rating Search ex: 1" />
+    <input type="text" ng-model="globalSearch.damage_vulnerabilities" placeholder="Damage Vulnerability Search ex: fire" />
+    <input type="text" ng-model="globalSearch.damage_resistances" placeholder="Damage Resistances Search ex: piercing" />
+    <input type="text" ng-model="globalSearch.damage_immunities" placeholder="Damage Immunities Search ex: cold" />
+    <input type="text" ng-model="globalSearch.condition_immunities" placeholder="Condition Immunities Search ex: poison" />
     <label><input type="checkbox" ng-model="strict" />Turn on Strict Values<sup>(case, spelling, structure)</sup></label>
-    <a href="javascript:void(0)" ng-show="advancedSearch" ng-click="advancedSearch = false">Close Advanced Search</a>
+    <a href="javascript:void(0)" class="red_btn" ng-show="advancedSearch" ng-click="advancedSearch = false">Close Advanced Search</a>
   </div>
-  <a href="javascript:void(0)" ng-show="!advancedSearch" ng-click="advancedSearch = true">Advanced Search</a>
+  <a href="javascript:void(0)" class="green_btn" ng-show="!advancedSearch" ng-click="advancedSearch = true">Advanced Search</a>
 </div>

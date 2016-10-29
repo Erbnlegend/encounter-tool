@@ -8,6 +8,7 @@ body {
 	background-image: url('../img/acaratus___city_of_veturoth___by_klauspillon-d8hkywg.jpg');
 	@include backGrd;
 	background-attachment: fixed;
+	position: relative;
 }
 
 .page_wrap {
@@ -141,6 +142,7 @@ monsters {
 	padding: 1em;
 	background: $yellow;
 	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
+	position: relative;
 	@include backGrd;
 	.monsterCage {
 	  width: 100%;
@@ -187,8 +189,8 @@ monsters {
 }
 
 #monstersList {
-	width: 100%;
-	min-width: 450px;
+	width: 50%;
+	min-width: 600px;
 	padding: 0.5em;
 	margin-top: 1em;
 	background: $yellow;
@@ -198,6 +200,7 @@ monsters {
 	background-attachment: fixed;
 }
 .monsters_search {
+	position: relative;
 	input {
 		margin: .5em 0;
 	}
@@ -209,7 +212,11 @@ monsters {
 		line-height: 1.5em;
 	}
 	a {
+		text-decoration: none;
+		text-align: center;
 		display: block;
+		width: 40%;
+		min-width: 250px;
 		margin: .5em 0;
 	}
 }

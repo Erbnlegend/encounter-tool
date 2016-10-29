@@ -155,6 +155,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+  position: relative;
 }
 
 .page_wrap {
@@ -290,6 +291,7 @@ monsters {
   padding: 1em;
   background: #EDD094;
   background-image: url("../img/Qdu8ZOl-wallpaper-old-paper.jpg");
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -338,8 +340,8 @@ monsters {
 }
 
 #monstersList {
-  width: 100%;
-  min-width: 450px;
+  width: 50%;
+  min-width: 600px;
   padding: 0.5em;
   margin-top: 1em;
   background: #EDD094;
@@ -349,6 +351,9 @@ monsters {
   background-attachment: fixed;
 }
 
+.monsters_search {
+  position: relative;
+}
 .monsters_search input {
   margin: .5em 0;
 }
@@ -360,7 +365,11 @@ monsters {
   line-height: 1.5em;
 }
 .monsters_search a {
+  text-decoration: none;
+  text-align: center;
   display: block;
+  width: 40%;
+  min-width: 250px;
   margin: .5em 0;
 }
 

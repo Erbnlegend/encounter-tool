@@ -72,8 +72,6 @@ app.controller('bodyCtrl', ['$scope', '$http', '$localStorage', function($scope,
     return randomIndex;
   };
 
-  console.log($scope.BKGDimages.length);
-
   $scope.rotatingBKGD = $scope.BKGDimages[$scope.rotatingBKGD()];
 
 }]);

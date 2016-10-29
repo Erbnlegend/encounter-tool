@@ -182,7 +182,7 @@ h3 {
 }
 
 #encounter_box {
-  width: 35%;
+  width: 40%;
   min-width: 400px;
   padding: 1em;
   margin: 2em;
@@ -193,7 +193,7 @@ h3 {
   background-position: center;
   background-image: url("../img/Qdu8ZOl-wallpaper-old-paper.jpg");
 }
-#encounter_box button {
+#encounter_box button.green_btn {
   width: 100%;
 }
 #encounter_box #playerField {
@@ -203,16 +203,17 @@ h3 {
 #encounter_box #playerField p {
   text-align: center;
   display: inline-block;
-  width: 32.66667%;
+  width: 19.6%;
   margin-bottom: 1em;
   text-decoration: underline;
 }
 #encounter_box .players_list {
   display: flex;
   margin-bottom: 1em;
+  position: relative;
 }
 #encounter_box .players_list input {
-  width: 24.5%;
+  width: 19.6%;
   border: 1px solid transparent;
   text-align: center;
   padding: 0.3em;
@@ -223,6 +224,12 @@ h3 {
 #encounter_box .players_list input:hover {
   border: 1px solid #bdc3c7;
   background: #f4e3c0;
+}
+#encounter_box .players_list button.gray_btn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  margin: 0;
 }
 #encounter_box h2 {
   margin: 0 auto 1em;
@@ -281,7 +288,7 @@ form.newPlayer_form input[type=submit] {
 }
 
 monsters {
-  width: 50%;
+  width: 45%;
   margin: 2em;
 }
 
@@ -295,6 +302,9 @@ monsters {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+#monster button.red_btn.main {
+  width: 100%;
 }
 #monster .monsterCage {
   width: 100%;
@@ -326,7 +336,12 @@ monsters {
 #monster .monsterCage button {
   position: absolute;
   top: 5px;
-  right: 5px;
+  right: 70px;
+}
+#monster .monsterCage button.gray_btn {
+  position: absolute;
+  top: 5px;
+  right: 0;
 }
 
 #monstersForm {
@@ -384,7 +399,7 @@ monsters {
   display: inline;
 }
 
-.empty_players_box {
+.empty_players_box, .empty_user_box {
   background: #e67e22;
   color: #fff;
   text-align: center;

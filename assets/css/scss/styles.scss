@@ -37,7 +37,7 @@ h3 {
 }
 
 #encounter_box {
-  width: 35%;
+  width: 40%;
   min-width: 400px;
   padding: 1em;
 	margin: 2em;
@@ -45,7 +45,7 @@ h3 {
 	background: $yellow;
 	@include backGrd;
 	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
-	button {
+	button.green_btn {
 		width: 100%;
 	}
   #playerField {
@@ -54,7 +54,7 @@ h3 {
     p {
       text-align: center;
       display: inline-block;
-      width: (98%/3);
+      width: (98%/5);
       margin-bottom: 1em;
       text-decoration: underline;
     }
@@ -62,8 +62,9 @@ h3 {
   .players_list {
     display: flex;
     margin-bottom: 1em;
+		position: relative;
     input {
-      width: (98% / 4);
+      width: (98% / 5);
       border: 1px solid transparent;
       text-align: center;
       padding: 0.3em;
@@ -75,6 +76,12 @@ h3 {
 				background: lighten($yellow, 10%);
       }
     }
+		button.gray_btn {
+			position: absolute;
+			top: 0;
+			right: 10px;;
+			margin: 0;
+		}
   }
   h2 {
     margin: 0 auto 1em;
@@ -133,7 +140,7 @@ form.newPlayer_form{
 	margin: 0 auto 1em;
 }
 monsters {
-	width: 50%;
+	width: 45%;
 	margin: 2em;
 }
 #monster {
@@ -143,6 +150,9 @@ monsters {
 	background: $yellow;
 	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
 	position: relative;
+	button.red_btn.main {
+		width: 100%;
+	}
 	@include backGrd;
 	.monsterCage {
 	  width: 100%;
@@ -173,7 +183,12 @@ monsters {
 		button {
 			position: absolute;
 			top: 5px;
-			right: 5px;
+			right: 70px;
+		}
+		button.gray_btn {
+			position: absolute;
+			top: 5px;
+			right: 0;
 		}
 	}
 }
@@ -231,7 +246,7 @@ monsters {
 	}
 }
 
-.empty_players_box {
+.empty_players_box, .empty_user_box {
 	background: $orange;
 	color: #fff;
 	text-align: center;

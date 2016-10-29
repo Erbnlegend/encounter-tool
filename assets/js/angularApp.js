@@ -49,7 +49,13 @@ app.controller('PlayerController', ['$scope', '$http', '$localStorage', function
     }else {
       return false
     }
-  }
+  };
+
+  $scope.removePlayer = function(item) {
+    var index = $scope.players.indexOf(item);
+    $scope.players.splice(index, 1);
+    $localStorage.players.splice(index, 1);
+  };
 
 }]);
 
@@ -127,5 +133,21 @@ app.controller('MonsterController', ['$scope', '$http', '$localStorage', functio
       $scope.showMonsterList = false
     }
   };
+
+  $scope.emptyUserCheck = function() {
+    if($scope.user.length == 0) {
+      return true
+    }else {
+      return false
+    }
+  };
+
+  $scope.removeMonster = function(item) {
+    var index = $scope.user.indexOf(item);
+    $scope.user.splice(index, 1);
+    $localStorage.user.splice(index, 1);
+  };
+
+
 
 }]);

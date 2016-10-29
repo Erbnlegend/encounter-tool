@@ -1,6 +1,7 @@
 <div ng-repeat="userMonsters in user track by $index">
   <div class="monsterCage">
     <div class="sectionTitle">
+      <button class="gray_btn" ng-click="removeMonster(userMonsters)">X</button>
       <h4>
         <strong>{{userMonsters.name}}</strong>
       </h4>
@@ -13,6 +14,7 @@
       </span>
       </p>
       <button class='blue_btn' ng-show="!monsterToggle" ng-click="monsterToggle = true">Open Stats</button>
+      <button class="red_btn" ng-show="monsterToggle" ng-click="monsterToggle = false">Close Stats</button>
     </div>
     <div class="monsterWrapper" ng-init="monsterToggle = false" ng-show="monsterToggle">
     <div class="section">
@@ -134,7 +136,7 @@
         {{userMonsters.languages}}
       </p>
     </div>
-    <button class="red_btn" ng-show="monsterToggle" ng-click="monsterToggle = false">Close Stats</button>
+
     <div class="section actions">
 
     </div>

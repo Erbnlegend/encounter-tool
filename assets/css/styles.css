@@ -278,7 +278,7 @@ form.newPlayer_form input[type=submit] {
 }
 
 monsters {
-  width: 55%;
+  width: 50%;
   margin: 2em 0 2em 2em;
 }
 
@@ -319,6 +319,11 @@ monsters {
   font-size: .9em;
   width: 35px;
 }
+#monster .monsterCage button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
 
 #monstersForm {
   min-width: 450px;
@@ -331,8 +336,8 @@ monsters {
 }
 
 #monstersList {
+  width: 100%;
   min-width: 450px;
-  max-width: 600px;
   padding: 0.5em;
   margin-top: 1em;
   background: #EDD094;

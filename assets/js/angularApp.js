@@ -1,4 +1,4 @@
-var app = angular.module('encounterTool', ['ngRoute','ngStorage']);
+var app = angular.module('encounterTool', ['ngRoute','ngStorage','ngAnimate']);
 
 app.controller('PlayerController', ['$scope', '$http', '$localStorage', function($scope, $http, $localStorage){
 
@@ -65,8 +65,8 @@ app.controller('bodyCtrl', ['$scope', '$http', '$localStorage', function($scope,
   ];
 
   $scope.rotatingBKGD = function() {
-    var randomIndex = Math.floor((Math.random() * $scope.BKGDimages.length) + 1);
-    return randomIndex
+    var randomIndex = Math.floor((Math.random() * $scope.BKGDimages.length));
+    return randomIndex;
   };
 
   console.log('randome number: '+$scope.BKGDimages[$scope.rotatingBKGD()])
@@ -98,13 +98,11 @@ app.controller('MonsterController', ['$scope', '$http', '$localStorage', functio
       }
     }
   };
-
   updateMonsters();
 
   $scope.addMonster = function(selectedMonster) {
     //Add Monster to user Array
     $scope.user.push(selectedMonster);
-
     $localStorage.user.push(selectedMonster);
   };
 
@@ -114,9 +112,7 @@ app.controller('MonsterController', ['$scope', '$http', '$localStorage', functio
       roundDex = 0;
     }
     var addRoll = roundDex + initRoll;
-
     $scope.addNewPlayer(name, ac, hit, addRoll);
-
   };
 
   $scope.numLimit = 30;

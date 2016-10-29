@@ -13,3 +13,11 @@ app.directive('monstersSearch', function() {
       controller: 'MonsterController'
   };
 });
+
+app.directive('monsterCage', function() {
+  return {
+      restrict: 'E',
+      templateUrl: './assets/js/views/monsterCage.html',
+      controller: 'MonsterController'
+  };
+});

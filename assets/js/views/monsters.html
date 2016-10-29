@@ -3,149 +3,8 @@
   <button class="red_btn" ng-click="toggleMonsterList()">Monsters List</button>
 </div>
 
-<div ng-repeat="userMonsters in user track by $index">
-  <div class="monsterCage">
+<monster-cage></monster-cage>
 
-    <div class="sectionTitle">
-      <h4>
-        <strong>{{userMonsters.name}}</strong>
-      </h4>
-      <p>
-        <span>
-            {{userMonsters.size}}
-            {{userMonsters.type}} {{userMonsters.subtype}},
-            {{userMonsters.alignment}}
-            (Challenge: {{userMonsters.challenge_rating}})
-      </span>
-      </p>
-    </div>
-
-    <div class="section">
-      <p><strong>Speed:</strong></p>
-      <p>
-        {{userMonsters.speed}}
-      </p>
-      <strong>HP:</strong>
-       <p>Max: {{userMonsters.hit_points}} <sup>({{userMonsters.hit_dice}})</sup></p>
-    </div>
-
-    <div class="section">
-      <p><strong>Attributes: </strong></p>
-      <p>
-        Str: {{userMonsters.strength}}
-        Dex: {{userMonsters.dexterity}}
-        Con: {{userMonsters.constitution}}
-        Int: {{userMonsters.intelligence}}
-        Wis: {{userMonsters.wisdom}}
-        Cha: {{userMonsters.charisma}}
-      </p>
-    </div>
-
-    <div class="section">
-      <p><strong>Saving Throws:</strong></p>
-      <p>
-        <span ng-if="userMonsters.strength_save">
-          Str +{{userMonsters.strength_save}},
-        </span>
-        <span ng-if="userMonsters.dexterity_save ">
-          Dex +{{userMonsters.dexterity_save}},
-        </span>
-        <span ng-if="userMonsters.constitution_save">
-          Con +{{userMonsters.constitution_save}},
-        </span>
-        <span ng-if="userMonsters.intelligence_save">
-          Int +{{userMonsters.intelligence_save}},
-        </span>
-        <span ng-if="userMonsters.wisdom_save">
-          Wis +{{userMonsters.wisdom_save}}
-          ,</span>
-        <span ng-if="userMonsters.charisma_save">
-          Cha +{{userMonsters.charisma_save}}
-        </span>
-      </p>
-
-      <p><strong>Skills: </strong></p>
-      <p>
-        <span ng-if="userMonsters.acrobatics">
-          +{{userMonsters.acrobatics}} Acrobatics (Dex),
-        </span>
-        <span ng-if="userMonsters.arcana">
-          +{{userMonsters.arcana}} Arcana (Int),
-        </span>
-        <span ng-if="userMonsters.athletics">
-          +{{userMonsters.athletics}} Athletics (Str),
-        </span>
-        <span ng-if="userMonsters.deception">
-          +{{userMonsters.deception}} Deception (Cha),
-        </span>
-        <span ng-if="userMonsters.history">
-          +{{userMonsters.history}} History (Int),
-        </span>
-        <span ng-if="userMonsters.insight">
-          +{{userMonsters.insight}} Insight (Wis),
-        </span>
-        <span ng-if="userMonsters.intimidation">
-          +{{userMonsters.intimidation}} Intimidation (Cha),
-        </span>
-        <span ng-if="userMonsters.investigation">
-          +{{userMonsters.investigation}}Investigation (Int),
-        </span>
-        <span ng-if="userMonsters.medicine">
-          +{{userMonsters.medicine}} Medicine (Wis),
-        </span>
-        <span ng-if="userMonsters.nature">
-          +{{userMonsters.nature}} Nature (Int),
-        </span>
-        <span ng-if="userMonsters.perception">
-          +{{userMonsters.perception}} Perception (Wis),
-        </span>
-        <span ng-if="userMonsters.performance">
-          +{{userMonsters.performance}}Performance (Cha),
-        </span>
-        <span ng-if="userMonsters.persuasion">
-          +{{userMonsters.persuasion}} Persuasion (Cha),
-        </span>
-        <span ng-if="userMonsters.religion">
-          +{{userMonsters.religion}} Religion (Int),
-        </span>
-        <span ng-if="userMonsters.stealth">
-          +{{userMonsters.stealth}} Stealth (Dex),
-        </span>
-        <span ng-if="userMonsters.survival">
-          +{{userMonsters.survival}} Survival (Wis)
-        </span>
-      </p>
-
-      <p><strong>Damage Resistance/Immunities/Vulnerabilites: </strong></p>
-      <p>
-        <span ng-if="userMonsters.damage_resistances">
-          Resistant to {{userMonsters.damage_resistances}},
-        </span>
-        <span ng-if="userMonsters.damage_immunities">
-          Immune to {{userMonsters.damage_immunities}},
-        </span>
-        <span ng-if="userMonsters.damage_vulnerabilities">
-          Vulnerable to {{userMonsters.damage_vulnerabilities}}
-        </span>
-      </p>
-
-      <p><strong>Senses: </strong></p>
-      <p>
-        {{userMonsters.senses}}
-      </p>
-
-      <p><strong>Languages: </strong></p>
-      <p>
-        {{userMonsters.languages}}
-      </p>
-    </div>
-
-    <div class="section actions">
-
-    </div>
-
-  </div>
-</div>
 </div>
 
 <div id="monstersList" ng-show="showMonsterList">
@@ -158,7 +17,7 @@
       + Add
     </button>
         <p>
-          {{monster.name}} ({{monster.type}})
+          {{monster.name}} <sup>({{monster.type}}, CL: {{monster.challenge_rating}})</sup>
         </p>
 
       <!--Monster Add Player Form-->

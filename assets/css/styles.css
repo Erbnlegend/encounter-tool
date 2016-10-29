@@ -508,5 +508,6 @@ h3 {
   font-size: 1.3em;
 }
 #license p {
+  padding: 0 1em;
   color: #bdc3c7;
 }

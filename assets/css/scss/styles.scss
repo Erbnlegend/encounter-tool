@@ -2,8 +2,8 @@
 @import 'variables';
 @import 'mixins';
 @import 'controls';
-@import 'players.scss';
-@import 'monsters.scss';
+@import 'players';
+@import 'monsters';
 
 // General Styles
 // list of images http://abduzeedo.com/badass-fantasy-illustrations-klaus-pillon
@@ -12,7 +12,6 @@ body {
 	background-image: url('../img/acaratus___city_of_veturoth___by_klauspillon-d8hkywg.jpg');
 	@include backGrd;
 	background-attachment: fixed;
-	position: relative;
 }
 
 .page_wrap {
@@ -70,7 +69,7 @@ h3 {
 // Styles for Empty Array
 // Get Started
 
-.empty_players_box, .empty_user_box {
+.empty_box {
 	background: $orange;
 	color: #fff;
 	text-align: center;
@@ -88,13 +87,21 @@ h3 {
 	text-align: center;
 	padding: 1em;
 	line-height: 1.2em;
+	@include mediaQ_small(860px) {
+		padding: .5em;
+	}
+	h2 {
+		display: block;
+		@include mediaQ_small(860px) {
+			display: none;
+		}
+	}
 	a {
 		color: $gray;
 	}
 }
 #license {
 	background: rgba(0,0,0,.6);
-	margin-bottom: 4.5em;
 	h1 {
 		font-size: 2em;
 	}

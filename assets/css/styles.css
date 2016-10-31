@@ -82,9 +82,9 @@ table {
   font-weight: bold;
   cursor: pointer;
   text-transform: capitalize;
-  transition: all 0.3s;
+  transition: all 0.3s linear;
   box-shadow: 5px 5px 10px -3px rgba(41, 41, 41, 0.5);
-  filter: sepia(0.4);
+  filter: sepia(0);
 }
 @media only screen and (max-width: 860px) {
   .btn, .red_btn, .blue_btn, .green_btn, .gray_btn, .orange_btn {
@@ -214,19 +214,30 @@ table {
   border: 1px solid #bdc3c7;
   background: #f4e3c0;
 }
-#encounter_box .players_list button.gray_btn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0;
-  font-size: 0.6em;
-}
 #encounter_box .players_list button.blue_btn {
   position: absolute;
   top: 0;
-  right: 10%;
+  right: 30px;
   margin: 0;
-  font-size: 0.6em;
+  font-size: .5em;
+}
+@media only screen and (max-width: 860px) {
+  #encounter_box .players_list button.blue_btn {
+    right: 40px;
+    font-size: .8em;
+  }
+}
+#encounter_box .players_list button.gray_btn {
+  position: absolute;
+  top: 0;
+  right: -5px;
+  margin: 0;
+  font-size: .5em;
+}
+@media only screen and (max-width: 860px) {
+  #encounter_box .players_list button.gray_btn {
+    font-size: .8em;
+  }
 }
 #encounter_box h2 {
   margin: 0 auto 1em;
@@ -304,6 +315,7 @@ monsters {
 #monster {
   width: 100%;
   padding: 1em;
+  margin-bottom: 1em;
   background: #EDD094;
   background-image: url("../img/Qdu8ZOl-wallpaper-old-paper.jpg");
   position: relative;
@@ -341,20 +353,52 @@ monsters {
   font-size: .9em;
   width: 35px;
 }
-#monster .monsterCage button {
-  position: absolute;
-  top: 5px;
-  right: 70px;
+#monster .monsterCage #monsterStats {
+  display: inline;
 }
 @media only screen and (max-width: 860px) {
-  #monster .monsterCage button {
-    right: 50px;
+  #monster .monsterCage #monsterStats {
+    display: block;
   }
 }
-#monster .monsterCage button.gray_btn {
+#monster .monsterCage #monsterStats button.blue_btn, #monster .monsterCage #monsterStats button.red_btn {
   position: absolute;
-  top: 5px;
+  top: -5px;
+  right: 90px;
+  font-size: .5em;
+}
+@media only screen and (max-width: 860px) {
+  #monster .monsterCage #monsterStats button.blue_btn, #monster .monsterCage #monsterStats button.red_btn {
+    position: static;
+    display: inline;
+    font-size: .8em;
+  }
+}
+#monster .monsterCage #monsterStats button.green_btn, #monster .monsterCage #monsterStats button.red_btn {
+  position: absolute;
+  top: -5px;
+  right: 33px;
+  font-size: .5em;
+}
+@media only screen and (max-width: 860px) {
+  #monster .monsterCage #monsterStats button.green_btn, #monster .monsterCage #monsterStats button.red_btn {
+    position: static;
+    display: inline;
+    font-size: .8em;
+  }
+}
+#monster .monsterCage #monsterStats button.gray_btn {
+  position: absolute;
+  top: -5px;
   right: 0;
+  font-size: .5em;
+}
+@media only screen and (max-width: 860px) {
+  #monster .monsterCage #monsterStats button.gray_btn {
+    position: static;
+    display: inline;
+    font-size: .8em;
+  }
 }
 
 #monstersForm {
@@ -427,7 +471,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  position: relative;
 }
 
 .page_wrap {
@@ -496,13 +539,25 @@ h3 {
   padding: 1em;
   line-height: 1.2em;
 }
+@media only screen and (max-width: 860px) {
+  #footer {
+    padding: .5em;
+  }
+}
+#footer h2 {
+  display: block;
+}
+@media only screen and (max-width: 860px) {
+  #footer h2 {
+    display: none;
+  }
+}
 #footer a {
   color: #bdc3c7;
 }
 
 #license {
   background: rgba(0, 0, 0, 0.6);
-  margin-bottom: 4.5em;
 }
 #license h1 {
   font-size: 2em;

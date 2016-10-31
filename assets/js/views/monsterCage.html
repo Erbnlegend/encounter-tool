@@ -1,7 +1,7 @@
 <div ng-repeat="userMonsters in user track by $index">
   <div class="monsterCage">
     <div class="sectionTitle">
-      <button class="gray_btn" ng-click="removeMonster(userMonsters)">X</button>
+
       <h4>
         <strong>{{userMonsters.name}}</strong>
       </h4>
@@ -12,11 +12,15 @@
             {{userMonsters.alignment}}
             (Challenge: {{userMonsters.challenge_rating}})
       </span>
+      <div class="monsterStats">
+        <button class="blue_btn" ng-click="showMonsterStats = showMonsterStats== 0 ? 1 : 0">Stats</button>
+        <button class="green_btn"  ng-click="showMonsterActions = showMonsterActions== 0 ? 1 : 0; showLegendButton = true">Abilities</button>
+        <button class="gray_btn" ng-click="removeMonster(userMonsters)">X</button>
+      </div>
       </p>
-      <button class='blue_btn' ng-show="!monsterToggle" ng-click="monsterToggle = true">Open Stats</button>
-      <button class="red_btn" ng-show="monsterToggle" ng-click="monsterToggle = false">Close Stats</button>
+
     </div>
-    <div class="monsterWrapper" ng-init="monsterToggle = false" ng-show="monsterToggle">
+    <div class="monsterWrapper" ng-init="showMonsterStats = false" ng-show="showMonsterStats">
     <div class="section">
       <p><strong>Speed:</strong></p>
       <p>
@@ -137,10 +141,70 @@
       </p>
     </div>
 
-    <div class="section actions">
-
+  </div>
+    <div ng-init="showMonsterActions = false" ng-show="showMonsterActions">
+        <div class="section" ng-repeat="userAbilities in userMonsters.special_abilities">
+          <p>
+            <strong>{{userAbilities.name}}:</strong>
+          </p>
+          <p>
+            {{userAbilities.desc}}
+          </p>
+          <p>
+            <strong>Attack Bonus: </strong>
+          </p>
+          <p>
+            {{userAbilities.attack_bonus}}
+          </p>
+          <p>
+            <strong>Damage Dice: </strong>
+          </p>
+          <p>
+            {{userAbilities.damage_dice}}
+          </p>
+          <p>
+            <strong>Damage Bonus: </strong>
+          </p>
+          <p>
+            {{userAbilities.damage_bonus}}
+          </p>
+      </div>
+      <div class="section" ng-repeat="userAttacks in userMonsters.actions">
+        <p>
+          <strong>{{userAttacks.name}}</strong>
+        </p>
+        <p>
+          {{userAttacks.desc}}
+        </p>
+        <p>
+          <strong>Attack Bonus: </strong>
+        </p>
+        <p>
+          {{userAttacks.attack_bonus}}
+        </p>
+        <p>
+          <strong>Damage Dice: </strong>
+        </p>
+        <p>
+          {{userAttacks.damage_dice}}
+        </p>
+        <p>
+          <strong>Damage Bonus: </strong>
+        </p>
+        <p>
+          {{userAttacks.damage_bonus}}
+        </p>
+      </div>
+      <div class="section" ng-repeat="legendAbilites in userMonsters.legendary_actions">
+        <strong><h4>Legendary Ability</h4></strong>
+          <p>
+            <strong>{{legendAbilites.name}}</strong>
+          </p>
+          <p>
+            {{legendAbilites.desc}}
+          </p>
+      </div>
     </div>
 
-  </div>
   </div>
 </div>

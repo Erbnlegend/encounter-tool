@@ -13,9 +13,9 @@
 	font-weight: bold;
 	cursor: pointer;
 	text-transform: capitalize;
-  transition: all 0.3s;
+  transition: all 0.3s linear;
   box-shadow: 5px 5px 10px -3px rgba(41,41,41,0.5);
-	filter: sepia(0.4);
+	filter: sepia(0);
 	@include mediaQ_small(860px) {
 		padding: 0.5em 1em;
 	}
@@ -85,4 +85,8 @@
 	input {
 		padding: 0.5em;
 	}
+}
+
+.active {
+	background: $red;
 }

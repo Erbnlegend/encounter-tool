@@ -8,7 +8,7 @@
         <p>Initiative: </p>
       </div>
       <div ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 3000, 'blur': 0 } }">
-        <div class="empty_players_box" ng-show="emptyPlayersCheck()">
+        <div class="empty_box" ng-show="emptyPlayersCheck()">
           No players yet, click the fancy button below to get going
         </div>
         <div class="players_list" ng-repeat="player in players | orderBy: '-initiative'">
@@ -37,7 +37,7 @@
             <button class="gray_btn" ng-click="removePlayer(player)">X</button>
 
         </div>
-        <button class="green_btn" type="submit" ng-click="showPlayerForm = true">+ Add</button>
+        <button class="green_btn" type="submit" ng-click="showPlayerForm = true">+ Add Player</button>
       </div>
     </div>
     <monsters></monsters>

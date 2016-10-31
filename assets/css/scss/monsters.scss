@@ -16,7 +16,6 @@ monsters {
 	}
 	@include mediaQ_medium(861px, 900px) {
 		width: 100%;
-		margin: 2em;
 	}
 	@include mediaQ_large(901px) {
 		width: 45%;
@@ -28,6 +27,7 @@ monsters {
 #monster {
 	width: 100%;
 	padding: 1em;
+	margin-bottom: 1em;
 	background: $yellow;
 	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
 	position: relative;
@@ -44,6 +44,7 @@ monsters {
 	  position: relative;
 	  .sectionTitle, .section {
 	    margin-top: .7em;
+			border-bottom: 1px solid $dark_gray;
 	  }
 	  h4 {
 			display: inline;
@@ -63,18 +64,44 @@ monsters {
 			font-size: .9em;
 			width: 35px;
 		}
-		button {
-			position: absolute;
-			top: 5px;
-			right: 70px;
+		.monsterStats {
+			display: inline;
 			@include mediaQ_small(860px) {
-				right: 50px;
+				display: block;
 			}
-		}
-		button.gray_btn {
-			position: absolute;
-			top: 5px;
-			right: 0;
+			button.blue_btn, button.red_btn {
+				position: absolute;
+				top: -5px;
+				right: 90px;
+				font-size: .5em;
+				@include mediaQ_small(860px) {
+					position: static;
+					display: inline;
+					font-size: .8em;
+				}
+			}
+			button.green_btn, button.red_btn {
+				position: absolute;
+				top: -5px;
+				right: 33px;
+				font-size: .5em;
+				@include mediaQ_small(860px) {
+					position: static;
+					display: inline;
+					font-size: .8em;
+				}
+			}
+			button.gray_btn {
+				position: absolute;
+				top: -5px;
+				right: 0;
+				font-size: .5em;
+				@include mediaQ_small(860px) {
+					position: static;
+					display: inline;
+	        font-size: .8em;
+	      }
+			}
 		}
 	}
 }

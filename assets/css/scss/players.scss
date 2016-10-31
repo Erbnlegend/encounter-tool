@@ -45,19 +45,26 @@
 				background: lighten($yellow, 10%);
       }
     }
-		button.gray_btn {
-			position: absolute;
-			top: 0;
-			right: 0;
-			margin: 0;
-      font-size: .6em
-		}
     button.blue_btn {
       position: absolute;
       top: 0;
-      right: 10%;
+      right: 30px;
       margin: 0;
-      font-size: .6em
+      font-size: .5em;
+      @include mediaQ_small(860px) {
+        right: 40px;
+        font-size: .8em;
+      }
+    }
+    button.gray_btn {
+      position: absolute;
+      top: 0;
+      right: -5px;
+      margin: 0;
+      font-size: .5em;
+      @include mediaQ_small(860px) {
+        font-size: .8em;
+      }
     }
   }
   h2 {

@@ -18,7 +18,7 @@ monsters {
 		width: 100%;
 	}
 	@include mediaQ_large(901px) {
-		width: 45%;
+		width: 50%;
 	}
 }
 
@@ -43,8 +43,9 @@ monsters {
 		border-bottom: 1px solid $dark_gray;
 	  position: relative;
 	  .sectionTitle, .section {
-	    margin-top: .7em;
+	    margin: .7em 0;
 			border-bottom: 1px solid $dark_gray;
+			@include clearfix;
 	  }
 	  h4 {
 			display: inline;
@@ -58,49 +59,74 @@ monsters {
 			font-size: .9em;
 		}
 		label {
-			font-size: .6em;
+			font-size: .8em;
+			@include mediaQ_small(860px) {
+				font-size: 1em;
+			}
+		}
+		sup input {
+			width: 45px;
 		}
 		input {
 			font-size: .9em;
-			width: 35px;
+			padding: 5px;
+			background: transparent;
+			border: none;
+		}
+		input[type=number] {
+			width: 50px;
 		}
 		.monsterStats {
-			display: inline;
+			position: absolute;
+			top: 0;
+			right: 0;
 			@include mediaQ_small(860px) {
-				display: block;
+				position: static;
 			}
 			button.blue_btn, button.red_btn {
-				position: absolute;
-				top: -5px;
-				right: 90px;
-				font-size: .5em;
+				font-size: .6em;
 				@include mediaQ_small(860px) {
 					position: static;
-					display: inline;
 					font-size: .8em;
 				}
 			}
 			button.green_btn, button.red_btn {
-				position: absolute;
-				top: -5px;
-				right: 33px;
-				font-size: .5em;
+				font-size: .6em;
 				@include mediaQ_small(860px) {
-					position: static;
-					display: inline;
 					font-size: .8em;
 				}
 			}
 			button.gray_btn {
-				position: absolute;
-				top: -5px;
-				right: 0;
-				font-size: .5em;
+				font-size: .6em;
 				@include mediaQ_small(860px) {
-					position: static;
-					display: inline;
 	        font-size: .8em;
 	      }
+			}
+		}
+		#skills {
+			ul {
+				width: 33%;
+				display: inline;
+				float: left;
+				margin: .5em 0;
+				@include mediaQ_small(550px) {
+					width: 100%;
+				}
+				@include mediaQ_medium(551px, 1340px) {
+					width: 50%;
+				}
+			}
+			li {
+				font-size: .8em;
+				@include mediaQ_small(860px) {
+					font-size: 1em;
+				}
+			}
+			input {
+				width: 40px;
+				@include mediaQ_small(860px) {
+					width: 55px;
+				}
 			}
 		}
 	}

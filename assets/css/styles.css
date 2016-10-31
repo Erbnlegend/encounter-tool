@@ -259,7 +259,7 @@ monsters {
       width: 100%; } }
   @media only screen and (min-width: 901px) {
     monsters {
-      width: 45%; } }
+      width: 50%; } }
 
 #monster {
   width: 100%;
@@ -279,8 +279,11 @@ monsters {
     border-bottom: 1px solid #414141;
     position: relative; }
     #monster .monsterCage .sectionTitle, #monster .monsterCage .section {
-      margin-top: .7em;
-      border-bottom: 1px solid #414141; }
+      margin: .7em 0;
+      border-bottom: 1px solid #414141;
+      content: '';
+      display: block;
+      clear: both; }
     #monster .monsterCage h4 {
       display: inline;
       font-size: 1.3em; }
@@ -290,45 +293,63 @@ monsters {
       line-height: 1.5em;
       font-size: .9em; }
     #monster .monsterCage label {
-      font-size: .6em; }
+      font-size: .8em; }
+      @media only screen and (max-width: 860px) {
+        #monster .monsterCage label {
+          font-size: 1em; } }
+    #monster .monsterCage sup input {
+      width: 45px; }
     #monster .monsterCage input {
       font-size: .9em;
-      width: 35px; }
+      padding: 5px;
+      background: transparent;
+      border: none; }
+    #monster .monsterCage input[type=number] {
+      width: 50px; }
     #monster .monsterCage .monsterStats {
-      display: inline; }
+      position: absolute;
+      top: 0;
+      right: 0; }
       @media only screen and (max-width: 860px) {
         #monster .monsterCage .monsterStats {
-          display: block; } }
+          position: static; } }
       #monster .monsterCage .monsterStats button.blue_btn, #monster .monsterCage .monsterStats button.red_btn {
-        position: absolute;
-        top: -5px;
-        right: 90px;
-        font-size: .5em; }
+        font-size: .6em; }
         @media only screen and (max-width: 860px) {
           #monster .monsterCage .monsterStats button.blue_btn, #monster .monsterCage .monsterStats button.red_btn {
             position: static;
-            display: inline;
             font-size: .8em; } }
       #monster .monsterCage .monsterStats button.green_btn, #monster .monsterCage .monsterStats button.red_btn {
-        position: absolute;
-        top: -5px;
-        right: 33px;
-        font-size: .5em; }
+        font-size: .6em; }
         @media only screen and (max-width: 860px) {
           #monster .monsterCage .monsterStats button.green_btn, #monster .monsterCage .monsterStats button.red_btn {
-            position: static;
-            display: inline;
             font-size: .8em; } }
       #monster .monsterCage .monsterStats button.gray_btn {
-        position: absolute;
-        top: -5px;
-        right: 0;
-        font-size: .5em; }
+        font-size: .6em; }
         @media only screen and (max-width: 860px) {
           #monster .monsterCage .monsterStats button.gray_btn {
-            position: static;
-            display: inline;
             font-size: .8em; } }
+    #monster .monsterCage #skills ul {
+      width: 33%;
+      display: inline;
+      float: left;
+      margin: .5em 0; }
+      @media only screen and (max-width: 550px) {
+        #monster .monsterCage #skills ul {
+          width: 100%; } }
+      @media only screen and (min-width: 551px) and (max-width: 1340px) {
+        #monster .monsterCage #skills ul {
+          width: 50%; } }
+    #monster .monsterCage #skills li {
+      font-size: .8em; }
+      @media only screen and (max-width: 860px) {
+        #monster .monsterCage #skills li {
+          font-size: 1em; } }
+    #monster .monsterCage #skills input {
+      width: 40px; }
+      @media only screen and (max-width: 860px) {
+        #monster .monsterCage #skills input {
+          width: 55px; } }
 
 #monstersForm {
   width: 60%;

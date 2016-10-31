@@ -1,16 +1,18 @@
-<div ng-repeat="userMonsters in user track by $index">
+<div ng-repeat="userMonsters in user">
   <div class="monsterCage">
     <div class="sectionTitle">
 
       <h4>
-        <strong>{{userMonsters.name}}</strong>
+        <strong><input ng-model="userMonsters.monsterArray.name"
+        ng-value="userMonsters.monsterArray.name"
+        ng-change="change(userMonsters, 'name')"</strong>
       </h4>
       <p>
         <span>
-            {{userMonsters.size}}
-            {{userMonsters.type}} {{userMonsters.subtype}},
-            {{userMonsters.alignment}}
-            (Challenge: {{userMonsters.challenge_rating}})
+            {{userMonsters.monsterArray.size}}
+            {{userMonsters.monsterArray.type}} {{userMonsters.monsterArray.subtype}},
+            {{userMonsters.monsterArray.alignment}}
+            (Challenge: {{userMonsters.monsterArray.challenge_rating}})
       </span>
       <div class="monsterStats">
         <button class="blue_btn" ng-click="showMonsterStats = showMonsterStats== 0 ? 1 : 0" ng-class="{active:showMonsterStats == 1}">Stats</button>
@@ -24,126 +26,239 @@
     <div class="section">
       <p><strong>Speed:</strong></p>
       <p>
-        {{userMonsters.speed}}
+        <input ng-model="userMonsters.monsterArray.speed" ng-value="userMonsters.monsterArray.speed" ng-change="change(userMonsters, 'speed')" />
       </p>
       <strong>HP:</strong>
-       <p>Max: {{userMonsters.hit_points}} <sup>({{userMonsters.hit_dice}})</sup></p>
+       <p>Max:
+         <input type="number" ng-model="userMonsters.monsterArray.hit_points" ng-value="userMonsters.monsterArray.hit_points"
+         ng-change="change(userMonsters, 'hit_points')" />
+          <sup>
+            (<input ng-model="userMonsters.monsterArray.hit_dice" ng-value="userMonsters.monsterArray.hit_dice"
+            ng-change="change(userMonsters, 'hit_dice')" />)
+          </sup></p>
     </div>
 
     <div class="section">
       <p><strong>Attributes: </strong></p>
-      <p>
-        Str: {{userMonsters.strength}}
-        Dex: {{userMonsters.dexterity}}
-        Con: {{userMonsters.constitution}}
-        Int: {{userMonsters.intelligence}}
-        Wis: {{userMonsters.wisdom}}
-        Cha: {{userMonsters.charisma}}
-      </p>
+        <label>Str:
+        <input type="number"
+          ng-model="userMonsters.monsterArray.strength" ng-value="userMonsters.monsterArray.strength"
+          ng-change="change(userMonsters, 'strength')" />
+        </label>
+        <label>Dex:
+        <input type="number"
+          ng-model="userMonsters.monsterArray.dexterity" ng-value="userMonsters.monsterArray.dexterity"
+          ng-change="change(userMonsters, 'dexterity')" />
+        </label>
+        <label>Con:
+        <input type="number"
+          ng-model="userMonsters.monsterArray.constitution" ng-value="userMonsters.monsterArray.constitution"
+          ng-change="change(userMonsters, 'constitution')" />
+        </label>
+        <label>Int:
+        <input type="number"
+          ng-model="userMonsters.monsterArray.intelligence" ng-value="userMonsters.monsterArray.intelligence"
+          ng-change="change(userMonsters, 'intelligence')" />
+        </label>
+        <label>Wis:
+        <input type="number"
+          ng-model="userMonsters.monsterArray.wisdom" ng-value="userMonsters.monsterArray.wisdom"
+          ng-change="change(userMonsters, 'wisdom')" />
+        </label>
+        <label>Cha:
+        <input type="number"
+          ng-model="userMonsters.monsterArray.charisma" ng-value="userMonsters.monsterArray.charisma"
+          ng-change="change(userMonsters, 'charisma')" />
+        </label>
     </div>
 
     <div class="section">
       <p><strong>Saving Throws:</strong></p>
-      <p>
-        <span ng-if="userMonsters.strength_save">
-          Str +{{userMonsters.strength_save}},
-        </span>
-        <span ng-if="userMonsters.dexterity_save ">
-          Dex +{{userMonsters.dexterity_save}},
-        </span>
-        <span ng-if="userMonsters.constitution_save">
-          Con +{{userMonsters.constitution_save}},
-        </span>
-        <span ng-if="userMonsters.intelligence_save">
-          Int +{{userMonsters.intelligence_save}},
-        </span>
-        <span ng-if="userMonsters.wisdom_save">
-          Wis +{{userMonsters.wisdom_save}}
-          ,</span>
-        <span ng-if="userMonsters.charisma_save">
-          Cha +{{userMonsters.charisma_save}}
-        </span>
-      </p>
+        <label>
+          Str+<input type="number"
+          ng-model="userMonsters.monsterArray.strength_save"
+          ng-model="userMonsters.monsterArray.strength_save"
+          ng-change="change(userMonsters, 'strength_save')" />
+        </label>
+        <label>
+          Dex+<input type="number"
+          ng-model="userMonsters.monsterArray.dexterity_save"
+          ng-model="userMonsters.monsterArray.dexterity_save"
+          ng-change="change(userMonsters, 'dexterity_save')" />
+        </label>
+        <label>
+          Con+<input type="number"
+          ng-model="userMonsters.monsterArray.constitution_save"
+          ng-model="userMonsters.monsterArray.constitution_save"
+          ng-change="change(userMonsters, 'constitution_save')" />
+        </label>
+        <label>
+          Int+<input type="number"
+          ng-model="userMonsters.monsterArray.intelligence_save"
+          ng-model="userMonsters.monsterArray.intelligence_save"
+          ng-change="change(userMonsters, 'intelligence_save')" />
+        </label>
+        <label>
+          Wis+<input type="number"
+          ng-model="userMonsters.monsterArray.wisdom_save"
+          ng-model="userMonsters.monsterArray.wisdom_save"
+          ng-change="change(userMonsters, 'wisdom_save')" />
+        </label>
+        <label>
+          Cha+<input type="number"
+          ng-model="userMonsters.monsterArray.charisma_save"
+          ng-model="userMonsters.monsterArray.charisma_save"
+          ng-change="change(userMonsters, 'charisma_save')" />
+        </label>
 
-      <p><strong>Skills: </strong></p>
-      <p>
-        <span ng-if="userMonsters.acrobatics">
-          +{{userMonsters.acrobatics}} Acrobatics (Dex),
-        </span>
-        <span ng-if="userMonsters.arcana">
-          +{{userMonsters.arcana}} Arcana (Int),
-        </span>
-        <span ng-if="userMonsters.athletics">
-          +{{userMonsters.athletics}} Athletics (Str),
-        </span>
-        <span ng-if="userMonsters.deception">
-          +{{userMonsters.deception}} Deception (Cha),
-        </span>
-        <span ng-if="userMonsters.history">
-          +{{userMonsters.history}} History (Int),
-        </span>
-        <span ng-if="userMonsters.insight">
-          +{{userMonsters.insight}} Insight (Wis),
-        </span>
-        <span ng-if="userMonsters.intimidation">
-          +{{userMonsters.intimidation}} Intimidation (Cha),
-        </span>
-        <span ng-if="userMonsters.investigation">
-          +{{userMonsters.investigation}}Investigation (Int),
-        </span>
-        <span ng-if="userMonsters.medicine">
-          +{{userMonsters.medicine}} Medicine (Wis),
-        </span>
-        <span ng-if="userMonsters.nature">
-          +{{userMonsters.nature}} Nature (Int),
-        </span>
-        <span ng-if="userMonsters.perception">
-          +{{userMonsters.perception}} Perception (Wis),
-        </span>
-        <span ng-if="userMonsters.performance">
-          +{{userMonsters.performance}}Performance (Cha),
-        </span>
-        <span ng-if="userMonsters.persuasion">
-          +{{userMonsters.persuasion}} Persuasion (Cha),
-        </span>
-        <span ng-if="userMonsters.religion">
-          +{{userMonsters.religion}} Religion (Int),
-        </span>
-        <span ng-if="userMonsters.stealth">
-          +{{userMonsters.stealth}} Stealth (Dex),
-        </span>
-        <span ng-if="userMonsters.survival">
-          +{{userMonsters.survival}} Survival (Wis)
-        </span>
-      </p>
+        <div id="skills" class="section">
+          <p><strong>Skills: </strong></p>
+          <ul>
+            <li>
+              +<input type="number"
+              ng-model="userMonsters.monsterArray.acrobatics"
+              ng-model="userMonsters.monsterArray.acrobatics"
+              ng-change="change(userMonsters, 'acrobatics')" /> Acrobatics (Dex)
+            </li>
+            <li>
+              +<input type="number"
+              ng-model="userMonsters.monsterArray.arcana"
+              ng-model="userMonsters.monsterArray.arcana"
+              ng-change="change(userMonsters, 'arcana')" /> Arcana (Int)
+            </li>
+            <li>
+              +<input type="number"
+              ng-model="userMonsters.monsterArray.athletics"
+              ng-model="userMonsters.monsterArray.athletics"
+              ng-change="change(userMonsters, 'athletics')" /> Athletics (Str)
+            </li>
+            <li>
+              +<input type="number"
+              ng-model="userMonsters.monsterArray.deception"
+              ng-model="userMonsters.monsterArray.deception"
+              ng-change="change(userMonsters, 'deception')" /> Deception (Cha)
+            </li>
+          </ul>
+          <ul>
+            <li>
+              +<input type="number"
+              ng-model="userMonsters.monsterArray.history"
+              ng-model="userMonsters.monsterArray.history"
+              ng-change="change(userMonsters, 'history')" /> History (Int)
+            </li>
+            <li>
+              +<input type="number"
+              ng-model="userMonsters.monsterArray.insight"
+              ng-model="userMonsters.monsterArray.insight"
+              ng-change="change(userMonsters, 'insight')" /> Insight (Wis)
+            </li>
+            <li>
+              +<input type="number"
+              ng-model="userMonsters.monsterArray.intimidation"
+              ng-model="userMonsters.monsterArray.intimidation"
+              ng-change="change(userMonsters, 'intimidation')" /> Intimidation (Cha)
+            </li>
+            <li>
+              +<input type="number"
+              ng-model="userMonsters.monsterArray.investigation"
+              ng-model="userMonsters.monsterArray.investigation"
+              ng-change="change(userMonsters, 'investigation')" /> Investigation (Int)
+            </li>
+          </ul>
+          <ul>
+            <li>
+              +<input type="number"
+              ng-model="userMonsters.monsterArray.medicine"
+              ng-model="userMonsters.monsterArray.medicine"
+              ng-change="change(userMonsters, 'medicine')" /> Medicine (Wis)
+            </li>
+            <li>
+              +<input type="number"
+              ng-model="userMonsters.monsterArray.nature"
+              ng-model="userMonsters.monsterArray.nature"
+              ng-change="change(userMonsters, 'nature')" /> Nature (Int)
+            </li>
+            <li>
+              +<input type="number"
+              ng-model="userMonsters.monsterArray.perception"
+              ng-model="userMonsters.monsterArray.perception"
+              ng-change="change(userMonsters, 'perception')" /> Perception (Wis)
+            </li>
+            <li>
+              +<input type="number"
+              ng-model="userMonsters.monsterArray.performance"
+              ng-model="userMonsters.monsterArray.performance"
+              ng-change="change(userMonsters, 'performance')" /> Performance (Cha)
+            </li>
+          </ul>
+          <ul>
+            <li>
+              +<input type="number"
+              ng-model="userMonsters.monsterArray.persuasion"
+              ng-model="userMonsters.monsterArray.persuasion"
+              ng-change="change(userMonsters, 'persuasion')" /> Persuasion (Cha)
+            </li>
+            <li>
+              +<input type="number"
+              ng-model="userMonsters.monsterArray.religion"
+              ng-model="userMonsters.monsterArray.religion"
+              ng-change="change(userMonsters, 'religion')" /> Religion (Int)
+            </li>
+            <li>
+              +<input type="number"
+              ng-model="userMonsters.monsterArray.stealth"
+              ng-model="userMonsters.monsterArray.stealth"
+              ng-change="change(userMonsters, 'stealth')" /> Stealth (Dex)
+            </li>
+            <li>
+              +<input type="number"
+              ng-model="userMonsters.monsterArray.survival"
+              ng-model="userMonsters.monsterArray.survival"
+              ng-change="change(userMonsters, 'survival')" /> Survival (Wis)
+            </li>
+          </ul>
+        </div>
 
-      <p><strong>Damage Resistance/Immunities/Vulnerabilites: </strong></p>
-      <p>
-        <span ng-if="userMonsters.damage_resistances">
-          Resistant to {{userMonsters.damage_resistances}},
-        </span>
-        <span ng-if="userMonsters.damage_immunities">
-          Immune to {{userMonsters.damage_immunities}},
-        </span>
-        <span ng-if="userMonsters.damage_vulnerabilities">
-          Vulnerable to {{userMonsters.damage_vulnerabilities}}
-        </span>
-      </p>
+        <div class="section">
+          <p><strong>Damage Resistance/Immunities/Vulnerabilites: </strong></p>
+            <label>
+              Resistant to <input
+              ng-model="userMonsters.monsterArray.damage_resistances"
+              ng-model="userMonsters.monsterArray.damage_resistances"
+              ng-change="change(userMonsters, 'damage_resistances')" />
+            </label>
+            <br />
+            <label>
+              Immune to <input
+              ng-model="userMonsters.monsterArray.damage_immunities"
+              ng-model="userMonsters.monsterArray.damage_immunities"
+              ng-change="change(userMonsters, 'damage_immunities')" />
+            </label>
+            <br />
+            <label>
+              Vulnerable to <input
+              ng-model="userMonsters.monsterArray.survival"
+              ng-model="userMonsters.monsterArray.survival"
+              ng-change="change(userMonsters, 'survival')" />
+            </label>
+        </div>
 
       <p><strong>Senses: </strong></p>
-      <p>
-        {{userMonsters.senses}}
-      </p>
+      <input
+      ng-model="userMonsters.monsterArray.senses"
+      ng-model="userMonsters.monsterArray.senses"
+      ng-change="change(userMonsters, 'senses')" />
 
       <p><strong>Languages: </strong></p>
-      <p>
-        {{userMonsters.languages}}
-      </p>
+      <input
+      ng-model="userMonsters.monsterArray.languages"
+      ng-model="userMonsters.monsterArray.languages"
+      ng-change="change(userMonsters, 'languages')" />
     </div>
 
   </div>
     <div ng-init="showMonsterActions = false" ng-show="showMonsterActions">
-        <div class="section" ng-repeat="userAbilities in userMonsters.special_abilities">
+        <div class="section" ng-repeat="userAbilities in userMonsters.monsterArray.special_abilities">
           <p>
             <strong>{{userAbilities.name}}:</strong>
           </p>
@@ -169,7 +284,7 @@
             {{userAbilities.damage_bonus}}
           </p>
       </div>
-      <div class="section" ng-repeat="userAttacks in userMonsters.actions">
+      <div class="section" ng-repeat="userAttacks in userMonsters.monsterArray.actions">
         <p>
           <strong>{{userAttacks.name}}</strong>
         </p>
@@ -195,7 +310,7 @@
           {{userAttacks.damage_bonus}}
         </p>
       </div>
-      <div class="section" ng-repeat="legendAbilites in userMonsters.legendary_actions">
+      <div class="section" ng-repeat="legendAbilites in userMonsters.monsterArray.legendary_actions">
         <strong><h4>Legendary Ability</h4></strong>
           <p>
             <strong>{{legendAbilites.name}}</strong>

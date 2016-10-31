@@ -1,24 +1,28 @@
 /*
-Error: Undefined variable: "$yellow".
-        on line 6 of F:\Library\Documents\Web Projects\In progress - projects\github\encounter-tool\assets\css\scss\players.scss
+Error: Undefined mixin 'mediaQ_small'.
+        on line 13 of F:\Library\Documents\Web Projects\In progress - projects\github\encounter-tool\assets\css\scss\monsters.scss, in `mediaQ_small'
+        from line 13 of F:\Library\Documents\Web Projects\In progress - projects\github\encounter-tool\assets\css\scss\monsters.scss
 
-1: // Static Styles
-2: #encounter_box {
-3:   padding: 1em;
-4: 	margin: 2em;
-5: 	align-self: baseline;
-6: 	background: $yellow;
-7: 	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
-8:   @include backGrd;
-9:   @include mediaQ_small(860px) {
-10:     padding: 1em;
-11:     margin: 2em 0;
+8: 
+9: // Space out the monsters directive
+10: 
+11: monsters {
+12: 	margin: 2em;
+13: 	@include mediaQ_small(860px) {
+14: 		width: 100%;
+15: 		margin: 0;
+16: 	}
+17: 	@include mediaQ_medium(861px, 900px) {
+18: 		width: 100%;
 
 Backtrace:
-F:\Library\Documents\Web Projects\In progress - projects\github\encounter-tool\assets\css\scss\players.scss:6
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/script/tree/variable.rb:49:in `_perform'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/script/tree/node.rb:50:in `perform'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:384:in `visit_prop'
+F:\Library\Documents\Web Projects\In progress - projects\github\encounter-tool\assets\css\scss\monsters.scss:13:in `mediaQ_small'
+F:\Library\Documents\Web Projects\In progress - projects\github\encounter-tool\assets\css\scss\monsters.scss:13
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:338:in `block in visit_mixin'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:98:in `block in with_mixin'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:98:in `with_mixin'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:336:in `visit_mixin'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `block in with_base'
@@ -62,4 +66,4 @@ C:/Program Files (x86)/Koala/bin/sass:18:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$yellow\".\A         on line 6 of F:\Library\Documents\Web Projects\In progress - projects\github\encounter-tool\assets\css\scss\players.scss\A \A 1: // Static Styles\A 2: #encounter_box {\A 3:   padding: 1em;\A 4: 	margin: 2em;\A 5: 	align-self: baseline;\A 6: 	background: $yellow;\A 7: 	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');\A 8:   @include backGrd;\A 9:   @include mediaQ_small(860px) {\A 10:     padding: 1em;\A 11:     margin: 2em 0;"; }
+  content: "Error: Undefined mixin 'mediaQ_small'.\A         on line 13 of F:\Library\Documents\Web Projects\In progress - projects\github\encounter-tool\assets\css\scss\monsters.scss, in `mediaQ_small'\A         from line 13 of F:\Library\Documents\Web Projects\In progress - projects\github\encounter-tool\assets\css\scss\monsters.scss\A \A 8: \A 9: // Space out the monsters directive\A 10: \A 11: monsters {\A 12: 	margin: 2em;\A 13: 	@include mediaQ_small(860px) {\A 14: 		width: 100%;\A 15: 		margin: 0;\A 16: 	}\A 17: 	@include mediaQ_medium(861px, 900px) {\A 18: 		width: 100%;"; }

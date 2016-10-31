@@ -15,22 +15,22 @@
             <input ng-model="player.name"
             type="text"
             ng-value="player.name"
-            ng-change="changeName(player)"
+            ng-change="change(player, 'name')"
             />
             <input ng-model="player.ac"
             type="number"
             ng-value="player.ac"
-            ng-change="changeAc(player)"
+            ng-change="change(player, 'ac')"
             />
             <input ng-model="player.health"
             type="number"
             ng-value="player.health"
-            ng-change="changeHealth(player)"
+            ng-change="change(player, 'health')"
             />
             <input ng-model="player.initiative"
             type="number"
             ng-value="player.initiative"
-            ng-change="changeInitiative(player)"
+            ng-change="change(player, 'initiative')"
             />
             <!--Clone and Delete-->
             <button class="blue_btn" ng-click="dupePlayer(player.name,player.ac,player.health,player.initiative)">Clone</button>

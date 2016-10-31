@@ -23,9 +23,13 @@
     p {
       text-align: center;
       display: inline-block;
-      width: (98%/5.5);
+      width: (98%/5);
       margin-bottom: 1em;
       text-decoration: underline;
+      @include mediaQ_medium(861px,1070px) {
+        width: (98%/5.5);
+        font-size: .9em;
+      }
     }
   }
   .players_list {
@@ -33,13 +37,16 @@
     margin-bottom: 1.5em;
 		position: relative;
     input {
-      width: (98% / 5.5);
+      width: (98% / 5);
       border: 1px solid transparent;
       text-align: center;
       padding: 0.3em;
 			background: transparent;
       transition: all 0.2s;
       font-size: .8em;
+      @include mediaQ_medium(861px,1070px) {
+        width: (98%/5.5);
+      }
       &:hover {
         border: 1px solid $gray;
 				background: lighten($yellow, 10%);

@@ -12,6 +12,8 @@ body {
 	background-image: url('../img/acaratus___city_of_veturoth___by_klauspillon-d8hkywg.jpg');
 	@include backGrd;
 	background-attachment: fixed;
+	padding-bottom: 5em;
+  min-height: 120vh;
 }
 
 .page_wrap {

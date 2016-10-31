@@ -13,8 +13,8 @@
             (Challenge: {{userMonsters.challenge_rating}})
       </span>
       <div class="monsterStats">
-        <button class="blue_btn" ng-click="showMonsterStats = showMonsterStats== 0 ? 1 : 0">Stats</button>
-        <button class="green_btn"  ng-click="showMonsterActions = showMonsterActions== 0 ? 1 : 0; showLegendButton = true">Abilities</button>
+        <button class="blue_btn" ng-click="showMonsterStats = showMonsterStats== 0 ? 1 : 0" ng-class="{active:showMonsterStats == 1}">Stats</button>
+        <button class="green_btn"  ng-click="showMonsterActions = showMonsterActions== 0 ? 1 : 0; showLegendButton = true" ng-class="{active:showMonsterActions == 1}">Abilities</button>
         <button class="gray_btn" ng-click="removeMonster(userMonsters)">X</button>
       </div>
       </p>

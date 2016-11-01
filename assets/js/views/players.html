@@ -44,16 +44,16 @@
   </div>
 
 <div class="overlayForm" ng-init="showPlayerForm = false" ng-show="showPlayerForm">
-  <form class="newPlayer_form"  ng-submit="addNewPlayer(playerName, playerArmorClass, playerHealth, playerInitiative)">
+  <form class="newPlayer_form"  ng-submit="addNewPlayer(playerName, playerArmorClass, playerHealth, playerInitiative);showPlayerForm = false">
     <div class="close_btn" ng-click="showPlayerForm = false">
       <div></div>
       <div></div>
     </div>
     <h3>Add New Player</h3>
-    <input type="text" placeholder="Name" ng-model="playerName"/>
-    <input type="number" placeholder="Armor class" ng-model="playerArmorClass"/>
-    <input type="number" placeholder="Hit Points" ng-model="playerHealth"/>
-    <input type="number" placeholder="Initiative" ng-model="playerInitiative"/>
-    <input ng-click="showPlayerForm = false" type="submit" value="+ Add Player"/>
+    <input type="text" placeholder="Name" ng-model="playerName" required/>
+    <input type="number" placeholder="Armor class" ng-model="playerArmorClass" required/>
+    <input type="number" placeholder="Hit Points" ng-model="playerHealth" required/>
+    <input type="number" placeholder="Initiative" ng-model="playerInitiative" required/>
+    <input type="submit" value="+ Add Player"/>
   </form>
 </div>

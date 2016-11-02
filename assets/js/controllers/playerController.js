@@ -18,19 +18,19 @@ app.controller('PlayerController', ['$scope', '$http', '$localStorage', function
   $scope.addNewPlayer = function(playerName, playerArmorClass, playerHealth, playerInitiative) {
     $scope.players.push(
       {
-      	"name": playerName,
-      	"ac": playerArmorClass,
-        "health": playerHealth,
-      	"initiative": playerInitiative
+      	name: playerName,
+      	ac: playerArmorClass,
+        health: playerHealth,
+      	initiative: playerInitiative
       }
     );
 
     $localStorage.players.push(
       {
-      	"name": playerName,
-      	"ac": playerArmorClass,
-        "health": playerHealth,
-      	"initiative": playerInitiative
+      	name: playerName,
+      	ac: playerArmorClass,
+        health: playerHealth,
+      	initiative: playerInitiative
       }
     );
 
@@ -44,8 +44,9 @@ app.controller('PlayerController', ['$scope', '$http', '$localStorage', function
 // Update the input values on change
 // Needed so that changes are kept on change of initial player creation
 // Fixes issue with updating local storage right after player is created
-  $scope.change = function(player, field) {
+  $scope.changePlayer = function(player, field) {
     var index = $scope.players.indexOf(player);
+    $scope.players[index][field] = player[field];
     $localStorage.players[index][field] = player[field];
   };
 

@@ -28,6 +28,11 @@ app.controller('MonsterController', ['$scope', '$http', '$localStorage', functio
     var monsterObject = jQuery.parseJSON(monsterJson);
     $scope.user.push(monsterObject);
     $localStorage.user.push(monsterObject);
+
+    setTimeout(function() {
+      $scope.adjust($('.adjustText'), 20, 5, 500);
+      $scope.adjust($('.adjustNum'), 30, 5, 50);
+    }, 500);
   };
 
   $scope.addPlayerMonster = function(name, ac, initRoll, hit, dex) {
@@ -76,8 +81,8 @@ app.controller('MonsterController', ['$scope', '$http', '$localStorage', functio
     };
 
 // auto adjusting width for input values
-    $(function() {
-      function adjust(elements, offset, min, max) {
+$scope.adjust =
+      function (elements, offset, min, max) {
         // initialize parameters
         offset = offset || 0;
         min    = min    || 0;
@@ -110,9 +115,8 @@ app.controller('MonsterController', ['$scope', '$http', '$localStorage', functio
   });
 }
 // apply to our element
-  adjust($('.adjustText'), 20, 5, 500);
-  adjust($('.adjustNum'), 30, 5, 50);
-    });
+  $scope.adjust($('.adjustText'), 20, 5, 500);
+  $scope.adjust($('.adjustNum'), 30, 5, 50);
 
 
 }]);

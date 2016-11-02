@@ -6,10 +6,16 @@
 	margin: 0 auto 1em;
 }
 
+//Default Input width
+
+input {
+	transition: width .15s linear;
+}
+
 // Space out the monsters directive
 
 monsters {
-	margin: 2em;
+	margin: 2em 2em 2em 1em;
 	@include mediaQ_small(860px) {
 		width: 100%;
 		margin: 0;
@@ -64,9 +70,6 @@ monsters {
 				font-size: 1em;
 			}
 		}
-		sup input {
-			width: 45px;
-		}
 		input {
 			font-size: .9em;
 			padding: 5px;
@@ -78,9 +81,6 @@ monsters {
 			height: 100px;
 			background: transparent;
 			border: none;
-		}
-		input[type=number] {
-			width: 50px;
 		}
 		.monsterStats {
 			position: absolute;
@@ -116,18 +116,12 @@ monsters {
 				}
 			}
 			input {
-				width: 40px;
-				@include mediaQ_small(860px) {
-					width: 55px;
-				}
+				width: 55px;
 			}
 		}
 		.abilities {
 			label {
 				display: block;
-			}
-			input {
-				width: 45%;
 			}
 		}
 	}
@@ -155,12 +149,8 @@ monsters {
 	margin-bottom: 3em;
 	background: $yellow;
 	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
-	background-repeat: no-repeat;
+	background-repeat: repeat-y;
 	background-position: right center;
-	background-attachment: fixed;
-	@include mediaQ_small(860px) {
-		width: 100%;
-	}
 }
 // Search Monster Styles
 .monsters_search {
@@ -169,7 +159,6 @@ monsters {
 		margin: .5em 0;
 	}
 	input[type=text] {
-		width: 49%;
 		text-align: center;
 	}
 	input[type=checkbox] {

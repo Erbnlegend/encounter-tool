@@ -24,18 +24,10 @@ app.controller('MonsterController', ['$scope', '$http', '$localStorage', functio
 
   $scope.addMonster = function(selectedMonster) {
     //Add Monster to user Array
-    var index = $scope.user.length;
-    $scope.user.push(
-      {
-        "id": index,
-        "monsterArray": selectedMonster
-      }
-    );
-    $localStorage.user.push({
-      "id": index,
-      "monsterArray": selectedMonster
-    }
-  );
+    var monsterJson = angular.toJson(selectedMonster);
+    var monsterObject = jQuery.parseJSON(monsterJson);
+    $scope.user.push(monsterObject);
+    $localStorage.user.push(monsterObject);
   };
 
   $scope.addPlayerMonster = function(name, ac, initRoll, hit, dex) {

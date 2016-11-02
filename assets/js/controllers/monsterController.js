@@ -82,7 +82,7 @@ app.controller('MonsterController', ['$scope', '$http', '$localStorage', functio
 
 // auto adjusting width for input values
 $scope.adjust =
-      function (elements, offset, min, max) {
+      function(elements, offset, min, max) {
         // initialize parameters
         offset = offset || 0;
         min    = min    || 0;

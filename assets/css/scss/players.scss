@@ -82,27 +82,24 @@
 				background: lighten($yellow, 10%);
       }
     }
+  .buttons {
+    position: absolute;
+    top: -45%;
+    right: 0;
+    margin: 0;
     button.blue_btn {
-      position: absolute;
-      top: 0;
-      right: 30px;
-      margin: 0;
-      font-size: .5em;
+      font-size: .6em;
       @include mediaQ_small(860px) {
-        right: 40px;
-        font-size: .8em;
+        font-size: .9em;
       }
     }
     button.gray_btn {
-      position: absolute;
-      top: 0;
-      right: -5px;
-      margin: 0;
-      font-size: .5em;
+      font-size: .6em;
       @include mediaQ_small(860px) {
-        font-size: .8em;
+        font-size: .9em;
       }
     }
+  }
   }
   h2 {
     margin: 0 auto 1em;

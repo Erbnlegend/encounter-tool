@@ -22,12 +22,14 @@
 
       <!--Monster Add Player Form-->
       <div class="overlayForm" ng-init="showMonsterForm = false" ng-show="showMonsterForm">
-        <form class="newPlayer_form" ng-submit="addPlayerMonster(monster.name, monster.armor_class, initiativeRoll, monster.hit_points, monster.dexterity);showMonsterForm = false">
+        <form class="newPlayer_form"  ng-submit="addPlayerMonster(name, armor_class, initiativeRoll, hit_points, monster.dexterity);showMonsterForm = false">
           <h3>Enter Initiative Roll</h3>
-          <input type="text" placeholder="Name" ng-value="monster.name" required/>
-          <input type="number" placeholder="Armor Class"  ng-value="monster.armor_class" required/>
-          <input type="number" placeholder="Hit Points"  ng-value="monster.hit_points" required/>
-          <input type="number" placeholder="Initiative" min="0" max="20" minlength="1"maxlength="2" ng-model="initiativeRoll" required/>
+          <input type="text" placeholder="Name" ng-model="name" ng-init="name = monster.name" ng-value="monster.name" required/>
+          <input type="number" placeholder="Armor Class" ng-model="armor_class" ng-init="armor_class = monster.armor_class" ng-value="monster.armor_class"
+          required/>
+          <input type="number" placeholder="Hit Points" ng-model="hit_points" ng-init="hit_points = monster.hit_points" ng-value="monster.hit_points"
+          required/>
+          <input type="number" placeholder="1d20 Roll" min="0" max="20" ng-model="initiativeRoll" required/>
           <input type="submit" value="+ Add" />
         </form>
       </div>

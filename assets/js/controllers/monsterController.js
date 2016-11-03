@@ -31,7 +31,6 @@ app.controller('MonsterController', ['$scope', '$http', '$localStorage', functio
         "monsterArray": selectedMonster
       }
     );
-    console.log($scope.user[0]);
     $localStorage.user.push({
       "id": index,
       "monsterArray": selectedMonster
@@ -77,8 +76,8 @@ app.controller('MonsterController', ['$scope', '$http', '$localStorage', functio
   };
 
   // Update the input values on change
-  // Needed so that changes are kept on change of initial player creation
-  // Fixes issue with updating local storage right after player is created
+  // Needed so that changes are kept on change of initial monster creation
+  // Fixes issue with updating local storage right after monster is created
     $scope.change = function(user, field) {
       var index = $scope.user.indexOf(player);
       $localStorage.user[index][field] = user[field];

@@ -2,6 +2,7 @@
   <div class="empty_box" ng-show="emptyUserCheck()">
     No monsters yet, click the fancy button below to get going
   </div>
+  <challenge></challenge>
   <button class="red_btn main" ng-click="toggleMonsterList()">+ Add Monster</button>
 
 <monster-cage></monster-cage>
@@ -17,7 +18,7 @@
       + Add
     </button>
         <p>
-          {{monster.name}} <sup>({{monster.type}}, CL: {{monster.challenge_rating}})</sup>
+          {{monster.name}} <sup>({{monster.type}}, XP: {{monster.challenge_rating}})</sup>
         </p>
 
       <!--Monster Add Player Form-->

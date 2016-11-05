@@ -34,7 +34,7 @@ app.controller('ChallengeController', ['$scope', function($scope) {
       default:
         $scope.multiplier = 4;
     }
-    $scope.adjustedChallenge = $scope.xpTotal * $scope.multiplier / numPlayers;
+    $scope.adjustedChallenge = Math.floor($scope.xpTotal * $scope.multiplier / numPlayers);
     switch (level) {
       case 1:
         if($scope.adjustedChallenge >= 0 && $scope.adjustedChallenge <= 25) {

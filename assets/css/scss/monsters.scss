@@ -21,12 +21,26 @@ monsters {
 		width: 50%;
 	}
 	#challenge {
+		width: 100%;
+		.field {
+			float: left;
+			width: 50%;
+		}
+		input {
+			width: 100%;
+			padding: 5px;
+			text-align: center;
+		}
+		input[type=submit] {
+			width: 100%;
+		}
 		h4 {
 			text-shadow: 1px 1px 1px rgb(0,0,0);
 			text-decoration: underline;
 			font-weight: bolder;
 			text-align: center;
 			font-size: 3em;
+			padding: .5em;
 		}
 		p {
 			text-align: center;

@@ -1,23 +1,27 @@
 <div id="challenge">
 
-  <form ng-submit="calculate(numPlayers, level)">
-    <label>Human Players:
+<form ng-submit="calculate(numPlayers, level)">
+  <div class="field">
+    <p>
+      Players:
+    </p>
     <input type="number" ng-model="numPlayers" min="1" max="10" required/>
-    </label>
-    <label>Player Level:
-      <input type="number" ng-model="level" min="1" max="20" required />
-    </label>
-    <input type="submit" value="Calculate" />
-  </form>
-  <h4 ng-model="difficulty" ng-style="{color: challengeColor}">
-    {{difficulty}}
-  </h4>
-  <p>
-    <span ng-model="xpTotal">
-      XP: {{xpTotal}}
-    </span>
-    <span ng-model="multiplier">
-      Challenge Multiplier:{{multiplier}}
-    </span>
+  </div>
+  <div class="field">
+    <p>
+      Level:
+    </p>
+    <input type="number" ng-model="level"  min="1" max="20" required />
+  </div>
+  <input class="green_btn" type="submit" value="Calculate Encounter Difficulty" />
+</form>
+<h4 ng-model="difficulty" ng-style="{color: challengeColor}">
+  {{difficulty}}
+</h4>
+  <p ng-model="xpTotal">
+    XP: {{xpTotal}}
+  </p>
+  <p ng-model="adjustedChallenge">
+    xp*multiplier/players: {{adjustedChallenge}}
   </p>
 </div>

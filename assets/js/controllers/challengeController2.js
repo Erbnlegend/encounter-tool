@@ -1,4 +1,9 @@
 app.controller('ChallengeController', ['$scope', function($scope) {
+// Initialize variables
+$scope.difficulty = 'Add Monster';
+$scope.xpTotal = 'Add Monster';
+$scope.adjustedChallenge = 'Add Monster';
+
   $scope.calculate =
   function(numPlayers, level) {
     $scope.xpTotal = 0;
@@ -35,6 +40,7 @@ app.controller('ChallengeController', ['$scope', function($scope) {
         $scope.multiplier = 4;
     }
     $scope.adjustedChallenge = Math.floor($scope.xpTotal * $scope.multiplier / numPlayers);
+
     switch (level) {
       case 1:
         if($scope.adjustedChallenge >= 0 && $scope.adjustedChallenge <= 25) {

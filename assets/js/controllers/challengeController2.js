@@ -43,6 +43,7 @@ $scope.levels = $localStorage;
       default:
         $scope.multiplier = 4;
     }
+    $scope.multiplierTotal = Math.floor($scope.xpTotal * $scope.multiplier);
     $scope.adjustedChallenge = Math.floor($scope.xpTotal * $scope.multiplier / numPlayers);
 
     switch (level) {

@@ -18,7 +18,7 @@
 
             (XP: <input type="number" class="adjustText" ng-model="userMonsters.challenge_rating"
             ng-value="userMonsters.challenge_rating"
-            ng-change="change(userMonsters, 'challenge_rating')" />)
+            ng-change="change(userMonsters, 'challenge_rating');calculate(numPlayers.numPlayer, levels.level)" />)
       </span>
       <div class="monsterStats">
         <button class="blue_btn" ng-click="showMonsterStats = showMonsterStats== 0 ? 1 : 0" ng-class="{active:showMonsterStats == 1}">Stats</button>

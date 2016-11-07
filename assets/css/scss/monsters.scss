@@ -23,6 +23,9 @@ monsters {
 	#challenge {
 		width: 100%;
 		margin-bottom: .3em;
+		p, label {
+			color: $white;
+		}
 		.field {
 			float: left;
 			width: 50%;
@@ -56,8 +59,10 @@ monsters {
 	width: 100%;
 	padding: 1em;
 	margin-bottom: 1em;
-	background: $yellow;
-	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
+	background-image: linear-gradient(rgba(65, 65, 65, .6), rgba(65, 65, 65, .6)),
+	url('../img/rusted1.jpg');
+  border: 15px solid transparent;
+  border-image: url('../img/rustedborder.jpg') 30 round;
 	position: relative;
 	button.red_btn.main {
 		width: 100%;
@@ -75,6 +80,9 @@ monsters {
 			border-bottom: 1px solid $dark_gray;
 			@include clearfix;
 	  }
+		h4, strong, p, input, label, textarea {
+			color: $white;
+		}
 	  h4 {
 			display: inline;
 			font-size: 1.3em;
@@ -99,7 +107,8 @@ monsters {
 			background: transparent;
 			&:hover {
 				border: 1px solid $gray;
-				background: lighten($yellow, 10%);
+				background: lighten($gray, 10%);
+				color: rgb(0,0,0);
 			}
 		}
 		textarea {
@@ -109,7 +118,8 @@ monsters {
 			border: 1px solid transparent;
 			&:hover {
 				border: 1px solid $gray;
-				background: lighten($yellow, 10%);
+				background: lighten($gray, 10%);
+				color: rgb(0,0,0);
 			}
 		}
 		.monsterStats {
@@ -177,13 +187,17 @@ monsters {
 	padding: 0.5em;
 	margin-top: 1em;
 	margin-bottom: 3em;
-	background: $yellow;
-	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
-	background-repeat: repeat-y;
+	background-image: linear-gradient(rgba(65, 65, 65, .6), rgba(65, 65, 65, .6)),
+	url('../img/rusted1.jpg');
+	border: 15px solid transparent;
+	border-image: url('../img/rustedborder.jpg') 30 round;
 	background-position: right center;
 }
 // Search Monster Styles
 .monsters_search {
+	label {
+		color: $white;
+	}
 	position: relative;
 	input {
 		margin: .5em 0;
@@ -210,6 +224,7 @@ monsters {
 		margin: 0 0.5em 0 0;
 	}
 	p {
+		color: $white;
 		display: inline;
 	}
 }

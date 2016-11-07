@@ -1,9 +1,12 @@
-app.controller('ChallengeController', ['$scope', function($scope) {
+app.controller('ChallengeController', ['$scope', '$localStorage', function($scope, $localStorage) {
 // Initialize variables
 $scope.difficulty = 'Trivial';
 $scope.challengeColor = '#2196F3';
 $scope.xpTotal = 0;
 $scope.adjustedChallenge = 0;
+
+$scope.numPlayers = $localStorage;
+$scope.levels = $localStorage;
 
   $scope.calculate =
   function(numPlayers, level) {
@@ -485,5 +488,5 @@ $scope.adjustedChallenge = 0;
           break;
     }
   }
-
+$scope.calculate($scope.numPlayers.numPlayer, $scope.levels.level)
 }]);

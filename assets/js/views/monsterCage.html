@@ -1,19 +1,24 @@
-<div ng-repeat="userMonsters in user">
+<div ng-repeat="userMonsters in user track by $index">
   <div class="monsterCage">
 
     <div class="sectionTitle">
 
       <h4>
-        <strong><input ng-model="userMonsters.monsterArray.name"
-        ng-value="userMonsters.monsterArray.name"
+        <strong><input class="adjustText" ng-model="userMonsters.name"
+        ng-value="userMonsters.name"
         ng-change="change(userMonsters, 'name')"</strong>
       </h4>
       <p>
         <span>
-            {{userMonsters.monsterArray.size}}
-            {{userMonsters.monsterArray.type}} {{userMonsters.monsterArray.subtype}},
-            {{userMonsters.monsterArray.alignment}}
-            (Challenge: {{userMonsters.monsterArray.challenge_rating}})
+            {{userMonsters.size}}
+            {{userMonsters.type}} {{userMonsters.subtype}},
+            <input class="adjustText" ng-model="userMonsters.alignment"
+            ng-value="userMonsters.alignment"
+            ng-change="change(userMonsters, 'alignment')" />
+
+            (Challenge: <input class="adjustText" ng-model="userMonsters.challenge_rating"
+            ng-value="userMonsters.challenge_rating"
+            ng-change="change(userMonsters, 'challenge_rating')" />)
       </span>
       <div class="monsterStats">
         <button class="blue_btn" ng-click="showMonsterStats = showMonsterStats== 0 ? 1 : 0" ng-class="{active:showMonsterStats == 1}">Stats</button>
@@ -28,14 +33,14 @@
     <div class="section">
       <p><strong>Speed:</strong></p>
       <p>
-        <input ng-model="userMonsters.monsterArray.speed" ng-value="userMonsters.monsterArray.speed" ng-change="change(userMonsters, 'speed')" />
+        <input class="adjustText" ng-model="userMonsters.speed" ng-value="userMonsters.speed" ng-change="change(userMonsters, 'speed')" />
       </p>
       <strong>HP:</strong>
        <p>Max:
-         <input type="number" ng-model="userMonsters.monsterArray.hit_points" ng-value="userMonsters.monsterArray.hit_points"
+         <input class="adjustNum" type="number" ng-model="userMonsters.hit_points" ng-value="userMonsters.hit_points"
          ng-change="change(userMonsters, 'hit_points')" />
           <sup>
-            (<input ng-model="userMonsters.monsterArray.hit_dice" ng-value="userMonsters.monsterArray.hit_dice"
+            (<input class="adjustText" ng-model="userMonsters.hit_dice" ng-value="userMonsters.hit_dice"
             ng-change="change(userMonsters, 'hit_dice')" />)
           </sup></p>
     </div>
@@ -43,33 +48,33 @@
     <div class="section">
       <p><strong>Attributes: </strong></p>
         <label>Str:
-        <input type="number"
-          ng-model="userMonsters.monsterArray.strength" ng-value="userMonsters.monsterArray.strength"
+        <input class="adjustNum" type="number"
+          ng-model="userMonsters.strength" ng-value="userMonsters.strength"
           ng-change="change(userMonsters, 'strength')" />
         </label>
         <label>Dex:
-        <input type="number"
-          ng-model="userMonsters.monsterArray.dexterity" ng-value="userMonsters.monsterArray.dexterity"
+        <input class="adjustNum" type="number"
+          ng-model="userMonsters.dexterity" ng-value="userMonsters.dexterity"
           ng-change="change(userMonsters, 'dexterity')" />
         </label>
         <label>Con:
-        <input type="number"
-          ng-model="userMonsters.monsterArray.constitution" ng-value="userMonsters.monsterArray.constitution"
+        <input class="adjustNum" type="number"
+          ng-model="userMonsters.constitution" ng-value="userMonsters.constitution"
           ng-change="change(userMonsters, 'constitution')" />
         </label>
         <label>Int:
-        <input type="number"
-          ng-model="userMonsters.monsterArray.intelligence" ng-value="userMonsters.monsterArray.intelligence"
+        <input class="adjustNum" type="number"
+          ng-model="userMonsters.intelligence" ng-value="userMonsters.intelligence"
           ng-change="change(userMonsters, 'intelligence')" />
         </label>
         <label>Wis:
-        <input type="number"
-          ng-model="userMonsters.monsterArray.wisdom" ng-value="userMonsters.monsterArray.wisdom"
+        <input class="adjustNum" type="number"
+          ng-model="userMonsters.wisdom" ng-value="userMonsters.wisdom"
           ng-change="change(userMonsters, 'wisdom')" />
         </label>
         <label>Cha:
-        <input type="number"
-          ng-model="userMonsters.monsterArray.charisma" ng-value="userMonsters.monsterArray.charisma"
+        <input class="adjustNum" type="number"
+          ng-model="userMonsters.charisma" ng-value="userMonsters.charisma"
           ng-change="change(userMonsters, 'charisma')" />
         </label>
     </div>
@@ -77,39 +82,39 @@
     <div class="section">
       <p><strong>Saving Throws:</strong></p>
         <label>
-          Str+<input type="number"
-          ng-model="userMonsters.monsterArray.strength_save"
-          ng-value="userMonsters.monsterArray.strength_save"
+          Str+<input class="adjustNum" type="number"
+          ng-model="userMonsters.strength_save"
+          ng-value="userMonsters.strength_save"
           ng-change="change(userMonsters, 'strength_save')" />
         </label>
         <label>
-          Dex+<input type="number"
-          ng-model="userMonsters.monsterArray.dexterity_save"
-          ng-value="userMonsters.monsterArray.dexterity_save"
+          Dex+<input class="adjustNum" type="number"
+          ng-model="userMonsters.dexterity_save"
+          ng-value="userMonsters.dexterity_save"
           ng-change="change(userMonsters, 'dexterity_save')" />
         </label>
         <label>
-          Con+<input type="number"
-          ng-model="userMonsters.monsterArray.constitution_save"
-          ng-value="userMonsters.monsterArray.constitution_save"
+          Con+<input class="adjustNum" type="number"
+          ng-model="userMonsters.constitution_save"
+          ng-value="userMonsters.constitution_save"
           ng-change="change(userMonsters, 'constitution_save')" />
         </label>
         <label>
-          Int+<input type="number"
-          ng-model="userMonsters.monsterArray.intelligence_save"
-          ng-value="userMonsters.monsterArray.intelligence_save"
+          Int+<input class="adjustNum" type="number"
+          ng-model="userMonsters.intelligence_save"
+          ng-value="userMonsters.intelligence_save"
           ng-change="change(userMonsters, 'intelligence_save')" />
         </label>
         <label>
-          Wis+<input type="number"
-          ng-model="userMonsters.monsterArray.wisdom_save"
-          ng-value="userMonsters.monsterArray.wisdom_save"
+          Wis+<input class="adjustNum" type="number"
+          ng-model="userMonsters.wisdom_save"
+          ng-value="userMonsters.wisdom_save"
           ng-change="change(userMonsters, 'wisdom_save')" />
         </label>
         <label>
-          Cha+<input type="number"
-          ng-model="userMonsters.monsterArray.charisma_save"
-          ng-value="userMonsters.monsterArray.charisma_save"
+          Cha+<input class="adjustNum" type="number"
+          ng-model="userMonsters.charisma_save"
+          ng-value="userMonsters.charisma_save"
           ng-change="change(userMonsters, 'charisma_save')" />
         </label>
 
@@ -118,104 +123,104 @@
           <ul>
             <li>
               +<input type="number"
-              ng-model="userMonsters.monsterArray.acrobatics"
-              ng-value="userMonsters.monsterArray.acrobatics"
+              ng-model="userMonsters.acrobatics"
+              ng-value="userMonsters.acrobatics"
               ng-change="change(userMonsters, 'acrobatics')" /> Acrobatics (Dex)
             </li>
             <li>
               +<input type="number"
-              ng-model="userMonsters.monsterArray.arcana"
-              ng-value="userMonsters.monsterArray.arcana"
+              ng-model="userMonsters.arcana"
+              ng-value="userMonsters.arcana"
               ng-change="change(userMonsters, 'arcana')" /> Arcana (Int)
             </li>
             <li>
               +<input type="number"
-              ng-model="userMonsters.monsterArray.athletics"
-              ng-value="userMonsters.monsterArray.athletics"
+              ng-model="userMonsters.athletics"
+              ng-value="userMonsters.athletics"
               ng-change="change(userMonsters, 'athletics')" /> Athletics (Str)
             </li>
             <li>
               +<input type="number"
-              ng-model="userMonsters.monsterArray.deception"
-              ng-value="userMonsters.monsterArray.deception"
+              ng-model="userMonsters.deception"
+              ng-value="userMonsters.deception"
               ng-change="change(userMonsters, 'deception')" /> Deception (Cha)
             </li>
           </ul>
           <ul>
             <li>
               +<input type="number"
-              ng-model="userMonsters.monsterArray.history"
-              ng-value="userMonsters.monsterArray.history"
+              ng-model="userMonsters.history"
+              ng-value="userMonsters.history"
               ng-change="change(userMonsters, 'history')" /> History (Int)
             </li>
             <li>
               +<input type="number"
-              ng-model="userMonsters.monsterArray.insight"
-              ng-value="userMonsters.monsterArray.insight"
+              ng-model="userMonsters.insight"
+              ng-value="userMonsters.insight"
               ng-change="change(userMonsters, 'insight')" /> Insight (Wis)
             </li>
             <li>
               +<input type="number"
-              ng-model="userMonsters.monsterArray.intimidation"
-              ng-value="userMonsters.monsterArray.intimidation"
+              ng-model="userMonsters.intimidation"
+              ng-value="userMonsters.intimidation"
               ng-change="change(userMonsters, 'intimidation')" /> Intimidation (Cha)
             </li>
             <li>
               +<input type="number"
-              ng-model="userMonsters.monsterArray.investigation"
-              ng-value="userMonsters.monsterArray.investigation"
+              ng-model="userMonsters.investigation"
+              ng-value="userMonsters.investigation"
               ng-change="change(userMonsters, 'investigation')" /> Investigation (Int)
             </li>
           </ul>
           <ul>
             <li>
               +<input type="number"
-              ng-model="userMonsters.monsterArray.medicine"
-              ng-value="userMonsters.monsterArray.medicine"
+              ng-model="userMonsters.medicine"
+              ng-value="userMonsters.medicine"
               ng-change="change(userMonsters, 'medicine')" /> Medicine (Wis)
             </li>
             <li>
               +<input type="number"
-              ng-model="userMonsters.monsterArray.nature"
-              ng-value="userMonsters.monsterArray.nature"
+              ng-model="userMonsters.nature"
+              ng-value="userMonsters.nature"
               ng-change="change(userMonsters, 'nature')" /> Nature (Int)
             </li>
             <li>
               +<input type="number"
-              ng-model="userMonsters.monsterArray.perception"
-              ng-value="userMonsters.monsterArray.perception"
+              ng-model="userMonsters.perception"
+              ng-value="userMonsters.perception"
               ng-change="change(userMonsters, 'perception')" /> Perception (Wis)
             </li>
             <li>
               +<input type="number"
-              ng-model="userMonsters.monsterArray.performance"
-              ng-value="userMonsters.monsterArray.performance"
+              ng-model="userMonsters.performance"
+              ng-value="userMonsters.performance"
               ng-change="change(userMonsters, 'performance')" /> Performance (Cha)
             </li>
           </ul>
           <ul>
             <li>
               +<input type="number"
-              ng-model="userMonsters.monsterArray.persuasion"
-              ng-value="userMonsters.monsterArray.persuasion"
+              ng-model="userMonsters.persuasion"
+              ng-value="userMonsters.persuasion"
               ng-change="change(userMonsters, 'persuasion')" /> Persuasion (Cha)
             </li>
             <li>
               +<input type="number"
-              ng-model="userMonsters.monsterArray.religion"
-              ng-value="userMonsters.monsterArray.religion"
+              ng-model="userMonsters.religion"
+              ng-value="userMonsters.religion"
               ng-change="change(userMonsters, 'religion')" /> Religion (Int)
             </li>
             <li>
               +<input type="number"
-              ng-model="userMonsters.monsterArray.stealth"
-              ng-value="userMonsters.monsterArray.stealth"
+              ng-model="userMonsters.stealth"
+              ng-value="userMonsters.stealth"
               ng-change="change(userMonsters, 'stealth')" /> Stealth (Dex)
             </li>
             <li>
               +<input type="number"
-              ng-model="userMonsters.monsterArray.survival"
-              ng-value="userMonsters.monsterArray.survival"
+              ng-model="userMonsters.survival"
+              ng-value="userMonsters.survival"
               ng-change="change(userMonsters, 'survival')" /> Survival (Wis)
             </li>
           </ul>
@@ -224,47 +229,47 @@
         <div class="section">
           <p><strong>Damage Resistance/Immunities/Vulnerabilites: </strong></p>
             <label>
-              Resistant to <input
-              ng-model="userMonsters.monsterArray.damage_resistances"
-              ng-value="userMonsters.monsterArray.damage_resistances"
+              Resistant to <input class="adjustText"
+              ng-model="userMonsters.damage_resistances"
+              ng-value="userMonsters.damage_resistances"
               ng-change="change(userMonsters, 'damage_resistances')" />
             </label>
             <br />
             <label>
-              Immune to <input
-              ng-model="userMonsters.monsterArray.damage_immunities"
-              ng-value="userMonsters.monsterArray.damage_immunities"
+              Immune to <input class="adjustText"
+              ng-model="userMonsters.damage_immunities"
+              ng-value="userMonsters.damage_immunities"
               ng-change="change(userMonsters, 'damage_immunities')" />
             </label>
             <br />
             <label>
-              Vulnerable to <input
-              ng-model="userMonsters.monsterArray.damage_vulnerabilities"
-              ng-value="userMonsters.monsterArray.damage_vulnerabilities"
+              Vulnerable to <input class="adjustText"
+              ng-model="userMonsters.damage_vulnerabilities"
+              ng-value="userMonsters.damage_vulnerabilities"
               ng-change="change(userMonsters, 'damage_vulnerabilities')" />
             </label>
         </div>
 
         <p><strong>Senses: </strong></p>
-        <input
-        ng-model="userMonsters.monsterArray.senses"
-        ng-value="userMonsters.monsterArray.senses"
+        <input class="adjustText"
+        ng-model="userMonsters.senses"
+        ng-value="userMonsters.senses"
         ng-change="change(userMonsters, 'senses')" />
 
         <p><strong>Languages: </strong></p>
-        <input
-        ng-model="userMonsters.monsterArray.languages"
-        ng-value="userMonsters.monsterArray.languages"
+        <input class="adjustText"
+        ng-model="userMonsters.languages"
+        ng-value="userMonsters.languages"
         ng-change="change(userMonsters, 'languages')" />
     </div>
     </div>
 
     <div ng-init="showMonsterActions = false" ng-show="showMonsterActions">
-        <div class="section abilities" ng-repeat="userAbilities in userMonsters.monsterArray.special_abilities">
+        <div class="section abilities" ng-repeat="userAbilities in userMonsters.special_abilities">
           <p>
             <strong>Abilities: </strong>
           </p>
-            <input ng-model="userAbilities.name"
+            <input class="adjustText" ng-model="userAbilities.name"
             ng-value="userAbilities.name"
             ng-change="change(userAbilities, 'name')"
             />
@@ -276,7 +281,7 @@
 
             <label>
               Attack Bonus:
-              <input type="number" ng-model="userAbilities.attack_bonus"
+              <input class="adjustNum" type="number" ng-model="userAbilities.attack_bonus"
               ng-value="userAbilities.attack_bonus"
               ng-change="change(userAbilities, 'attack_bonus')"
               />
@@ -284,7 +289,7 @@
 
             <label>
               Damage Dice:
-              <input ng-model="userAbilities.damage_dice"
+              <input class="adjustText" ng-model="userAbilities.damage_dice"
               ng-value="userAbilities.damage_dice"
               ng-change="change(userAbilities, 'damage_dice')"
               />
@@ -292,18 +297,18 @@
 
             <label>
               Damage Bonus:
-              <input type="number" ng-model="userAbilities.damage_bonus"
+              <input class="adjustNum" type="number" ng-model="userAbilities.damage_bonus"
               ng-value="userAbilities.damage_bonus"
               ng-change="change(userAbilities, 'damage_bonus')"
               />
             </label>
 
       </div>
-      <div class="section abilities" ng-repeat="userAttacks in userMonsters.monsterArray.actions">
+      <div class="section abilities" ng-repeat="userAttacks in userMonsters.actions">
         <p>
           <strong>Attack: </strong>
         </p>
-          <input ng-model="userAttacks.name"
+          <input class="adjustText" ng-model="userAttacks.name"
           ng-value="userAttacks.name"
           ng-change="change(userAttacks, 'name')"
           />
@@ -315,7 +320,7 @@
 
           <label>
             Attack Bonus:
-            <input type="number" ng-model="userAttacks.attack_bonus"
+            <input class="adjustNum" type="number" ng-model="userAttacks.attack_bonus"
             ng-value="userAttacks.attack_bonus"
             ng-change="change(userAttacks, 'attack_bonus')"
             />
@@ -323,7 +328,7 @@
 
           <label>
             Damage Dice:
-            <input ng-model="userAttacks.damage_dice"
+            <input class="adjustText" ng-model="userAttacks.damage_dice"
             ng-value="userAttacks.damage_dice"
             ng-change="change(userAttacks, 'damage_dice')"
             />
@@ -331,13 +336,13 @@
 
           <label>
             Damage Bonus:
-            <input type="number" ng-model="userAttacks.damage_bonus"
+            <input class="adjustNum" type="number" ng-model="userAttacks.damage_bonus"
             ng-value="userAttacks.damage_bonus"
             ng-change="change(userAttacks, 'damage_bonus')"
             />
           </label>
       </div>
-      <div class="section" ng-repeat="legendAbilites in userMonsters.monsterArray.legendary_actions">
+      <div class="section" ng-repeat="legendAbilites in userMonsters.legendary_actions">
         <strong><h4>Legendary Ability</h4></strong>
           <p>
             <strong>{{legendAbilites.name}}</strong>

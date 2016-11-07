@@ -1,8 +1,9 @@
 app.controller('ChallengeController', ['$scope', function($scope) {
 // Initialize variables
-$scope.difficulty = 'Add Monster';
-$scope.xpTotal = 'Add Monster';
-$scope.adjustedChallenge = 'Add Monster';
+$scope.difficulty = 'Trivial';
+$scope.challengeColor = '#2196F3';
+$scope.xpTotal = 0;
+$scope.adjustedChallenge = 0;
 
   $scope.calculate =
   function(numPlayers, level) {

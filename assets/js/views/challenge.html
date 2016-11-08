@@ -1,0 +1,30 @@
+<div id="challenge">
+
+<form ng-submit="calculate(numPlayers.numPlayer, levels.level)">
+  <div class="field">
+    <p>
+      Players:
+    </p>
+    <input type="number" ng-model="numPlayers.numPlayer" min="1" max="10" ng-keyup="calculate(numPlayers.numPlayer, levels.level)" required/>
+  </div>
+  <div class="field">
+    <p>
+      Level:
+    </p>
+    <input type="number" ng-model="levels.level"  min="1" max="20" ng-keyup="calculate(numPlayers.numPlayer, levels.level)" required />
+  </div>
+  <h4 ng-model="difficulty" ng-style="{color: challengeColor}">
+    {{difficulty}}
+  </h4>
+    <p ng-model="xpTotal">
+      XP: {{xpTotal}}
+    </p>
+    <p ng-model="multiplierTotal">
+      Adjusted Challenge Multiplier: {{multiplierTotal}}
+    </p>
+    <p ng-model="adjustedChallenge">
+      Each Players XP Total: {{adjustedChallenge}}
+    </p>
+  <input class="green_btn" type="submit" value="Calculate Encounter Difficulty" />
+</form>
+</div>

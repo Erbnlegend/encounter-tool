@@ -16,9 +16,9 @@
             ng-value="userMonsters.alignment"
             ng-change="change(userMonsters, 'alignment')" />
 
-            (Challenge: <input class="adjustText" ng-model="userMonsters.challenge_rating"
+            (XP: <input type="number" class="adjustText" ng-model="userMonsters.challenge_rating"
             ng-value="userMonsters.challenge_rating"
-            ng-change="change(userMonsters, 'challenge_rating')" />)
+            ng-change="change(userMonsters, 'challenge_rating');calculate(numPlayers.numPlayer, levels.level)" />)
       </span>
       <div class="monsterStats">
         <button class="blue_btn" ng-click="showMonsterStats = showMonsterStats== 0 ? 1 : 0" ng-class="{active:showMonsterStats == 1}">Stats</button>
@@ -264,7 +264,7 @@
     </div>
     </div>
 
-    <div ng-init="showMonsterActions = false" ng-show="showMonsterActions">
+    <div class="monsterActions" ng-init="showMonsterActions = false" ng-show="showMonsterActions">
         <div class="section abilities" ng-repeat="userAbilities in userMonsters.special_abilities">
           <p>
             <strong>Abilities: </strong>

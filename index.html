@@ -21,7 +21,10 @@
     <script src="assets/js/vendors/angular-animate.min.js"></script>
   </head>
   <body ng-controller="bodyCtrl" ng-style="{'background-image': 'url('+rotatingBKGD+')' }">
-    <h1>Game Master Quick Encounter Tools</h1>
+    <h1 id="toolTitle">Game Master Quick Encounter Tools</h1>
+    <div id="toggleMenus" class="">
+      <p ng-click="toggleMenu()">View Image</p>
+    </div>
     <ng-view class="page_wrap"></ng-view>
     <div id="footer">
       <a href="#/license">View full license agreement</a>

@@ -1,19 +1,24 @@
 var app = angular.module('encounterTool', ['ngRoute','ngStorage','ngAnimate']);
 
-
-
 app.controller('bodyCtrl', ['$scope', '$http', '$localStorage', function($scope, $http, $localStorage){
 
   $scope.BKGDimages = [
+    'assets/img/big-dragon-little-knight.jpg',
     'assets/img/evil_monastery_by_klauspillon-d83rh7b.jpg',
+    'assets/img/shade.jpg',
     'assets/img/acaratus___city_of_veturoth___by_klauspillon-d8hkywg.jpg',
     'assets/img/rise_of_the_kage___city_of_ryu___by_klauspillon-d83mi6s.jpg',
     'assets/img/ur_ghom__city_of_caves_by_klauspillon-d83rgvo.jpg',
     'assets/img/55-410176.jpg',
+    'assets/img/ambush.jpg',
     'assets/img/dragon_s_castle_by_klauspillon-d8fmohg.jpg',
     'assets/img/dragon_s_nest_by_klauspillon-d85hcvq.jpg',
+    'assets/img/dead.jpg',
+    'assets/img/forest.jpg',
     'assets/img/they_found_it__by_klauspillon-d760i25.jpg',
-    'assets/img/acaratus_concept_art___prison___by_klauspillon-d7ap9hx.jpg'
+    'assets/img/acaratus_concept_art___prison___by_klauspillon-d7ap9hx.jpg',
+    'assets/img/fire.jpg',
+    'assets/img/dragon.jpg'
   ];
 
   $scope.rotatingBKGD = function() {
@@ -22,6 +27,13 @@ app.controller('bodyCtrl', ['$scope', '$http', '$localStorage', function($scope,
   };
 
   $scope.rotatingBKGD = $scope.BKGDimages[$scope.rotatingBKGD()];
+
+  $scope.toggleMenu = function() {
+    $('#monster').animate({opacity: 'toggle'},200);
+    $('#encounter_box').animate({opacity: 'toggle'},200);
+    $('#monstersList').animate({opacity: 'toggle'},200);
+    $('#toolTitle').animate({opacity: 'toggle'},200);
+  }
 
   // auto adjusting width for input values
   $scope.adjust =

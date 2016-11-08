@@ -1,4 +1,4 @@
-  <div class="flex_center">
+  <div class="flex">
     <div id="encounter_box">
       <h2>Encounter Order</h2>
       <div id="playerField">
@@ -8,43 +8,54 @@
         <p>Initiative: </p>
       </div>
       <div ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 3000, 'blur': 0 } }">
-        <div class="empty_players_box" ng-show="emptyPlayersCheck()">
+        <div class="empty_box" ng-show="emptyPlayersCheck()">
           No players yet, click the fancy button below to get going
         </div>
         <div class="players_list" ng-repeat="player in players | orderBy: '-initiative'">
             <input ng-model="player.name"
             type="text"
-            ng-value="player.name"
-            required/>
+            ng-value="name"
+            ng-change="changePlayer(player, 'name')"
+            />
             <input ng-model="player.ac"
             type="number"
-            ng-value="player.ac"
-            required/>
+            ng-value="ac"
+            ng-change="changePlayer(player, 'ac')"
+            />
             <input ng-model="player.health"
             type="number"
-            ng-value="player.health"/>
+            ng-value="health"
+            ng-change="changePlayer(player, 'health')"
+            />
             <input ng-model="player.initiative"
             type="number"
-            ng-value="player.initiative"
-            required/>
+            ng-value="initiative"
+            ng-change="changePlayer(player, 'initiative')"
+            />
+            <!--Clone and Delete-->
+            <div class="buttons">
+              <button class="blue_btn" ng-click="dupePlayer(player.name,player.ac,player.health,player.initiative)">Clone</button>
+              <button class="gray_btn" ng-click="removePlayer(player)">X</button>
+            </div>
+
         </div>
-        <button class="green_btn" type="submit" ng-click="showPlayerForm = true">+ Add</button>
+        <button class="green_btn" type="submit" ng-click="showPlayerForm = true">+ Add Player</button>
       </div>
     </div>
     <monsters></monsters>
   </div>
 
 <div class="overlayForm" ng-init="showPlayerForm = false" ng-show="showPlayerForm">
-  <form class="newPlayer_form"  ng-submit="addNewPlayer(playerName, playerArmorClass, playerHealth, playerInitiative)">
+  <form class="newPlayer_form"  ng-submit="addNewPlayer(playerName, playerArmorClass, playerHealth, playerInitiative);showPlayerForm = false">
     <div class="close_btn" ng-click="showPlayerForm = false">
       <div></div>
       <div></div>
     </div>
     <h3>Add New Player</h3>
-    <input type="text" placeholder="Name" ng-model="playerName"/>
-    <input type="number" placeholder="Armor class" ng-model="playerArmorClass"/>
-    <input type="number" placeholder="Hit Points" ng-model="playerHealth"/>
-    <input type="number" placeholder="Initiative" ng-model="playerInitiative"/>
-    <input ng-click="showPlayerForm = false" type="submit" value="+ Add"/>
+    <input type="text" placeholder="Name" ng-model="playerName" required/>
+    <input type="number" placeholder="Armor class" ng-model="playerArmorClass" required/>
+    <input type="number" placeholder="Hit Points" ng-model="playerHealth" required/>
+    <input type="number" placeholder="Initiative" ng-model="playerInitiative" required/>
+    <input type="submit" value="+ Add Player"/>
   </form>
 </div>

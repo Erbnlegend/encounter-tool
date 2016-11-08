@@ -1,57 +1,6 @@
-var app = angular.module('encounterTool', ['ngRoute','ngStorage']);
-
-app.controller('PlayerController', ['$scope', '$http', '$localStorage', function($scope, $http, $localStorage){
-
-  $scope.players = [];
-
-  var updatePlayers = function() {
-    if ($localStorage.players == undefined) {
-      $localStorage.players = [];
-    } else {
-      for (i = 0; i < $localStorage.players.length; i++) {
-        $scope.players.push($localStorage.players[i])
-      }
-    }
-  };
-
-  updatePlayers();
+var app = angular.module('encounterTool', ['ngRoute','ngStorage','ngAnimate']);
 
 
-  $scope.addNewPlayer = function(playerName, playerArmorClass, playerHealth, playerInitiative) {
-    $scope.players.push(
-      {
-      	"name": playerName,
-      	"ac": playerArmorClass,
-        "health": playerHealth,
-      	"initiative": playerInitiative
-      }
-    );
-
-    $localStorage.players.push(
-      {
-      	"name": playerName,
-      	"ac": playerArmorClass,
-        "health": playerHealth,
-      	"initiative": playerInitiative
-      }
-    );
-
-    //clear out fields
-    $scope.playerName = '';
-    $scope.playerArmorClass = '';
-    $scope.playerHealth = '';
-    $scope.playerInitiative = '';
-  };
-
-  $scope.emptyPlayersCheck = function() {
-    if($scope.players.length == 0) {
-      return true
-    }else {
-      return false
-    }
-  }
-
-}]);
 
 app.controller('bodyCtrl', ['$scope', '$http', '$localStorage', function($scope, $http, $localStorage){
 
@@ -69,70 +18,44 @@ app.controller('bodyCtrl', ['$scope', '$http', '$localStorage', function($scope,
 
   $scope.rotatingBKGD = function() {
     var randomIndex = Math.floor((Math.random() * $scope.BKGDimages.length));
-    console.log('randomIndex: '+randomIndex);
-    return randomIndex
+    return randomIndex;
   };
-
-  console.log($scope.BKGDimages.length);
 
   $scope.rotatingBKGD = $scope.BKGDimages[$scope.rotatingBKGD()];
 
-}]);
-
-
-app.controller('MonsterController', ['$scope', '$http', '$localStorage', function($scope, $http, $localStorage){
-
-  $scope.monsters = null;
-  $scope.user = [];
-
-  $http.get('assets/js/data/monsters.json')
-      .success(function(data) {
-          $scope.monsters = data;
-      })
-      .error(function(data,status,error,config){
-          $scope.monsters = [{heading:"Error",description:"Could not load json data"}];
-      });
-
-  var updateMonsters = function() {
-    if ($localStorage.user == undefined) {
-      $localStorage.user = [];
-    } else {
-      for (i = 0; i < $localStorage.user.length; i++) {
-        $scope.user.push($localStorage.user[i])
-      }
-    }
-  };
-
-  updateMonsters();
-
-  $scope.addMonster = function(selectedMonster) {
-    //Add Monster to user Array
-    $scope.user.push(selectedMonster);
-
-    $localStorage.user.push(selectedMonster);
-  };
-
-  $scope.addPlayerMonster = function(name, ac, initRoll, hit, dex) {
-    var roundDex = Math.floor((dex -10)/2);
-    if(roundDex < 0) {
-      roundDex = 0;
-    }
-    var addRoll = roundDex + initRoll;
-
-    $scope.addNewPlayer(name, ac, hit, addRoll);
-
-  };
-
-  $scope.numLimit = 30;
-
-  $scope.showMonsterList = false;
-  //toggle btn for monsters list
-  $scope.toggleMonsterList = function() {
-    if($scope.showMonsterList == false) {
-      $scope.showMonsterList = true
-    }else {
-      $scope.showMonsterList = false
-    }
-  };
+  // auto adjusting width for input values
+  $scope.adjust =
+        function(elements, offset, min, max) {
+          // initialize parameters
+          offset = offset || 0;
+          min    = min    || 0;
+          max    = max    || Infinity;
+          elements.each(function() {
+            var element = $(this);
+            // add element to measure pixel length of text
+            var id = btoa(Math.floor(Math.random() * Math.pow(2, 64)));
+            var tag = $('<span id="' + id + '">' + element.val() + '</span>').css({
+              'display': 'none',
+              'font-family': element.css('font-family'),
+              'font-size': element.css('font-size'),
+            }).appendTo('body');
+            // adjust element width on keydown
+            function update() {
+              // give browser time to add current letter
+              setTimeout(function() {
+                // prevent whitespace from being collapsed
+                tag.html(element.val().replace(/ /g, '&nbsp'));
+                // clamp length and prevent text from scrolling
+                var size = Math.max(min, Math.min(max, tag.width() + offset));
+                if (size < max)
+                  element.scrollLeft(0);
+              // apply width to element
+              element.width(size);
+          }, 0);
+        };
+        update();
+        element.keydown(update);
+    });
+  }
 
 }]);

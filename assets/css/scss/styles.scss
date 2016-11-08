@@ -2,12 +2,19 @@
 @import 'variables';
 @import 'mixins';
 @import 'controls';
+@import 'players';
+@import 'monsters';
+@import 'animations';
 
+// General Styles
 // list of images http://abduzeedo.com/badass-fantasy-illustrations-klaus-pillon
+
 body {
-	background-image: url('../img/acaratus___city_of_veturoth___by_klauspillon-d8hkywg.jpg');
+	background-image: url('');
 	@include backGrd;
 	background-attachment: fixed;
+	padding-bottom: 5em;
+  min-height: 120vh;
 }
 
 .page_wrap {
@@ -28,200 +35,86 @@ h1 {
   padding: 1em 0 0.5em 0;
 	font-family: 'Cabin Sketch', 'Cedarville Cursive', 'Marck Script', 'Kaushan Script', sans-serif;
 	color: #fff;
+	@include mediaQ_small(860px) {
+		font-size: 2em;
+		text-shadow: 2px 2px 1px rgba(41,41,41,0.8),
+		-2px 2px 1px rgba(41,41,41,0.8),
+		-2px -2px 1px rgba(41,41,41,0.8),
+		2px -2px 1px rgba(41,41,41,0.8);
+	}
 }
+
 h3 {
   text-align: center;
   font-size: 1.5em;
   padding: .5em 0;
 }
 
-#encounter_box {
-  width: 35%;
-  min-width: 400px;
-  padding: 1em;
-	margin: 2em;
-	align-self: baseline;
-	background: $yellow;
-	@include backGrd;
-	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
-	button {
-		width: 100%;
-	}
-  #playerField {
-    width: 100%;
-    display: flex;
-    p {
-      text-align: center;
-      display: inline-block;
-      width: (98%/3);
-      margin-bottom: 1em;
-      text-decoration: underline;
-    }
-  }
-  .players_list {
-    display: flex;
-    margin-bottom: 1em;
-    input {
-      width: (98% / 4);
-      border: 1px solid transparent;
-      text-align: center;
-      padding: 0.3em;
-			background: transparent;
-      transition: all 0.2s;
-      font-size: 1.1em;
-      &:hover {
-        border: 1px solid $gray;
-				background: lighten($yellow, 10%);
-      }
-    }
-  }
-  h2 {
-    margin: 0 auto 1em;
-    text-align: center;
-    font-size: 1.5em;
-  }
-}
-
 //flex containers
 .flex {
+	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 }
+
 .flex_center {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+	flex-direction: row;
 }
+
 .flex_center_nowrap {
 	display: flex;
   justify-content: center;
 }
 
+// Styles for Empty Array
+// Get Started
 
-//add players form
-.overlayForm {
-  background: rgba(0,0,0,.9);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-	z-index: 10;
-}
-form.newPlayer_form{
-  background: $blue;
-  padding: 1em;
-  display: block;
-  width: 45%;
-  margin: 15% auto;
-  position: relative;
-  input {
-    text-align: center;
-    width: (97.3%/4);
-    padding: 10px 0;
-    margin-top: 1em;
-  }
-  input[type=submit] {
-    width: 100%;
-  }
-}
-
-.add_monster_btn_wrap button {
-	width: 100%;
-	display: block;
-	margin: 0 auto 1em;
-}
-monsters {
-	margin: 2em;
-}
-#monster {
-	width: 100%;
-	min-width: 600px;
-	padding: 1em;
-	background: $yellow;
-	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
-	@include backGrd;
-	.monsterCage {
-	  width: 100%;
-	  padding: .1em 1em;
-		border-bottom: 1px solid $dark_gray;
-	  position: relative;
-	  .sectionTitle, .section {
-	    margin-top: .7em;
-	  }
-	  h4 {
-			display: inline;
-			font-size: 1.3em;
-		}
-		strong {
-			font-size: 1.1em;
-		}
-		p {
-			line-height: 1.5em;
-			font-size: .9em;
-		}
-		label {
-			font-size: .6em;
-		}
-		input {
-			font-size: .9em;
-			width: 35px;
-		}
-	}
-}
-
-#monstersForm {
-	min-width: 450px;
-	max-width: 600px;
-  width: 60%;
-  float: left;
-  border: 1px solid rgb(0,0,0);
-  padding: 1em;
-  margin: 1em;
-}
-
-#monstersList {
-	min-width: 450px;
-	max-width: 600px;
-	padding: 0.5em;
-	margin-top: 1em;
-	background: $yellow;
-	background-image: url('../img/Qdu8ZOl-wallpaper-old-paper.jpg');
-	background-repeat: no-repeat;
-	background-position: right center;
-	background-attachment: fixed;
-}
-.monsters_search {
-	input {
-		margin: .5em 0;
-	}
-	input[type=text] {
-		width: 49%;
-		text-align: center;
-	}
-	input[type=checkbox] {
-		line-height: 1.5em;
-	}
-	a {
-		display: block;
-		margin: .5em 0;
-	}
-}
-.monster_inlist {
-	padding: 0.5em;
-	margin: 0.5em 0;
-	button {
-		margin: 0 0.5em 0 0;
-	}
-	p {
-		display: inline;
-	}
-}
-
-.empty_players_box {
+.empty_box {
 	background: $orange;
 	color: #fff;
 	text-align: center;
 	padding: 1.5em;
 	font-size: 0.8em;
+}
+
+#footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(0,0,0, .5);
+	color: $gray;
+	text-align: center;
+	padding: 1em;
+	line-height: 1.2em;
+	@include mediaQ_small(860px) {
+		padding: .5em;
+	}
+	h2 {
+		display: block;
+		@include mediaQ_small(860px) {
+			display: none;
+		}
+	}
+	a {
+		color: $gray;
+	}
+}
+#license {
+	background: rgba(0,0,0,.6);
+	h1 {
+		font-size: 2em;
+	}
+	h2,h3 {
+		text-align: center;
+		color: $gray;
+		font-size: 1.3em;
+	}
+	p {
+		padding: 0 1em;
+		color: $gray;
+	}
 }

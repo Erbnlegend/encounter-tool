@@ -12,15 +12,17 @@ $scope.levels = $localStorage;
   $scope.calculate =
   function(numPlayers, level) {
     $scope.xpTotal = 0;
+    $scope.totalMonsters = 0;
     for(i=0;i<$scope.user.length; i++) {
       if(isNaN($scope.user[i].numberOfMonster)) {
         $scope.user[i].numberOfMonster = 1;
       }
       $scope.setXPOfMonster = $scope.user[i].numberOfMonster * $scope.user[i].challenge_rating;
       $scope.number = $scope.setXPOfMonster;
+      $scope.totalMonsters += $scope.user[i].numberOfMonster;
       $scope.xpTotal += $scope.number;
     }
-    switch ($scope.user.length) {
+    switch ($scope.totalMonsters) {
       case 1:
         $scope.multiplier= 1;
         break;

@@ -16,9 +16,12 @@
             ng-value="userMonsters.alignment"
             ng-change="change(userMonsters, 'alignment')" />
 
-            (XP: <input type="number" class="adjustText" ng-model="userMonsters.challenge_rating"
+            (XP per Monster: <input type="number" class="adjustText" ng-model="userMonsters.challenge_rating"
             ng-value="userMonsters.challenge_rating"
-            ng-change="change(userMonsters, 'challenge_rating');calculate(numPlayers.numPlayer, levels.level)" />)
+            ng-change="change(userMonsters, 'challenge_rating');calculate(numPlayers.numPlayer, levels.level)" />
+            Amount: <input type="number" class="adjustText" ng-model="userMonsters.numberOfMonster"
+            ng-value="userMonsters.numberOfMonster"
+            ng-change="change(userMonsters, 'numberOfMonster');calculate(numPlayers.numPlayer, levels.level)" min="1" />)
       </span>
       <div class="monsterStats">
         <button class="blue_btn" ng-click="showMonsterStats = showMonsterStats== 0 ? 1 : 0" ng-class="{active:showMonsterStats == 1}">Stats</button>

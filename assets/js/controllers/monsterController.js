@@ -21,14 +21,13 @@ app.controller('MonsterController', ['$scope', '$http', '$localStorage', functio
     }
   };
   updateMonsters();
-
+  
   $scope.addMonster = function(selectedMonster) {
     //Add Monster to user Array
     var monsterJson = angular.toJson(selectedMonster);
     var monsterObject = jQuery.parseJSON(monsterJson);
     $scope.user.push(monsterObject);
     $localStorage.user.push(monsterObject);
-
     setTimeout(function() {
       $scope.adjust($('.adjustText'), 20, 5, 500);
       $scope.adjust($('.adjustNum'), 30, 5, 50);

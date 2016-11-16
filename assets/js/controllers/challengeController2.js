@@ -4,6 +4,7 @@ $scope.difficulty = 'Trivial';
 $scope.challengeColor = '#2196F3';
 $scope.xpTotal = 0;
 $scope.adjustedChallenge = 0;
+$scope.setNumberOfMonsters = 0;
 
 $scope.numPlayers = $localStorage;
 $scope.levels = $localStorage;
@@ -12,7 +13,11 @@ $scope.levels = $localStorage;
   function(numPlayers, level) {
     $scope.xpTotal = 0;
     for(i=0;i<$scope.user.length; i++) {
-      $scope.number = $scope.user[i].challenge_rating;
+      if(isNaN($scope.user[i].numberOfMonster)) {
+        $scope.user[i].numberOfMonster = 1;
+      }
+      $scope.setXPOfMonster = $scope.user[i].numberOfMonster * $scope.user[i].challenge_rating;
+      $scope.number = $scope.setXPOfMonster;
       $scope.xpTotal += $scope.number;
     }
     switch ($scope.user.length) {

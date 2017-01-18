@@ -6147,6 +6147,79 @@
     ]
   },
   {
+    "name": "Drow Elite Warrior",
+    "size": "Medium",
+    "type": "humanoid",
+    "subtype": "elf",
+    "alignment": "neutral evil",
+    "armor_class": 18,
+    "hit_points": 71,
+    "hit_dice": "11d8 +22",
+    "speed": "30 ft.",
+    "strength": 13,
+    "dexterity": 18,
+    "constitution": 14,
+    "intelligence": 11,
+    "wisdom": 13,
+    "charisma": 12,
+    "perception": 4,
+    "stealth": 10,
+    "dexterity_save": 7,
+    "constitution_save": 5,
+    "wisdom_save": 4,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "senses": "darkvision 120 ft., passive Perception 14",
+    "languages": "Elvish, Undercommon",
+    "challenge_rating": 1800,
+    "special_abilities": [
+      {
+        "name": "Fey Ancestry",
+        "desc": "The drow has advantage on saving throws against being charmed, and magic can't put the drow to sleep.",
+        "attack_bonus": 0
+      },
+      {
+        "name": "Innate Spellcasting",
+        "desc": "The drow's spellcasting ability is Charisma (spell save DC 12). It can innately cast the following spells, requiring no material components:\nAt will: dancing lights\n1/day each: darkness, faerie fire, levitate (self only)",
+        "attack_bonus": 0
+      },
+      {
+        "name": "Sunlight Sensitivity",
+        "desc": "While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
+        "attack_bonus": 0
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "desc": "The drow makes two shortsword attacks."
+      },
+      {
+        "name": "Shortsword",
+        "desc": "Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 5 (1d6 + 4) piercing damage plus 10 (3d6) poison damage",
+        "attack_bonus": 7,
+        "damage_dice": "1d6",
+        "damage_bonus": 4
+      },
+      {
+        "name": "Hand Crossbow",
+        "desc": "Ranged Weapon Attack: +7 to hit, range 30/120 ft., one target. Hit: 5 (1d6 + 4) piercing damage, and the target must succeed on a DC 13 Constitution saving throw or be poisoned for 1 hour. If the saving throw fails by 5 or more, the target is also unconscious while poisoned in this way. The target wakes up if it takes damage or if another creature takes an action to shake it awake.",
+        "attack_bonus": 7,
+        "damage_dice": "1d6",
+        "damage_bonus": 4
+      }
+    ],
+    "reactions": [
+      {
+        "name": "Parry",
+        "desc": "The drow adds 3 to its AC against one melee attack that would hit it. To do so, the drow must see the attacker and be wielding a melee weapon.",
+        "attack_bonus": 0
+      }
+    ]
+  },
+  {
     "name": "Druid",
     "size": "Medium",
     "type": "humanoid",
@@ -13672,6 +13745,51 @@
         "attack_bonus": 9,
         "damage_dice": "3d6",
         "damage_bonus": 9
+      }
+    ]
+  },
+  {
+    "name": "Quaggoth",
+    "size": "Medium",
+    "type": "humanoid",
+    "subtype": "",
+    "alignment": "chaotic nuetral",
+    "armor_class": 13,
+    "hit_points": 45,
+    "hit_dice": "6d8 + 18",
+    "speed": "30 ft., climb 30 ft.",
+    "strength": 17,
+    "dexterity": 12,
+    "constitution": 16,
+    "intelligence": 6,
+    "wisdom": 12,
+    "charisma": 7,
+    "athletics": 5,
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "passive Perception 10, dark vison 120ft",
+    "languages": "Undercommon",
+    "challenge_rating": 450,
+    "special_abilities": [
+      {
+        "name": "Wounded Fury",
+        "desc": "While it has 10 or fewer hitpoints the quaggoth has advantage on attack rolls. In addition, it deals an extra 2d6 damage to any target it hits with a melee attack.",
+        "damage_dice": "2d6 extra"
+      }
+    ],
+    "actions": [
+      {
+        "name": "multiattack",
+        "desc": "The quaggoth makes two claw attacks."
+      },
+      {
+        "name": "Claw",
+        "desc": "Melee Weapon Attack: +5 to hit, reach 5 ft, one target, hit: 1d6 + 3 slashing damage.",
+        "attack_bonus": 5,
+        "damage_dice": "1d6",
+        "damage_bonus": 3
       }
     ]
   },

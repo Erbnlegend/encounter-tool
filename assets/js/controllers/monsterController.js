@@ -1,15 +1,8 @@
-app.controller('MonsterController', ['$scope', '$http', '$localStorage', function($scope, $http, $localStorage){
+app.controller('MonsterController', ['$scope', '$http', '$localStorage', 'monstersFactory', function($scope, $http, $localStorage, monstersFactory){
 
-  $scope.monsters = null;
+  $scope.monsters = monstersFactory;
+
   $scope.user = [];
-
-  $http.get('assets/js/data/monsters.json')
-      .success(function(data) {
-          $scope.monsters = data;
-      })
-      .error(function(data,status,error,config){
-          $scope.monsters = [{heading:"Error",description:"Could not load json data"}];
-      });
 
   var updateMonsters = function() {
     if ($localStorage.user == undefined) {
@@ -21,11 +14,13 @@ app.controller('MonsterController', ['$scope', '$http', '$localStorage', functio
     }
   };
   updateMonsters();
-  
+
   $scope.addMonster = function(selectedMonster) {
     //Add Monster to user Array
+
     var monsterJson = angular.toJson(selectedMonster);
     var monsterObject = jQuery.parseJSON(monsterJson);
+
     $scope.user.push(monsterObject);
     $localStorage.user.push(monsterObject);
     setTimeout(function() {
@@ -87,6 +82,5 @@ var adjustOnload = function(){
   },500);
 };
 adjustOnload();
-
 
 }]);

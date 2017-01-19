@@ -13,7 +13,7 @@
 <!--Monster Search-->
 <monsters-search></monsters-search>
 
-  <div class="monster_inlist" ng-repeat="monster in monsters | filter: globalSearch:strict | limitTo: numLimit">
+  <div class="monster_inlist" ng-repeat="monster in monsters.monster">
     <button class="green_btn" ng-model="user.monsters" ng-value="monster" ng-click="addMonster(monster);showMonsterForm = true;calculate(numPlayers.numPlayer, levels.level)">
       + Add
     </button>
